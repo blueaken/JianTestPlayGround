@@ -10,11 +10,6 @@ MANIFEST.MF
 *.zip
 */target/*
 */src/main/resources/buildinfo.properties
-/.idea/
-**/*.ipr
-*.ipr
-**/*.iws
-*.iws
 build.xml
 4cc.checksum
 /.metadata
