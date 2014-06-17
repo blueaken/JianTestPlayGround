@@ -11,8 +11,6 @@ MANIFEST.MF
 */target/*
 */src/main/resources/buildinfo.properties
 /.idea/
-**/*.iml
-*.iml
 **/*.ipr
 *.ipr
 **/*.iws
