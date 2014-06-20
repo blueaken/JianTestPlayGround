@@ -34,22 +34,22 @@ public class MergeSortedKList {
         if (lists.size() == 0) return null;
         Comparator<ListNode> listNodeComparator = new ListNodeComparator();
         PriorityQueue<ListNode> priorityQueue = new PriorityQueue<ListNode>(lists.size(), listNodeComparator);
+
         for (ListNode listNode : lists){
             priorityQueue.add(listNode);
         }
-        ListNode head = new ListNode(-999);
-        ListNode p = head;
 
+        ListNode head = new ListNode(-999);//temp head to be thrown away
+        ListNode p = head;
         while (priorityQueue.size() != 0) {
-            ListNode current = priorityQueue.remove();
-            p.val = current.val;
-            p.next = new ListNode(-999);
+            ListNode current = priorityQueue.poll();
+            p.next = current;
             p = p.next;
             if (current.next != null){
                 priorityQueue.add(current.next);
             }
         }
-        return head;
+        return head.next;
     }
 
     public static void main(String[] args){
@@ -77,6 +77,7 @@ public class MergeSortedKList {
         ListNode result = mergeKLists(lists);
         while (result!=null){
             System.out.print(result.val);
+            result = result.next;
         }
     }
 
