@@ -89,15 +89,6 @@ public class MergeSortedKList {
             System.out.print(result.val);
             result = result.next;
         }
-
-        //empty list [{}]
-        ListNode emptyListNode = new ListNode(0);
-        List<ListNode> emptyList = new ArrayList<ListNode>(3);
-        ListNode emptyResult = mergeKLists(emptyList);
-        while (result!=null){
-            System.out.print(emptyResult.val);
-            result = result.next;
-        }
     }
 
 }
