@@ -31,7 +31,7 @@ class ListNodeComparator implements Comparator<ListNode> {
  */
 public class MergeSortedKList {
     public static ListNode mergeKLists(List<ListNode> lists) {
-        if (lists.size() == 0) return null;
+        if (lists == null || lists.size() == 0) return null;
         Comparator<ListNode> listNodeComparator = new ListNodeComparator();
         PriorityQueue<ListNode> priorityQueue = new PriorityQueue<ListNode>(lists.size(), listNodeComparator);
 
@@ -77,6 +77,23 @@ public class MergeSortedKList {
         ListNode result = mergeKLists(lists);
         while (result!=null){
             System.out.print(result.val);
+            result = result.next;
+        }
+
+        //null list
+        List<ListNode> nullList = null;
+        ListNode nullResult = mergeKLists(nullList);
+        while (result!=null){
+            System.out.print(result.val);
+            result = result.next;
+        }
+
+        //empty list [{}]
+        ListNode emptyListNode = new ListNode(0);
+        List<ListNode> emptyList = new ArrayList<ListNode>(3);
+        ListNode emptyResult = mergeKLists(emptyList);
+        while (result!=null){
+            System.out.print(emptyResult.val);
             result = result.next;
         }
     }
