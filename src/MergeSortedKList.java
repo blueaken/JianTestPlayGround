@@ -36,7 +36,9 @@ public class MergeSortedKList {
         PriorityQueue<ListNode> priorityQueue = new PriorityQueue<ListNode>(lists.size(), listNodeComparator);
 
         for (ListNode listNode : lists){
-            priorityQueue.add(listNode);
+            if (listNode != null){
+                priorityQueue.add(listNode);
+            }
         }
 
         ListNode head = new ListNode(-999);//temp head to be thrown away
