@@ -3,7 +3,9 @@ import java.util.*;
 class IteratorComparator implements Comparator<Iterator<Integer>> {
     @Override
     public int compare(Iterator<Integer> a, Iterator<Integer> b){
-        return a.next() - b.next();
+        int na = a.next();
+        int nb = b.next();
+        return na - nb;
     }
 }
 /**
@@ -34,7 +36,7 @@ public class MergingIterator {
         //mergering here
     }
 
-    private List mergeKListIterators(){
+    private ListNode mergeKListIterators(){
         if (sortedStreams == null || sortedStreams.size() == 0) return null;
         Comparator<Iterator<Integer>> iteratorComparator = new IteratorComparator();
         PriorityQueue<Iterator<Integer>> priorityQueue = new PriorityQueue<Iterator<Integer>>(sortedStreams.size(), iteratorComparator);
@@ -45,33 +47,32 @@ public class MergingIterator {
             }
         }
 
-//        ListNode head = new ListNode(-999);//temp head to be thrown away
-//        ListNode p = head;
-//        while (priorityQueue.size() != 0) {
-//            Iterator<Integer> current = priorityQueue.poll();
-//            p.next = current;
-//            p = p.next;
-//            if (current.hasNext()){
-//                priorityQueue.add((Iterator<Integer>)current.next());
-//            }
-//        }
-//        return head.next;
+        ListNode head = new ListNode(-999);//temp head to be thrown away
+        ListNode p = head;
+        while (priorityQueue.size() != 0) {
+            Iterator<Integer> current = priorityQueue.poll();
+            p.next = new ListNode(-999);
+            p.next.val = current.next();
+            current.remove();
+            p = p.next;
+            if (current.hasNext()){
+                priorityQueue.add(current);
+            }
+        }
+        return head.next;
     }
 
     public static void main(String[] args){
         //1,4,7
-        List<Integer> list1 = new ArrayList<Integer>(3);
-        list1 = Arrays.asList(1,4,7);
+        List<Integer> list1 = new LinkedList<Integer>(Arrays.asList(1,4,7));
         Iterator<Integer> iterator1 = list1.iterator();
 
         //2,5,8
-        List<Integer> list2 = new ArrayList<Integer>(3);
-        list2 = Arrays.asList(2,5,8);
+        List<Integer> list2 = new LinkedList<Integer>(Arrays.asList(2,5,8));
         Iterator<Integer> iterator2 = list2.iterator();
 
         //3,6,9
-        List<Integer> list3 = new ArrayList<Integer>(3);
-        list3 = Arrays.asList(3,6,9);
+        List<Integer> list3 = new LinkedList<Integer>(Arrays.asList(3,6,9));
         Iterator<Integer> iterator3 = list3.iterator();
 
         List<Iterator> iteratorList = new ArrayList<Iterator>(3);
@@ -80,6 +81,12 @@ public class MergingIterator {
         iteratorList.add(iterator3);
 
         MergingIterator mergingIterator = new MergingIterator(iteratorList);
+        ListNode result = mergingIterator.mergeKListIterators();
+        while (result!=null){
+            System.out.print(result.val);
+            result = result.next;
+        }
+
 //        while (mergingIterator.hasNext()) {
 //            System.out.println(mergingIterator.next());
 //        }

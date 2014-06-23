@@ -29,7 +29,7 @@ class ListNodeComparator implements Comparator<ListNode> {
 /**
  * Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
  */
-public class MergeSortedKList {
+public class MergeNSortedLists {
     public static ListNode mergeKLists(List<ListNode> lists) {
         if (lists == null || lists.size() == 0) return null;
         Comparator<ListNode> listNodeComparator = new ListNodeComparator();
