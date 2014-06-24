@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Created with IntelliJ IDEA.
  * User: blueaken
@@ -5,35 +7,42 @@
  * Time: 10:57 下午
  */
 public class MergeSortedInPlaceArray {
-    // solution 1 - using an extra array. Simple but need extra memory
-    // try solution 2 - sort from the end and finish the task in place
+    /**
+     * Analysis: solution 1 - using an extra array. Simple but need extra memory.
+     * So let's try solution 2 - merge sort from the end and finish the task in place
+     */
     public static void merge(int A[], int m, int B[], int n) {
-        if ((A == null || A.length == 0) && (B != null && B.length != 0)) {
-            System.arraycopy(B, 0, A, 0, B.length);
-            return;
-        }
+            int position = m+n-1;
+            m--;n--;
 
-        int[] result = new int[m+n];
-        int position = 0;
-        int aposition = 0;
-        int bposition = 0;
-
-        while (aposition < A.length && bposition < B.length){
-            if (A[aposition] < B[bposition]){
-                result[position++] = A[aposition++];
-            }else{
-                result[position++] = B[bposition++];
+            while (m>=0 && n>=0){
+                if(A[m] > B[n]){
+                    A[position--] = A[m--];
+                } else{
+                    A[position--] = B[n--];
+                }
             }
-        }
 
-        while (aposition < A.length){
-            result[position++] = A[aposition++];
-        }
+            while (n>=0){
+                A[position--] = B[n--];
+            }
+    }
 
-        while (bposition < B.length){
-            result[position++] = B[bposition++];
-        }
+    public static void main(String[] args){
+        //assume array testA has size of m+n
+        int[] testA = {1,3,5,7,9,11,0,0,0,0};
+        int[] testB = {2,4,6,8};
 
-        System.arraycopy(result, 0, A, 0, result.length);
+        System.out.println("testA array before merge: " + Arrays.toString(testA));
+        merge(testA, 6, testB, 4);
+        System.out.println("testA array after merge: " + Arrays.toString(testA));
+
+        //null testB case
+        int[] twoA = {1,3};
+        int[] nullB = {};
+        System.out.println("testA array before merge: " + Arrays.toString(twoA));
+        merge(twoA, 2, nullB, 0);
+        System.out.println("testA array after merge: " + Arrays.toString(twoA));
+
     }
 }
