@@ -1,3 +1,5 @@
+package merge;
+
 import java.util.Arrays;
 
 /**

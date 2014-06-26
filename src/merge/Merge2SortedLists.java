@@ -1,3 +1,4 @@
+package merge;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,7 +13,7 @@ public class Merge2SortedLists {
         if (l1 == null && l2 != null) return l2;
         if (l1 != null && l2 == null) return l1;
 
-        ListNode tempHead = new ListNode (-9999);
+        ListNode tempHead = new ListNode(-9999);
         ListNode point = tempHead;
         while (l1 != null && l2 != null){
             if (l1.val < l2.val) {

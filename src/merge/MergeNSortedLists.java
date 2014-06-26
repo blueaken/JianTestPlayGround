@@ -1,4 +1,4 @@
-/**
+package merge; /**
  * Created with IntelliJ IDEA.
  * User: blueaken
  * Date: 6/19/14
