@@ -5,7 +5,7 @@ import type.TreeNode;
 /**
  * @author jianshen
  */
-public class sortedArrayToBST {
+public class SortedArrayToBST {
 
     //yeah, 我的解法和flightforyourdream大侠几乎一样
     public static TreeNode sortedArrayToBST(int[] num) {
@@ -26,7 +26,7 @@ public class sortedArrayToBST {
     }
 
 
-//    public static TreeNode sortedArrayToBST(int[] num) {
+//    public static TreeNode SortedArrayToBST(int[] num) {
 //        TreeNode bst = sortedArrayToBSTRec(num, 0, num.length-1);
 //        return bst;
 //    }
