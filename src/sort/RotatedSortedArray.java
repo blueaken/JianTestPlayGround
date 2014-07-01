@@ -4,6 +4,7 @@ package sort;
  * Author: blueaken
  * Date: 6/29/14 1:19 下午
  */
+// also like 水中的鱼的解法， O(logN) http://fisherlei.blogspot.com/2013/01/leetcode-search-in-rotated-sorted-array.html
 public class RotatedSortedArray {
     public static int search(int[] A, int target) {
         int len = A.length;
@@ -12,7 +13,7 @@ public class RotatedSortedArray {
         int pivot = -999;
         //found the pivot position
         for (int i=0; i<len-1; i++){
-            if (A[i] < A[i+1]) continue;
+            if (A[i] <= A[i+1]) continue;
             pivot = i+1;
             break;
         }
@@ -40,8 +41,9 @@ public class RotatedSortedArray {
 
     public static void main(String[] args){
 //        int[] rotatedArr = {3,4,5,6,7,9,0,1,2};
-        int[] rotatedArr = {1};
-        int target = 1;
+//        int[] rotatedArr = {1};
+        int[] rotatedArr = {3,4,4,5,5,6,7,9,0,1,2};  //duplicates has no effect on my solution
+        int target = 12;
         int index = search(rotatedArr, target);
         System.out.println("target " + target + " index is: " + index);
     }
