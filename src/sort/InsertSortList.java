@@ -4,6 +4,7 @@ package sort;
  * @author jianshen
  */
 public class InsertSortList {
+    //in case of linked list, we have to loop from the head to end, unlike array algorithm
     public static ListNode insertionSortList(ListNode head) {
         if (head == null || head.next == null) return head;
 
@@ -16,15 +17,16 @@ public class InsertSortList {
             if (p1.val < p2.val) { //in order, good!
                 p1 = p1.next;
                 p2 = p2.next;
-                continue;
             }else{ //need to figure where to insert from head
                 p0 = head;
-                while (p0 != null){
+                while (p0 != null && p0!=p2){
                     if (p0.val > p2.val) {
                         swap = p0.val; p0.val = p2.val; p2.val = swap;
                     }
                     p0 = p0.next;
                 }
+                p1 = p1.next;
+                p2 = p2.next;
             }
         }
 
@@ -44,7 +46,7 @@ public class InsertSortList {
 //        ln.next.next.next.next.next.next.next.next.next = new ListNode(57);
 
         ListNode ln = new ListNode(2);
-        ln.next = new ListNode(2);
+//        ln.next = new ListNode(2);
 
         ListNode result = ln;
 
