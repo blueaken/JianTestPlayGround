@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Author: blueaken
  * Date: 7/3/14 2:53 下午
  */
-public class S1 {
+public class FindingMedianSortedArrays {
     public static double findMedianSortedArrays(int A[], int B[]) {
         int m = A.length;
         int n = B.length;

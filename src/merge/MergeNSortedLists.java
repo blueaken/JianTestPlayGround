@@ -5,16 +5,10 @@ package merge; /**
  * Time: 12:17 上午
  */
 
+import comparator.ListNodeComparator;
 import type.ListNode;
 
 import java.util.*;
-
-class ListNodeComparator implements Comparator<ListNode> {
-    @Override
-    public int compare(ListNode a, ListNode b){
-        return a.val - b.val;
-    }
-}
 
 /**
  * Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
