@@ -1,5 +1,7 @@
 package merge;
 
+import type.ListNode;
+
 /**
  * Created with IntelliJ IDEA.
  * User: blueaken

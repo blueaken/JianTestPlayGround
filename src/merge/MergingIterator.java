@@ -1,5 +1,7 @@
 package merge;
 
+import type.ListNode;
+
 import java.util.*;
 
 class IteratorComparator implements Comparator<Iterator<Integer>> {

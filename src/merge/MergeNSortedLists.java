@@ -5,19 +5,9 @@ package merge; /**
  * Time: 12:17 上午
  */
 
-import java.util.*;
+import type.ListNode;
 
-/**
- * Definition for singly-linked list.
- *  */
- class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) {
-          val = x;
-          next = null;
-      }
-  }
+import java.util.*;
 
 class ListNodeComparator implements Comparator<ListNode> {
     @Override
