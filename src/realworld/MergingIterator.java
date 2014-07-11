@@ -1,8 +1,5 @@
 package realworld;
 
-import com.sun.tools.javac.util.*;
-import comparator.IntegerComparator;
-import comparator.IteratorComparator;
 import comparator.ListIteratorComparator;
 
 import java.util.*;
