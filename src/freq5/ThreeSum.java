@@ -9,6 +9,7 @@ import java.util.List;
  * Date: 7/19/14 11:17 下午
  */
 public class ThreeSum {
+    //level 3
     public static List<List<Integer>> threeSum(int[] num) {
         //prepare step
         List<List<Integer>> result = new ArrayList<List<Integer>>();
