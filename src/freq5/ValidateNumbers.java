@@ -46,6 +46,8 @@ public class ValidateNumbers {
         }
     }
 
+    //note: also like this non-regex solution: http://answer.ninechapter.com/solutions/valid-number/
+
     public static void main(String[] args){
 //        String test = " +321";
         //String test = " -321";
