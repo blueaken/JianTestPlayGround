@@ -7,6 +7,7 @@ import java.util.Arrays;
  * Date: 8/11/14 4:43 下午
  */
 public class ClimbingStair {
+    //level 2
     public static int climbStairs(int n) {
         // dp数组，用来保存结果，可以适当开大一些
         int[] dp = new int[n+5];
