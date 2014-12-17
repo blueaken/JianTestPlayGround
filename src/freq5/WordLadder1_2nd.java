@@ -8,17 +8,24 @@ import java.util.*;
  */
 public class WordLadder1_2nd {
     public static void main(String[] args){
-        String start = "hit";
-        String end = "cog";
-        Set<String> dict = new HashSet<String>(Arrays.asList("hot","dot","dog","lot","log"));
+//        String start = "hit";
+        String start = "a";
+//        String end = "cog";
+        String end = "c";
+//        Set<String> dict = new HashSet<String>(Arrays.asList("hot","dot","dog","lot","log"));
+        Set<String> dict = new HashSet<String>(Arrays.asList("a","b","c"));
 
         System.out.println(ladderLength(start, end, dict));
     }
 
+    /*
+    "a", "c", ["a","b","c"]
+     */
+
     public static int ladderLength(String start, String end, Set<String> dict) {
         if (start == null || end == null || dict.isEmpty() ) return 0;
 
-        Queue queue = new LinkedList();
+        Queue<String> queue = new LinkedList<String>();
         queue.offer(start);
         dict.remove(start);
 
@@ -27,19 +34,25 @@ public class WordLadder1_2nd {
 
         String current, temp;
         while (!queue.isEmpty()){
-            current = (String)queue.remove();
-            for (int i = 0; i < wordLen; i++){
-                for (char c = 'a'; c <= 'z' ; c++){
-                    if (current.charAt(i) == c) continue;
+            int count = queue.size();
 
-                    temp = replace(current, i, c);
-                    if (temp.equalsIgnoreCase(end)){
-                        return ladderLength + 1;
-                    }
+            for (int j = 0; j < count; j++) {
+                current = queue.remove();
+                // Check each adjacent string
+//                current = queue.poll();
+                for (int i = 0; i < wordLen; i++){
+                    for (char c = 'a'; c <= 'z' ; c++){
+                        if (current.charAt(i) == c) continue;
 
-                    if (dict.contains(temp)){
-                        dict.remove(temp);
-                        queue.offer(temp);
+                        temp = replace(current, i, c);
+                        if (temp.equalsIgnoreCase(end)){
+                            return ladderLength + 1;
+                        }
+
+                        if (dict.contains(temp)){
+                            dict.remove(temp);
+                            queue.offer(temp);
+                        }
                     }
                 }
             }
