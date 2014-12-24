@@ -34,8 +34,8 @@ public class QuickSortedArray {
             }
         }
 
-        leftArray = sort(leftArray);
-        rightArray = sort(rightArray);
+        sort(leftArray);
+        sort(rightArray);
 
         System.arraycopy(leftArray, 0, data, 0, leftArray.length);
         data[leftArray.length] = pivotValue;
