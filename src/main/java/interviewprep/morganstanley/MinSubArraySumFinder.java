@@ -8,11 +8,7 @@ import java.util.Arrays;
  */
 public class MinSubArraySumFinder {
     public static void main(String[] args){
-        int[] input = new int[8];
-        for (int i=0; i<input.length; i++){
-            input[i] = i+1;
-        }
-
+        int[] input = {4, 4, 3, 3, 2};
         findMinSubArraySum(input);
     }
 
