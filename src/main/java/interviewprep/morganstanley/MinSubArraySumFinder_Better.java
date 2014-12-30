@@ -26,12 +26,7 @@ public class MinSubArraySumFinder_Better {
         System.out.println("Sorted input array:");
         printArray(data);
 
-        List<Integer> bestSubArr1 = new ArrayList<Integer>();
-        List<Integer> bestSubArr2 = new ArrayList<Integer>();
-
-        boolean initialized = false;
-        int bestSubArrSum1 = 0;
-
+        //calculate the total sum and half sum
         int totalSum = getArraySum(data);
         double s1 = totalSum / 2.0;
         int halfSum = totalSum / 2;
@@ -40,12 +35,23 @@ public class MinSubArraySumFinder_Better {
             halfSum += 1;
         }
 
+        // Lists to hold the best solution
+        List<Integer> bestSubArr1 = new ArrayList<Integer>();
+        List<Integer> bestSubArr2 = new ArrayList<Integer>();
 
+        int bestSubArrSum1 = 0;
         int start = len - 2;
+        boolean initialized = false;
+
         while (start>=0){
-            BitSet bitSet = new BitSet();
+            // Lists to hold temp sub lists
             List<Integer> tempSubArr1 = new ArrayList<Integer>();
             List<Integer> tempSubArr2 = new ArrayList<Integer>();
+
+            // BitSet to record the array positions used by temp list 1
+            BitSet bitSet = new BitSet();
+
+            // Inti the last element of array to list1.
             tempSubArr1.add(data[len-1]);
             int tempSum1 = data[len-1];
             bitSet.set(len-1);
@@ -58,12 +64,13 @@ public class MinSubArraySumFinder_Better {
                 }
             }
 
-            //add the rest
+            //add the remains to list 2
             for (int i=0; i<len; i++) {
                 if(!bitSet.get(i))
                 tempSubArr2.add(data[i]);
             }
 
+            // Initialize best solution if not yet
             if (!initialized){
                 bestSubArr1 = tempSubArr1;
                 bestSubArr2 = tempSubArr2;
@@ -71,6 +78,7 @@ public class MinSubArraySumFinder_Better {
                 initialized = true;
             }
 
+            // if better than current best solution than replace
             if (Math.abs(halfSum - tempSum1) < Math.abs(halfSum - bestSubArrSum1)){
                 bestSubArr1.clear();
                 bestSubArr1.addAll(tempSubArr1);
