@@ -26,14 +26,10 @@ public class MinSubArraySumFinder_Better {
         System.out.println("Sorted input array:");
         printArray(data);
 
-        //calculate the total sum and half sum
+        //calculate the total sum and half sum - using ceiling value
         int totalSum = getArraySum(data);
-        double s1 = totalSum / 2.0;
-        int halfSum = totalSum / 2;
-        //adjust halfSum val if more than the integer value
-        if (s1 > halfSum) {
-            halfSum += 1;
-        }
+        int halfSum = (int)Math.ceil(totalSum / 2.0);
+
 
         // Lists to hold the best solution
         List<Integer> bestSubArr1 = new ArrayList<Integer>();

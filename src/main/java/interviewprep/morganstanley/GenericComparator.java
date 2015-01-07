@@ -1,6 +1,5 @@
 package interviewprep.morganstanley;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,6 +13,22 @@ import java.util.List;
 * build a generic comparator with reflection
  */
 public class GenericComparator<T> implements Comparator<T> {
+
+
+    public static void main(String[] args){
+        Student s1 = new Student("david");
+        Student s2 = new Student("adam");
+
+        List<Student> list = new ArrayList<Student>();
+        list.add(s1);
+        list.add(s2);
+
+        System.out.println("Before sort: " + list);
+
+        Collections.sort(list, new GenericComparator<Student>("getName"));
+
+        System.out.println("After sort: " + list);
+    }
 
     private String property;
 
@@ -48,20 +63,6 @@ public class GenericComparator<T> implements Comparator<T> {
             e.printStackTrace();
         }
         return (Comparable)invoke;
-    }
-
-    public static void main(String[] args){
-        Student s1 = new Student("david");
-        Student s2 = new Student("adam");
-
-        List<Student> list = new ArrayList<Student>();
-        list.add(s1);
-        list.add(s2);
-
-        System.out.println(list);
-
-        Collections.sort(list, new GenericComparator<Student>("getName"));
-        System.out.println("After sort :" + list);
     }
 
 }

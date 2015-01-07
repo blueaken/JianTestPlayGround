@@ -11,10 +11,6 @@ public class StringRotationVerifier {
         isRotation(str1, str2);
     }
 
-    /*
-    * first attempt - works but clumsy, see this post has a very elegant solution:
-    * http://stackoverflow.com/questions/2553522/interview-question-check-if-one-string-is-a-rotation-of-other-string
-     */
     private static void isRotation(String str1, String str2){
         if (str1 == null || str2 == null) {
             System.out.println("Input string is null.");
@@ -30,6 +26,10 @@ public class StringRotationVerifier {
         return;
     }
 
+    /*
+    * first attempt - works but clumsy, see this post has a very elegant solution:
+    * http://stackoverflow.com/questions/2553522/interview-question-check-if-one-string-is-a-rotation-of-other-string
+     */
 //    private static void isRotation(String str1, String str2){
 //        if (str1 == null || str2 == null) {
 //            System.out.println("Input string is null.");

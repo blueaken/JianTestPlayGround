@@ -1,6 +1,5 @@
 package interviewprep.morganstanley;
 
-import java.util.BitSet;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -50,8 +49,10 @@ public class FirstNonRepeatCharFinder {
     * the 1st case.
      */
     private static char findFirstNonRepeatChar_Occur(String input){
+        char not_found = '!';
+
         int size = input.length();
-        if (size==0) return '!'; //not found indicator
+        if (size==0) return not_found;
         if (size==1) return input.charAt(0);
 
         //if size >=2
@@ -75,6 +76,6 @@ public class FirstNonRepeatCharFinder {
             ind++;
         }
 
-        return '!'; //not found indicator
+        return not_found;
     }
 }

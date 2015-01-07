@@ -65,11 +65,6 @@ public class ThreeStringProblem {
     /**
      * The method is used to check if all the characters of String include are
      * present in String toCheck but not that of String avoid
-     *
-     * @param toCheck
-     * @param include
-     * @param avoid
-     * @return
      */
     /*
     * 这里考虑用BitSet而不用HashSet,
