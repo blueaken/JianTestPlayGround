@@ -3,6 +3,16 @@ package dp;
 /**
  * Created by jianshen on 12/31/14.
  */
+/*
+* The question is from Wu and http://stackoverflow.com/questions/9105699/algorithm-for-finding-all-paths-in-a-nxn-grid
+* The idea is to find all paths in a grid from upper left to bottom right. But the solution on the post uses recursive,
+* Wu points out this is a DP problem. And finally figure out the DP way of doing it.
+*
+* The idea is -
+ * 1. The path to any point on the border of the start point is 1, since it can only move down or right.
+ * 2. To any point of the grid: grid[i][j], the total path to it is the sum of the path to its left point: grid[i-1][j]
+  * and upper point: grid[i][j-1], and the euqation is grid[i][j] = grid[i-1][j] + grid[i][j-1].
+ */
 public class GridAllPathFinder {
     public static void main(String[]args){
         int row = 4;
