@@ -21,7 +21,7 @@ public class TestListPerformance {
             vals[i] = new Integer(currval);
             currval+=r.nextInt(100)+1;
         }
-        values= Arrays.asList(vals);
+        values= new ArrayList(Arrays.asList(vals));
     }
 
     static long getHeavyLookupPerformance(List lst){
