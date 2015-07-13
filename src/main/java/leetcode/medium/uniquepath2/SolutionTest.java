@@ -14,7 +14,7 @@ public class SolutionTest {
 
         for (int i=0; i<row; i++){
             for (int j=0; j<col; j++){
-                if ((i==0 && j==0)) {
+                if ((i==0 && j==1)) {
                     testGrid1[i][j] = 1;
                 } else{
                     testGrid1[i][j] = 0;
@@ -25,7 +25,8 @@ public class SolutionTest {
         //print the grid
         printGrid(testGrid1);
 
-        Solution solution = new Solution();
+        //Solution solution = new Solution();
+        Solution_Refactor solution = new Solution_Refactor();
         System.out.println("The actual result is: " + solution.uniquePathsWithObstacles(testGrid1));
 
         //print the grid
