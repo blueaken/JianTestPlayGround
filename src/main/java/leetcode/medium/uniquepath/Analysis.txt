@@ -1,1 +1,2 @@
 A 2-dimension DP problem, see the "DP problems.txt" under dp package and the analysis of GridAllPathFinder problem.
+Refactor point: the init of the border value is clumsy, any better way to do it?

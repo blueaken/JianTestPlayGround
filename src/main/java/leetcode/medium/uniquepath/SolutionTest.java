@@ -5,7 +5,8 @@ package leetcode.medium.uniquepath;
  */
 public class SolutionTest {
     public static void main(String[] args){
-        Solution solution = new Solution();
+        //Solution solution = new Solution();
+        Solution_Refactor solution = new Solution_Refactor();
         System.out.println("The actual result is: " + solution.uniquePaths(3,3));
     }
 }
