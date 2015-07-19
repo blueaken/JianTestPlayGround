@@ -1,6 +1,6 @@
 package leetcode.medium.uniquepath2;
 
-import leetcode.easy.validparenthese.*;
+import leetcode.Util;
 
 /**
  * Created by jshe18 on 7/12/15.
@@ -23,28 +23,14 @@ public class SolutionTest {
         }
 
         //print the grid
-        printGrid(testGrid1);
+        Util.printGrid(testGrid1);
 
         //Solution solution = new Solution();
         Solution_Refactor solution = new Solution_Refactor();
         System.out.println("The actual result is: " + solution.uniquePathsWithObstacles(testGrid1));
 
         //print the grid
-        printGrid(testGrid1);
+        Util.printGrid(testGrid1);
 
-    }
-
-    private static void printGrid(int[][] testGrid){
-        System.out.println("The test grid:");
-        int row = testGrid.length;
-        int col = testGrid[0].length;
-
-        for (int i=0; i<row; i++) {
-            for (int j = 0; j < col; j++) {
-                System.out.print(testGrid[i][j] + " ");
-            }
-            System.out.println("");
-        }
-        System.out.println("");
     }
 }
