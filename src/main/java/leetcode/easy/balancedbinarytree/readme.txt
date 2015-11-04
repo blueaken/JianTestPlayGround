@@ -1,0 +1,1 @@
+An interesting followup question after maxDepth, especially the bottom up solution.
