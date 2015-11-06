@@ -1,31 +1,33 @@
 package leetcode.easy.minstack;
 
+import type.MinStackNode;
+
 /**
  * Created by jshe18 on 6/25/15.
  */
 public class MinStack_WithNodeStructure {
 
-    Node top = null;
+    MinStackNode top = null;
 
    public void push(int x){
-       Node node = new Node(x);
+       MinStackNode node = new MinStackNode(x);
        if (top != null){
-           if (x < top.min){
-               node.min = x;
+           if (x < top.getMin()){
+               node.setMin(x);
            } else {
-               node.min = top.min;
+               node.setMin(top.getMin());
            }
-           node.next = top;
+           node.setNext(top);
        } else {
-           node.min = x;
+           node.setMin(x);
        }
        top = node;
    }
 
    public int pop(){
        if (top != null){
-           int val = top.val;
-           top = top.next;
+           int val = top.getVal();
+           top = top.getNext();
            return val;
        }else{
            return Integer.MAX_VALUE;
@@ -34,7 +36,7 @@ public class MinStack_WithNodeStructure {
 
    public int top(){
        if (top != null){
-           return top.val;
+           return top.getVal();
        }else{
            return Integer.MAX_VALUE;
        }
@@ -42,19 +44,10 @@ public class MinStack_WithNodeStructure {
 
    public int getMin(){
        if (top != null){
-           return top.min;
+           return top.getMin();
        }else{
            return Integer.MAX_VALUE;
        }
    }
 }
 
-class Node {
-    int val;
-    int min;
-    Node next;
-
-    Node (int v) {
-        val = v;
-    }
-}
