@@ -27,10 +27,7 @@ public class SolutionTest {
 
         //Solution solution = new Solution();
         Solution_Refactor solution = new Solution_Refactor();
-        System.out.println("The actual result is: " + solution.uniquePathsWithObstacles(testGrid1));
-
-        //print the grid
-        Util.printGrid(testGrid1);
+        System.out.println("The result is: " + solution.uniquePathsWithObstacles(testGrid1));
 
     }
 }
