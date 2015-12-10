@@ -19,12 +19,15 @@ public class Solution_HashMap {
 
     public void add(int value){
         int count = map.containsKey(value) ? map.get(value) : 0;
-        map.put(value, count);
+        map.put(value, count+1);
     }
 
     public boolean find(int target){
         if (map.size()>0){
             for (int i: map.keySet()){
+                if (i == (target-i)){
+                    return (map.get(i)>=2); //ensure there are at least 2 for duplicates
+                }
                 if (map.containsKey(target-i)){
                     return true;
                 }
