@@ -1,4 +1,4 @@
-package leetcode.easy.implementstrstr;
+package leetcode.medium.implementstrstr;
 
 /**
  * Author: blueaken
