@@ -11,10 +11,10 @@ import java.util.Map;
  * Author: blueaken
  * Date: 12/22/15 8:27 AM
  */
-public class VendingMaching {
+public class VendingMachine {
     private Map<Product, Integer> inventory = new HashMap<>();
 
-    public VendingMaching(Map<Product, Integer> inventory) {
+    public VendingMachine(Map<Product, Integer> inventory) {
         this.inventory = inventory;
     }
 

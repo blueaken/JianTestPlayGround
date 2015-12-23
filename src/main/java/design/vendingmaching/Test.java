@@ -2,7 +2,6 @@ package design.vendingmaching;
 
 import design.vendingmaching.coin.Coin;
 import design.vendingmaching.coin.OneCent;
-import design.vendingmaching.coin.TwoCent;
 import design.vendingmaching.product.Chips;
 import design.vendingmaching.product.Coke;
 import design.vendingmaching.product.Product;
@@ -28,12 +27,18 @@ public class Test {
         //TwoCent twoCentCoin = new TwoCent();
         List<Coin> coins = new ArrayList<>();
         coins.add(oneCentCoin);
-        coins.add(oneCentCoin);
 
-        VendingMaching vendingMaching = new VendingMaching(inventory);
-        vendingMaching.checkInventory();
-        vendingMaching.buy(coke, coins);
-        vendingMaching.checkInventory();
+        VendingMachine vendingMachine = new VendingMachine(inventory);
+
+        //insufficient fund
+        vendingMachine.checkInventory();
+        vendingMachine.buy(coke, coins);
+        vendingMachine.checkInventory();
+
+        //success
+        coins.add(oneCentCoin);
+        vendingMachine.buy(coke, coins);
+        vendingMachine.checkInventory();
     }
 
 
