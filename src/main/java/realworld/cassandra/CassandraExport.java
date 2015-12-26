@@ -14,7 +14,9 @@ import com.datastax.driver.core.Statement;
 
 /**
  * Created by jshe18 on 12/15/15.
- * note: works only in local evn, in aws cluster, we use eurika lookup to find target servers. To make it work, has to
+ * note: the following code works only in local or known ip env.
+ *
+ * If in aws cluster, Nike CDS team uses eurika lookup to find target servers. To make it work, has to
  * deploy it in test/prod env, which is not an option today.
  */
 public class CassandraExport {
