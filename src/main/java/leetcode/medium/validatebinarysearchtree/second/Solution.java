@@ -1,24 +1,23 @@
-package leetcode.medium.validatebinarysearchtree;
+package leetcode.medium.validatebinarysearchtree.second;
 
 import type.TreeNode;
 
 /**
  * Author: blueaken
- * Date: 9/19/15 9:33 PM
+ * Date: 2/7/16 9:59 AM
  */
-public class Solution_PreOrder {
+public class Solution {
+
     public static boolean isValidBST(TreeNode root) {
-       return rec (root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+        return rec(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
-    private static boolean rec(TreeNode node, int left, int right){
-        if (node == null) return true;
+    private static boolean rec(TreeNode node, int low, int high){
+        if (node==null) return true;
 
-        if (node.val <= left || node.val >=  right){
-            return false;
-        }
-
-        return rec(node.left, left, node.val) && rec(node.right, node.val, right);
+        return node.val>low && node.val<high
+                && rec(node.left, low, node.val)
+                && rec(node.right, node.val, high);
     }
 
     public static void main(String[] args){
@@ -38,5 +37,4 @@ public class Solution_PreOrder {
 
         System.out.println(isValidBST(node));
     }
-
 }
