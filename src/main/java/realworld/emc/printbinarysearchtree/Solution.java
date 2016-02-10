@@ -15,23 +15,28 @@ public class Solution {
 
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
-        TreeNode rightmost = root;
+        int currentLevel = 1;
+        int nextLevel = 0;
 
         while (queue.size()>0){
             TreeNode node = queue.poll();
             System.out.print(node.val);
             System.out.print(" ");
+            currentLevel--;
 
             if (node.left != null) {
                 queue.add(node.left);
+                nextLevel++;
             }
             if (node.right != null) {
                 queue.add(node.right);
+                nextLevel++;
             }
 
-            if (node == rightmost){
+            if (currentLevel == 0){
                 System.out.println();
-                rightmost = (node.right != null) ? node.right : node.left;
+                currentLevel = nextLevel;
+                nextLevel = 0;
             }
         }
 
@@ -44,6 +49,9 @@ public class Solution {
         node.right = new TreeNode(15);
         node.right.left = new TreeNode(11);
         node.right.left.left = new TreeNode(6);
+        node.right.left.right = new TreeNode(12);
+        node.right.left.left.left = new TreeNode(2);
+        node.right.left.left.right = new TreeNode(8);
         node.right.right = new TreeNode(27);
 
         printBinaryTree(node);
