@@ -1,0 +1,1 @@
+similar to level order traversal BFS, just add a direction control para, it works as expected.
