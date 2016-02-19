@@ -1,4 +1,4 @@
-package leetcode.medium.lettercombinationsofaphonenumber;
+package leetcode.np_problems.medium.lettercombinationsofaphonenumber;
 
 import java.util.ArrayList;
 import java.util.HashMap;

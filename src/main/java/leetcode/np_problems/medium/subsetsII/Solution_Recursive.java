@@ -1,4 +1,4 @@
-package leetcode.medium.subsetsII;
+package leetcode.np_problems.medium.subsetsII;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,15 +1,14 @@
-package leetcode.medium.subsets;
+package leetcode.np_problems.medium.subsetsII;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * Author: blueaken
- * Date: 2/17/16 9:32 AM
+ * Date: 2/17/16 2:09 PM
  */
-public class Solution_Recursive {
-    public static List<List<Integer>> subsets(int[] nums) {
+public class Solution_Works_But_Not_Efficient {
+
+    public static List<List<Integer>> subsetsWithDup(int[] nums) {
         // write your code here
         if (nums == null) return null;
         Arrays.sort(nums);
@@ -31,14 +30,16 @@ public class Solution_Recursive {
         for (int i=0; i<size; i++){
             List<Integer> temp = new ArrayList<>(result.get(i));
             temp.add(data[index]);
+            if (result.contains(temp)) continue; //avoid duplicates
             result.add(temp);
         }
     }
 
     public static void main (String[] args){
-        int[] test = {1,2,3};
+        int[] test = {1,2,2};
 
-        List<List<Integer>> result = subsets(test);
+        List<List<Integer>> result = subsetsWithDup(test);
         System.out.println(result);
     }
+
 }

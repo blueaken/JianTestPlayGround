@@ -1,4 +1,4 @@
-package leetcode.medium.lettercombinationsofaphonenumber.second;
+package leetcode.np_problems.medium.lettercombinationsofaphonenumber;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,11 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Author: blueaken
- * Date: 2/17/16 10:51 AM
+ * Created by jshe18 on 9/23/15.
  */
-public class Solution_Interactive {
-
+public class Solution_Rec {
     private static final Map<Integer, String> DICTIONARY = new HashMap<Integer, String>(){{
         put(2, "abc");
         put(3, "def");
@@ -26,22 +24,24 @@ public class Solution_Interactive {
     public static List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<>();
         if (digits==null || digits.length()==0) return result;
+        StringBuilder temp = new StringBuilder();
 
-        List<String> temp = new ArrayList<>();
-        result.add("");
+        rec(digits, result, temp, 0);
+        return result;
+    }
 
-        for (int i=0; i<digits.length(); i++){
-            for (String s : result){
-                String map = DICTIONARY.get(digits.charAt(i)-'0');
-                for (int j=0; j<map.length(); j++){
-                    temp.add(s + map.charAt(j));
-                }
-            }
-            result = temp;
-            temp = new ArrayList<>();
+    static void rec(String digits, List<String> result, StringBuilder temp, int position){
+        if (position == digits.length()){
+            result.add(temp.toString());
+            return;
         }
 
-        return result;
+        String letters = DICTIONARY.get(digits.charAt(position)-'0');
+        for (char c : letters.toCharArray()){
+            temp.append(c);
+            rec(digits, result, temp, position + 1);
+            temp.deleteCharAt(temp.length() - 1);
+        }
     }
 
     public static void main(String[] args){
