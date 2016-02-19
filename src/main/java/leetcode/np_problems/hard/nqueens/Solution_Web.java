@@ -1,4 +1,4 @@
-package leetcode.hard.nqueens;
+package leetcode.np_problems.hard.nqueens;
 
 import java.util.ArrayList;
 import java.util.List;
