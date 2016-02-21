@@ -1,4 +1,4 @@
-package ninechapter.chapter1_search_problems.subsetsII;
+package ninechapter.chapter1_strstr_to_search_problems.subsetsII;
 
 import java.util.ArrayList;
 import java.util.Collections;
