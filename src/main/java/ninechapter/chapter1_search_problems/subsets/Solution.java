@@ -1,4 +1,4 @@
-package ninechapter.chapter1_searchtree_pattern.subsets;
+package ninechapter.chapter1_search_problems.subsets;
 
 import java.util.ArrayList;
 import java.util.Arrays;
