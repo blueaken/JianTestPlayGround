@@ -1,4 +1,4 @@
-package leetcode.medium.searchinsertposition;
+package leetcode.binarysearch.searchinsertposition;
 
 /**
  * Author: blueaken
@@ -23,7 +23,7 @@ public class Solution_Interactive {
     }
 
     public static void main(String[] args){
-        int[] test = {1,3,5,10};
+        int[] test = {1,3};
         int target1 = 5;
         int target2 = 2;
         int target3 = 7;

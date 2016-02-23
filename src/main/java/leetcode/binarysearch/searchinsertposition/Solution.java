@@ -1,4 +1,4 @@
-package leetcode.medium.searchinsertposition;
+package leetcode.binarysearch.searchinsertposition;
 
 /**
  * Author: blueaken
@@ -10,21 +10,19 @@ public class Solution {
     }
 
     static int rec(int[] data, int left, int right, int val){
-        if (left == right) {
-            if (data[left] < val) {
-                return left+1;
-            }
-            if (data[left] > val){
-                return left;
-            }
+        if (left >= right) {
+            return data[left] < val ?  left+1 : left;
         }
 
-        if (left > right) return left;
-
         int mid = (left+right)/2;
-        if (data[mid] == val) return mid;
-        else if (data[mid] < val) return rec(data, mid + 1, right, val);
-        else return rec(data, left, mid-1, val);
+        if (data[mid] == val) {
+            return mid;
+        }
+        else if (data[mid] < val) {
+            return rec(data, mid + 1, right, val);
+        } else {
+            return rec(data, left, mid-1, val);
+        }
     }
 
     public static void main(String[] args){
