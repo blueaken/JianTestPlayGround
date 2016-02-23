@@ -1,0 +1,20 @@
+Before class:
+1. review and understand totally the binary formula from clean book
+   and find one mistake on P:96 - when the loop ends, the start can be
+   greater than end
+
+ while (start < end){
+  ...
+ }
+ return nums[start] == target ? start : -1;
+
+
+2. do the required exercises and study the pattern from the nine chapter answers:
+ while (start + 1 < end){
+  ...
+ }
+
+ if (nums[start] == target) ...
+ if (nums[end] == target) ...
+ return -1;
+
