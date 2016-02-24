@@ -1,4 +1,4 @@
-package leetcode.medium.findminrotatedsortedarray;
+package leetcode.binarysearch.findminrotatedsortedarray;
 
 /**
  * Created by jshe18 on 8/1/15.
