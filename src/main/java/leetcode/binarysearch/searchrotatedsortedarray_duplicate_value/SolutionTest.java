@@ -1,4 +1,4 @@
-package leetcode.hard.searchrotatedsortedarray_duplicate_value;
+package leetcode.binarysearch.searchrotatedsortedarray_duplicate_value;
 
 /**
  * Created by jshe18 on 8/2/15.

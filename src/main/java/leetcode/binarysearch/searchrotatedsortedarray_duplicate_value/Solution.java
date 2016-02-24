@@ -1,10 +1,10 @@
-package leetcode.medium.searchrotatedsortedarray;
+package leetcode.binarysearch.searchrotatedsortedarray_duplicate_value;
 
 /**
- * Created by jshe18 on 8/1/15.
+ * Created by jshe18 on 8/2/15.
  */
 public class Solution {
-    public int search(int[] nums, int target) {
+    public boolean search(int[] nums, int target) {
         int left = 0;
         int right = nums.length-1;
 
@@ -12,7 +12,7 @@ public class Solution {
         while(left<=right){
             mid = (left+right)/2;
             if (nums[mid] == target){
-                return mid;
+                return true;
             }
 
             if (nums[mid] < nums[right]){
@@ -23,16 +23,18 @@ public class Solution {
                 else {
                     right = mid-1;
                 }
-            }else{
+            }else if (nums[mid] > nums[right]){
                 //left side is sorted
                 if (target < nums[mid] && target >= nums[left]){
                     right = mid-1;
                 }else {
                     left = mid+1;
                 }
+            }else {//nums[mid] == nums[right], skip duplicates
+                right --;
             }
         }
 
-        return -1; //not found
+        return false;
     }
 }
