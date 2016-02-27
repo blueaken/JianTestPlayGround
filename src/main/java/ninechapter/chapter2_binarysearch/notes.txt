@@ -1,0 +1,11 @@
+Chapter 2. binary search
+
+－ 工作上最好不要用递归 － 大型项目容易stack over flow
+
+－ start+1 < end 模版
+－ 使用start + (end - start) / 2 不会越界，当start和end接近2^31-1时 － 装逼
+直接用end + start会overflow
+
+wood cut && search in rotated sorted array
+－ binary search两种类型：二分index vs 二分答案
+－ 三步翻转法 数组原地翻转 相关 － recover rotated sorted array
