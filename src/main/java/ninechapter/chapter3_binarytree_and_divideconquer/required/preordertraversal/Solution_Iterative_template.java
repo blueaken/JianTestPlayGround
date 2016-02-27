@@ -9,7 +9,7 @@ import java.util.Stack;
  * Author: blueaken
  * Date: 2/27/16 1:50 PM
  */
-public class Solution_Iteractive {
+public class Solution_Iterative_template {
     public static ArrayList<Integer> preorderTraversal(TreeNode root) {
         // write your code here
         ArrayList<Integer> result = new ArrayList<>();
@@ -18,16 +18,17 @@ public class Solution_Iteractive {
         }
 
         Stack<TreeNode> stack = new Stack<>();
-        stack.push(root);
-        while (!stack.isEmpty()) {
-            TreeNode node = stack.pop();
-            result.add(node.val);
-
-            if (node.right != null) {
-                stack.push(node.right);
+        TreeNode node = root;
+        while (!stack.isEmpty() || node != null) {
+            while (node != null) {
+                result.add(node.val);
+                stack.push(node);
+                node = node.left;
             }
-            if (node.left != null) {
-                stack.push(node.left);
+
+            while (!stack.isEmpty()) {
+                node = stack.pop();
+                node = node.right;
             }
         }
 
@@ -35,9 +36,13 @@ public class Solution_Iteractive {
     }
 
     public static void main(String[] args) {
+//        TreeNode node = new TreeNode(1);
+//        node.left = new TreeNode(2);
+//        node.right = new TreeNode(3);
+
         TreeNode node = new TreeNode(1);
         node.left = new TreeNode(2);
-        node.right = new TreeNode(3);
+        node.left.right = new TreeNode(3);
 
         System.out.println(preorderTraversal(node));
     }
