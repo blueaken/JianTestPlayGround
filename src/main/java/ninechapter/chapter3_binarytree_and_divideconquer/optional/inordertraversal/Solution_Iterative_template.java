@@ -39,9 +39,15 @@ public class Solution_Iterative_template {
     }
 
     public static void main(String[] args) {
+//        TreeNode node = new TreeNode(1);
+//        node.left = new TreeNode(2);
+//        node.right = new TreeNode(3);
+
+        //inorder bst is sorted
         TreeNode node = new TreeNode(1);
-        node.left = new TreeNode(2);
-        node.right = new TreeNode(3);
+        node.right = new TreeNode(5);
+        node.right.left = new TreeNode(3);
+        node.right.right = new TreeNode(7);
 
         System.out.println(inorderTraversal(node));
     }
