@@ -9,7 +9,7 @@ import java.util.List;
  * Author: blueaken
  * Date: 2/28/16 10:04 AM
  */
-public class Solution_PreOrder_ResultSet_NotWorking {
+public class Solution_InOrder_Traversal {
     /**
      * @param root: The root of binary tree.
      * @return: True if the binary tree is BST, or false
@@ -25,7 +25,7 @@ public class Solution_PreOrder_ResultSet_NotWorking {
             return true;
         }
 
-        for (int i = 1; i < list.size() - 1; i++) {
+        for (int i = 1; i < list.size(); i++) {
             if (list.get(i-1) >= list.get(i)) {
                 return false;
             }
@@ -38,8 +38,8 @@ public class Solution_PreOrder_ResultSet_NotWorking {
             return;
         }
 
-        list.add(node.val);
         rec(node.left, list);
+        list.add(node.val);
         rec(node.right, list);
     }
 
