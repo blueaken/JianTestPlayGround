@@ -1,4 +1,4 @@
-package ninechapter.chapter3_binarytree_and_divideconquer.required.maxpathsum;
+package ninechapter.chapter3_binarytree_and_divideconquer.required.maxpathSum;
 
 import type.TreeNode;
 
@@ -38,10 +38,14 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        TreeNode treeNode = new TreeNode(1);
-        treeNode.left = new TreeNode(2);
-        treeNode.right = new TreeNode(3);
-        treeNode.right.right = new TreeNode(6);
+//        TreeNode treeNode = new TreeNode(1);
+//        treeNode.left = new TreeNode(2);
+//        treeNode.right = new TreeNode(3);
+//        treeNode.right.right = new TreeNode(6);
+
+        TreeNode treeNode = new TreeNode(-19);
+        treeNode.left = new TreeNode(-3);
+        treeNode.right = new TreeNode(-4);
 
         int maxsum = maxPathSum(treeNode);
         System.out.println("Max Path Sum of the tree is: " + maxsum);
