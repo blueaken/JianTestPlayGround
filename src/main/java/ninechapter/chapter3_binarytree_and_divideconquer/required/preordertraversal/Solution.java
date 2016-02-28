@@ -32,9 +32,15 @@ public class Solution {
     }
 
     public static void main(String[] args) {
+//        TreeNode node = new TreeNode(1);
+//        node.left = new TreeNode(2);
+//        node.right = new TreeNode(3);
+
+        //preorder bst is not sorted
         TreeNode node = new TreeNode(1);
-        node.left = new TreeNode(2);
-        node.right = new TreeNode(3);
+        node.right = new TreeNode(5);
+        node.right.left = new TreeNode(3);
+        node.right.right = new TreeNode(7);
 
         System.out.println(preorderTraversal(node));
     }
