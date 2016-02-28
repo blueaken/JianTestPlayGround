@@ -1,4 +1,4 @@
-package leetcode.easy.balancedbinarytree.second;
+package leetcode.binarytrees.balancedbinarytree.second;
 
 import type.TreeNode;
 

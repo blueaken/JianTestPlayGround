@@ -1,4 +1,4 @@
-package leetcode.easy.binarytreedfs;
+package leetcode.binarytrees.binarytreedfs;
 
 import type.TreeNode;
 

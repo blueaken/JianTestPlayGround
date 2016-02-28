@@ -1,4 +1,4 @@
-package leetcode.medium.validatebinarysearchtree.second;
+package leetcode.binarytrees.validatebinarysearchtree.second;
 
 import type.TreeNode;
 

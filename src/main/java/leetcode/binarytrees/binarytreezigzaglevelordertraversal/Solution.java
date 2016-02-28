@@ -1,4 +1,4 @@
-package leetcode.medium.binarytreezigzaglevelordertraversal;
+package leetcode.binarytrees.binarytreezigzaglevelordertraversal;
 
 import type.TreeNode;
 

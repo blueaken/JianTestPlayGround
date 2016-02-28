@@ -1,4 +1,4 @@
-package leetcode.medium.binarytreeupsidedown.second;
+package leetcode.binarytrees.binarytreeupsidedown.second;
 
 import type.TreeNode;
 import realworld.emc.printbinarysearchtree.Solution;

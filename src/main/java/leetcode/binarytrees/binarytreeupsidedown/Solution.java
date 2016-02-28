@@ -1,4 +1,4 @@
-package leetcode.medium.binarytreeupsidedown;
+package leetcode.binarytrees.binarytreeupsidedown;
 
 import type.TreeNode;
 

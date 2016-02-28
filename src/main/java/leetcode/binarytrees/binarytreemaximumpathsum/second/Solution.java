@@ -1,4 +1,4 @@
-package leetcode.hard.binarytreemaximumpathsum.second;
+package leetcode.binarytrees.binarytreemaximumpathsum.second;
 
 import type.TreeNode;
 
