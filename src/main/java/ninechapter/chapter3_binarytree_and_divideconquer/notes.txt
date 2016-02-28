@@ -1,0 +1,34 @@
+Binary Tree问题三种方法：
+
+- iterative
+- traversal - return void,
+- divide & conquer (SJ：确实是利器)
+   - return result, dfs or bottom-up
+   － result in para vs result in return
+
+－ 二叉树天然适用 divide & conquer来解决
+   －SJ：DC里面也可以分两种，topdown，比如Validate BST; bottomup,比如IS Balanced Tree
+－ 80%二叉树问题可以用D&C解决,比如，max depth可以用两种方法
+
+- 其他适合DC的经典场合：merger sort / quick sort
+  － important， practice if you don't know
+
+递归＋动归 ＝ 算法基本可以过
+
+ LCA
+ return value more than one can define a new result type class is a good way
+
+ BFS
+ - not a recursive by nature
+ - know which level from the list size
+
+ - has DFS solution, low efficient - search algrithem like before O(2^N)
+ - storage wise very efficient - just the max level related.
+ - useful in old times when memory is limited
+
+ Iterator
+ - Traversal iterative solution by nature
+
+ Validate BST
+ - Inorder Traversal
+ - Top Down DC
