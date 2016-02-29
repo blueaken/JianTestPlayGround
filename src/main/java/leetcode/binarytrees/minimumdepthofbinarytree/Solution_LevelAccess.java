@@ -1,4 +1,4 @@
-package leetcode.medium.minimumdepthofbinarytree;
+package leetcode.binarytrees.minimumdepthofbinarytree;
 
 import type.TreeNode;
 

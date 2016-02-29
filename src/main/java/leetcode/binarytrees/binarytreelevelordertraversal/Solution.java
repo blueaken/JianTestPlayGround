@@ -1,4 +1,4 @@
-package leetcode.easy.binarytreelevelordertraversal;
+package leetcode.binarytrees.binarytreelevelordertraversal;
 
 import type.TreeNode;
 
