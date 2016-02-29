@@ -2,9 +2,6 @@ package ninechapter.chapter3_binarytree_and_divideconquer.required.inordersucces
 
 import type.TreeNode;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Author: blueaken
  * Date: 2/28/16 8:15 PM
