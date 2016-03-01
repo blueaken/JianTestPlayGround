@@ -1,4 +1,4 @@
-package leetcode.medium.maxproductsubarray.second;
+package leetcode.dp.maxproductsubarray.second;
 
 /**
  * Author: blueaken

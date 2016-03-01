@@ -1,6 +1,4 @@
-package leetcode.medium.maxproductsubarray;
-
-import leetcode.Util;
+package leetcode.dp.maxproductsubarray;
 
 /**
  * Created by jshe18 on 7/19/15.

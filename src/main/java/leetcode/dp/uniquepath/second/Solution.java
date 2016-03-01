@@ -1,4 +1,4 @@
-package leetcode.medium.uniquepath.second;
+package leetcode.dp.uniquepath.second;
 
 /**
  * Author: blueaken

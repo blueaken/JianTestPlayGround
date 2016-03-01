@@ -1,4 +1,4 @@
-package leetcode.medium.uniquepath2;
+package leetcode.dp.uniquepath2;
 
 /**
  * Created by jshe18 on 7/12/15.

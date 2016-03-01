@@ -1,4 +1,4 @@
-package leetcode.medium.uniquepath2;
+package leetcode.dp.uniquepath2;
 
 import leetcode.Util;
 

@@ -1,4 +1,4 @@
-package leetcode.easy.climbingstairs;
+package leetcode.dp.climbingstairs;
 
 /**
  * Created by jshe18 on 7/11/15.

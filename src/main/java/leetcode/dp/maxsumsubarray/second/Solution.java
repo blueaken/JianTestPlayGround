@@ -1,4 +1,4 @@
-package leetcode.medium.maxsumsubarray.second;
+package leetcode.dp.maxsumsubarray.second;
 
 /**
  * Created by jshe18 on 11/19/15.
