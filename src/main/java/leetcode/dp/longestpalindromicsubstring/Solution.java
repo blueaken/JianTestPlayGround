@@ -1,4 +1,4 @@
-package leetcode.medium.longestpalindromicsubstring;
+package leetcode.dp.longestpalindromicsubstring;
 
 /**
  * Author: blueaken
