@@ -18,23 +18,23 @@ public class Solution {
             return -1;
         }
 
+        //init - try not to init in the dp body with if statements, so as to improve code maintainability
         int row = grid.length;
         int col = grid[0].length;
         int min[][] = new int[row][col];
 
-        //init and dp together
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < col; j++) {
-                if (i == 0 && j == 0) {
-                    min[0][0] = grid[0][0];
-                } else if (i == 0 && j > 0) {
-                    min[0][j] = grid[0][j] + min[0][j-1];
-                } else if (i > 0 && j == 0) {
-                    min[i][0] = grid[i][0] + min[i-1][0];
-                } else {
-                    min[i][j] = grid[i][j] + Math.min(min[i-1][j], min[i][j-1]);
-                }
+        min[0][0] = grid[0][0];
+        for (int i = 1; i < row; i++) {
+            min[i][0] = min[i-1][0] + grid[i][0];
+        }
+        for (int i = 1; i < col; i++) {
+            min[0][i] = min[0][i-1] + grid[0][i];
+        }
 
+        //init and dp together
+        for (int i = 1; i < row; i++) {
+            for (int j = 1; j < col; j++) {
+                min[i][j] = grid[i][j] + Math.min(min[i-1][j], min[i][j-1]);
             }
         }
 
