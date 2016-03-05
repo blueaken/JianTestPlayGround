@@ -2,9 +2,9 @@ package ninechapter.chapter4_dynamic_prgramming_1.climbStairs;
 
 /**
  * Author: blueaken
- * Date: 3/2/16 9:45 AM
+ * Date: 3/5/16 9:46 AM
  */
-public class Solution {
+public class Solution_OptimizeSpace {
     /**
      * @param n: An integer
      * @return: An integer
@@ -14,16 +14,24 @@ public class Solution {
         if (n < 2) {
             return 1;
         }
-        int[] solutions = new int[n+1];
 
         //init
-        solutions[0] = 1;
-        solutions[1] = 1;
+        int p = 1;
+        int pp = 1;
+        int result = 0;
 
         //dp it
         for (int i = 2; i <= n; i++) {
-            solutions[i] = solutions[i-1] + solutions[i-2] ;
+            result = p + pp;
+            pp = p;
+            p = result;
         }
-        return solutions[n];
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int n = 3;
+
+        System.out.println(climbStairs(n));
     }
 }
