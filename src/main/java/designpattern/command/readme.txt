@@ -42,3 +42,6 @@ http://www.cnblogs.com/java-my-life/archive/2012/06/01/2526972.html
 
 　　由于发起命令的对象和具体的实现完全解耦，因此扩展新的命令就很容易，只需要实现新的命令对象，然后在装配的时候，把具体的实现对象设置到
 命令对象中，然后就可以使用这个命令对象，已有的实现完全不用变化。
+
+SJ：和Strategy模式的比较，可以看出不同的地方是Strategy对象没有Receiver的概念，并严重依赖于Client来决定谁来实施Strategy；而Command
+对象知道命令的执行者Receiver对象，并通过Invoker对象实现同时执行多个Command。从而实现比Strategy模式更加复杂的封装和解耦。
