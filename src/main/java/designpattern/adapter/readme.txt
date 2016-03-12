@@ -37,3 +37,6 @@ Adaptee后，就不可能再去处理  Adaptee的子类了。
 　　过多的使用适配器，会让系统非常零乱，不易整体进行把握。比如，明明看到调用的是A接口，其实内部被适配成了B接口的实现，一个系统如果太多
 出现这种情况，无异于一场灾难。因此如果不是很有必要，可以不使用适配器，而是直接对系统进行重构。
 
+
+Java IO使用了Adapter模式来解决字符类到字节类的转化 － 从Reader／Writer到InputStream／OutputStream －
+InputStreamReader和OutputStreamWriter作为Adapter。
