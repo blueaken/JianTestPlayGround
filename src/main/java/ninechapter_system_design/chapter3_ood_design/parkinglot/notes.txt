@@ -1,0 +1,5 @@
+Ref: http://blog.csdn.net/xjwun/article/details/43484327
+
+Modified per the request of nine chapter class: http://www.lintcode.com/zh-cn/problem/parking-lot/
+
+Still need to polish with Bus's parking logic, but the overall should work. Get the idea of OOD design
