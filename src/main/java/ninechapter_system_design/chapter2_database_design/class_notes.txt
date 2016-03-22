@@ -1,0 +1,52 @@
+第二节
+
+QQ：476365869
+DB Sharding问题：
+1. 多台机器不能保证trasaction
+2. range query
+3. 数据继续增多怎么办
+
+这节课的重点是了解SQL，NoSQL，以及数据库需要扩展的时候怎么扩展。这些都是面试会问的问题。比如你了解清楚SQL
+和NoSQL的区别之后，你就能知道，支付系统我们要保证原子性等，就要用支持transcation的SQL数据库。而message
+的表，因为量大，查询简单，就可以用NoSQL来提高效率。这才是我们这节课的重点
+
+问: 何时 用sharding何时用caching
+答复: shard解决的是存储不够+query太多的问题。caching只解决query太多的问题。
+
+问: master machine crash怎么办
+答复: 可以用一个slave顶上去做新的master
+
+问: master machine crash怎么办
+答复: 还有一个办法叫做双master，但这种方法用得很少。
+
+问: memcached是 分布式的吗？
+答复: 是的
+
+多台机器range query? 首先尽量避免，too expensive
+
+问: 什么时候讲nosql？
+答复: 这已经是NoSQL的内容部分了，Consistent hashing是NoSQL最重要的知识。
+
+问: 老师能再讲一下避免作range query 的事情吗?
+答复: 避免做 shard key 上的range query。如cassandra
+
+问: 老师能再讲一下避免作range query 的事情吗?
+答复: 其实大部分message系统的数据表，都会有一个user_id作为一个foreign key，比如谁like了，谁comments
+了，谁发了post。所以一般来说shard_key都是user_id。一般来说很少取去user_id在一段范围内的数据，一般都是
+指定某个user之后，获得这个user的一段数据。这个是使用场景决定的。
+
+问: 非shard key更不应该做range query了吧：
+答复: 为啥不可以。一个表里可以有好多column，每个column都可以做index。
+
+问: 老师刚才说要避免join，那像FB要显示like会用join吗
+答复: 不需要join，因为user信息全都cache了，先从like table里选出所有的信息，然后根据user_id去cache里
+查user的具体信息。这样就避免了数据库上的join。
+
+问: 现在讲的sharding 是对nosql对吧？ 那关系型数据库可以是distributed的吗？
+答复: sharding这个概念同时适用于 SQL和noSQL。区别是，SQL你要自己写程序来shard，noSQL帮你做了你不用管。
+
+问: “求出某个帖子，昨天到现在的所有的留言”，这应该查询comment表，但还是必须查所有的shard对吧，即使是range query
+答复: 你按照帖子的id作为shard Key不就解决了么:) 或者按照帖子的发帖人。
+
+问: zookeeper老师建议看得文章是什么？
+答复: paxos, raft
