@@ -1,0 +1,4 @@
+inspired by: http://blog.chinaunix.net/uid-26750075-id-3370694.html
+
+did not finish - since it is too cumbersome using java api, with library support multimap will be much easier.
+left the comment and leave
