@@ -1,0 +1,26 @@
+get:
+1. singleton double checked locking mode
+
+2. system design 实战真题
+- 电梯，第二天MICROSOF面试刚好考到
+
+3. 一个老印面试官跟我提起OOD DESIGN的精华是什么，我说是BEHAVIOR,因为所有的DESIGN PATTER几乎都是为了DECOUPLIN而服务的，而他觉得是
+数据：因为不管如何只有数据是不变的。不管怎么，是个有意思的观点。
+
+OOD 大法：
+1. 想想有什么实体？（来源于生活但是高于）
+2. 想每个实体有什么属性，包含什么？
+3. 想每个实体可以干什么？
+4. 怎么贯穿整个流程？ Scenario -第一节课的SNAK大法
+
+note:
+- OO Design不要多想算法，简单work就行
+- OO Design Manager拥有上帝之眼，调控全局。这样把功能和逻辑分开，把功能集中在实体类中，业务逻辑集中在Manager类中，使业务逻辑的改变不
+会影响实体类。
+- OO Design 根据不同场景说理，有理就好，没有正确答案. 题可以不一定全对，工程的思想，思考思路最重要
+- OO Design 不是逻辑算法， 是信息传递流设计
+
+4.
+微软面试问到：
+semaphore and mutex difference -
+http://stackoverflow.com/questions/62814/difference-between-binary-semaphore-and-mutex/346678#346678
