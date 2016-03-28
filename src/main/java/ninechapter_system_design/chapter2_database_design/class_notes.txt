@@ -10,7 +10,7 @@ DB Sharding问题：
 和NoSQL的区别之后，你就能知道，支付系统我们要保证原子性等，就要用支持transcation的SQL数据库。而message
 的表，因为量大，查询简单，就可以用NoSQL来提高效率。这才是我们这节课的重点
 
-问: 何时 用sharding何时用caching
+问: 何时用sharding何时用caching
 答复: shard解决的是存储不够+query太多的问题。caching只解决query太多的问题。
 
 问: master machine crash怎么办
@@ -50,3 +50,11 @@ DB Sharding问题：
 
 问: zookeeper老师建议看得文章是什么？
 答复: paxos, raft
+
+====
+Master slave vs sharding优缺点？
+A：以Mongo DB为例，master slave在Mongo DB中被叫做repli set，sharding提高read performance，master slave提高数据的可用性。
+如果在production环境中如果有High Available的要求那还是应该使用master slave的。一般在系统预算允许的条件下，使用master slave和
+sharding共同使用的mix模式，下面的参考链接中有图
+
+http://dba.stackexchange.com/questions/52632/difference-between-sharding-and-replication-on-mongodb
