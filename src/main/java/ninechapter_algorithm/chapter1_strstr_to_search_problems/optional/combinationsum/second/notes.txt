@@ -1,1 +1,2 @@
 take as a template to deal with unlimited visit of an element
+- actually try with permutation template and it works, so not as diff as a new template
