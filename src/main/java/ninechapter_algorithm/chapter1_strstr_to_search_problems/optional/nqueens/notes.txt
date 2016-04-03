@@ -1,0 +1,1 @@
+permutation template, isValid() function is the additional key.
