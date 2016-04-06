@@ -1,4 +1,4 @@
-package ninechapter.chapter4_dynamic_prgramming_1.climbStairs;
+package ninechapter_algorithm.chapter4_dynamic_prgramming_1.climbStairs;
 
 /**
  * Author: blueaken

@@ -1,4 +1,4 @@
-package ninechapter.chapter4_dynamic_prgramming_1.longestincreasingsequence;
+package ninechapter_algorithm.chapter4_dynamic_prgramming_1.longestincreasingsequence;
 
 import java.util.List;
 import java.util.ArrayList;
