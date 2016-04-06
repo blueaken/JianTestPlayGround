@@ -1,4 +1,4 @@
-package ninechapter.chapter5_dynamic_prgramming_2.wordbreak;
+package ninechapter_algorithm.chapter5_dynamic_prgramming_2.wordbreak;
 
 import java.util.HashSet;
 import java.util.Set;

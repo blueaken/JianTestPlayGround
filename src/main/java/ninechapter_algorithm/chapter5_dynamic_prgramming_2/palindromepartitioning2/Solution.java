@@ -1,4 +1,4 @@
-package ninechapter.chapter5_dynamic_prgramming_2.palindromepartitioning2;
+package ninechapter_algorithm.chapter5_dynamic_prgramming_2.palindromepartitioning2;
 
 /**
  * Author: blueaken
