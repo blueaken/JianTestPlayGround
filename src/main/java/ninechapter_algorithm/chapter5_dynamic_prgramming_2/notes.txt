@@ -10,6 +10,14 @@ DP擅长把O（2^n）-> O(n^2)
 －技巧：
 1. 坐标DP一般可以先初始化第一行第一列
 2. 单序列DP一般可以产生一个N＋1的数组，初始化0位的值
+3. 双序列DP －
+   state: f[i][j]代表了第一个sequence的前i个数字/字符，配上第二个sequence
+   的前j个...
+   function: f[i][j] = 研究第i个和第j个的匹配关系
+   initialize: f[i][0] 和 f[0][i]
+   answer: f[n][m]
+   n = s1.length()
+   m = s2.length()
 
 做题参考课堂笔记
 
