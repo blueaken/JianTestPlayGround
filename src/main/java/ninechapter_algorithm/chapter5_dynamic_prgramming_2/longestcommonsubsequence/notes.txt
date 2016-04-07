@@ -1,0 +1,4 @@
+note the diff between subsequence and substring, which subsequence doesn't need to be consecutive.
+
+ref:
+https://www.youtube.com/watch?v=NnD96abizww
