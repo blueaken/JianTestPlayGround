@@ -1,0 +1,4 @@
+the loop is slightly diff than 2nd try, but I like it better since it follows the definition of the dp function
+closer
+
+dp function: f[i] = OR{f[j] && j+1~i is a word}, 其中 j < i
