@@ -9,3 +9,6 @@ function: f[i][j]
 intialize: f[i][0] = 0 f[0][j] = 0
 
 answer: MAX(f[n][m])
+
+also ref:
+//https://www.youtube.com/watch?v=BysNXJHzCEs
