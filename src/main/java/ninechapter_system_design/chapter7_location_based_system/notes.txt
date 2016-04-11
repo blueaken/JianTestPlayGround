@@ -1,0 +1,39 @@
+问: mysql5.7 geo index location?
+答复: great
+
+hash map not support range query
+tree map support range query since it is sorted
+
+redis easy to down, that is why it is only good for unimportant data
+
+问: 如果美中某地第一位geohash横跨了9和d大区的话怎么解决呢？也就是说实际距离很近 但是geohash出来的共享
+prefix却很短呢？
+答复: 会有这个问题，所以这个是geohash，包括Google S2也会有的问题。只不过这个问题的影响并不大，可以忽略，
+你站在交界处的概率很小。Google S2在这方面的误差要比geohash好一些，所以Google S2更常用。
+
+问: 请问那些公司主要用Geohash呢？
+答复: airbnb, uber, 所有有map的公司都会这么用
+
+问: 老师别不理我啊，这个GeoHash最主要的意义是什么？？编码后的位置长度刚才看也在七到八位，不编码直接用经纬
+度可能大概也就11位左右，直接比较经纬度不是就可以？？
+答复: 你直接存经纬度，无法做range query.就是找附近的车这个事情，做不了。（只能for所有点）
+
+DB Sharding
+- avoid single point of failure
+
+uber use per city sharding - one city down should not affect other city
+how to define city? geo fence
+
+Further - master|slave
+
+======
+Uber summary
+- write heavy system, unlike most other read heavy system
+
+
+log - must be no sql, born for this
+message very similar to log
+
+good paper to read for infrastructure position:
+Dynamo: Amazon’s Highly Available Key-value Store
+Scaling Memcache at Facebook

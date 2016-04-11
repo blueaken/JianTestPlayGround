@@ -1,0 +1,46 @@
+给人用的系统一般都是读大于写；
+1:10 ~ 1:30, 读10条写1条
+
+Web Service可以看作OOD中的Manager
+
+是否想偷懒？重要标准，呵呵
+
+是否需要连续Id? 而不是uuid
+取决于你用的算法
+
+NoSQL一般比SQL快10倍到几十倍，scalability
+why 6位 570亿－ consider 一共1.2T web urls on the world, assume 20% need short url
+
+301 Moved Permanently
+The HTTP response status code 301 Moved Permanently is used for permanent URL redirection,
+ meaning current links or records using the URL that the response is received for should
+ be updated. The new URL should be provided in the Location field included with the
+ response. The 301 redirect is considered a best practice for upgrading users from HTTP
+ to HTTPS.
+
+Example:
+Client request:
+GET /index.php HTTP/1.1
+Host: www.example.org
+
+Server response:
+HTTP/1.1 301 Moved Permanently
+Location: http://www.example.org/index.asp
+
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+GOOGLE不到的内容 － E部分：
+利用地理位置优化performance
+－通过DNS对不同地区的用户使用不同的web server
+- distributed Memcached跨地区分布
+解决了中国用户访问美国服务器慢的问题
+
+- 可以通过Consistent Sharding来扩展数据库来解决“存不下”（Storage角度）和“忙不过”（QPS角度）的问题。
+
+进一步优化：
+－数据库拆分，让中国服务器访问中国数据库，优化系统就是优化主流的需要
+－Customer URL表来对应Customer URL的需求
+
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+tip:
+问: 老师，怎么点出来你的chrome右边的那个显示
+答复: mac下option+command+J，小贴士，option和command键可以用拇指一起按
