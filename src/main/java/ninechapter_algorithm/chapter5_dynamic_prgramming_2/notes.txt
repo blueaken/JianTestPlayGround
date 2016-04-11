@@ -23,3 +23,5 @@ DP擅长把O（2^n）-> O(n^2)
 
 - 背包问题：参考阅读材料《背包九讲》：http://love-oriented.com/pack/
 
+Ref:
+Tushar Roy's video - https://www.youtube.com/watch?v=8LusJS5-AGo
