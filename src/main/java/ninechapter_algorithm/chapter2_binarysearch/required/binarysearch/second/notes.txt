@@ -1,0 +1,1 @@
+用的clean book模版，两分结束start（end）永远停在第一个index位置（有duplicate情况）
