@@ -1,0 +1,5 @@
+the find kth closest part ref the post: http://www.geeksforgeeks.org/find-k-closest-elements-given-value/ and works
+well.
+
+the solution on nine chapter looks like a shit :)
+
