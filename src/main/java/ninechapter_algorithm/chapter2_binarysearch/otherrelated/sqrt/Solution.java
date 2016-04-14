@@ -11,6 +11,9 @@ public class Solution {
      */
     public static int sqrt(int x) {
         // write your code here
+        if (x < 0) {
+            return -1;
+        }
         if (x == 0 || x == 1) {
             return x;
         }
@@ -22,7 +25,7 @@ public class Solution {
             long product = mid * mid;
             if (product == x) {
                 return (int)mid;
-            } else if (mid * mid < x) {
+            } else if (product < x) {
                 start = mid + 1;
             } else {
                 end = mid;

@@ -4,3 +4,7 @@
  better here
 - my wood cut solution has similar bug on perfect cut case which is all wood has same length and k equals
  number of wood, ex [20,20,20], k = 3.
+
+Code Ganker:
+实际面试遇到的题目可能不是对一个整数开方，而是对一个实数。方法和整数其实是一致的，只是结束条件换成左界和右界的差的绝对值小于某一个
+epsilon（极小值）即可。
