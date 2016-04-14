@@ -1,4 +1,4 @@
-package ninechapter_algorithm.chapter2_binarysearch.otherrelatedretatedarray.recoverrotatedsortedarray;
+package ninechapter_algorithm.chapter2_binarysearch.otherrelated.recoverrotatedsortedarray;
 
 import java.util.ArrayList;
 

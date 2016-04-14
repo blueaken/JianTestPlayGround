@@ -1,0 +1,6 @@
+- note the overflow condition when mid * mid
+- similar to wood cut, using clean book template to find the smallest number to break the equation and
+ then return -1 value. but need to handle the case when x is perfect square. nine chapter template fits
+ better here
+- my wood cut solution has similar bug on perfect cut case which is all wood has same length and k equals
+ number of wood, ex [20,20,20], k = 3.
