@@ -1,0 +1,4 @@
+attack it with the same seperate BS as "search 2d matrix".
+
+nine chapter answer using another interesting way to attack it -
+http://www.jiuzhang.com/solutions/search-a-2d-matrix-ii/
