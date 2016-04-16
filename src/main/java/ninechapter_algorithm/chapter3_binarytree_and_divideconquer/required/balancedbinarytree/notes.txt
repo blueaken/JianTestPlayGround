@@ -1,0 +1,2 @@
+this solution may not looks as concise as the clean book version, but it saves the calculate of right subtree when
+left subtree returns -1.
