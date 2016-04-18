@@ -1,7 +1,10 @@
 Binary Tree问题三种方法：
 
 - iterative
-- traversal - return void,
+- traversal
+  - return void
+  - iterative for preorder and inorder
+
 - divide & conquer (SJ：确实是利器)
    - return result, dfs or bottom-up
    － result in para vs result in return
@@ -14,6 +17,12 @@ Binary Tree问题三种方法：
   － important， practice if you don't know
 
 递归＋动归 ＝ 算法基本可以过
+
+Binary Tree time complexity:
+all traverse related operation: O(n) - simply because it need to visit all nodes of the tree
+search/insert/delete: O(logN) - takes as much as tree's height, which is logN, visit to solve the problem
+
+space complexity - O(N)
 
  LCA
  return value more than one can define a new result type class is a good way
