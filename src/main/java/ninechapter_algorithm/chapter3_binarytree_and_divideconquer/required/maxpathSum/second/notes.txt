@@ -1,0 +1,3 @@
+it is essentially still a tree traverse:time O(N) space O(logN)
+
+ref: http://blog.csdn.net/linhuanmars/article/details/22969069
