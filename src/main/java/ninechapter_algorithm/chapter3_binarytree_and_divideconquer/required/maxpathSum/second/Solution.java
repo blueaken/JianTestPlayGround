@@ -24,9 +24,11 @@ public class Solution {
             return 0;
         }
 
+        //divide
         int left = rec(node.left, max);
         int right = rec(node.right, max);
 
+        //conquer
         int pathMax = Math.max(Math.max(left, right) + node.val, node.val);
         max[0] = Math.max(Math.max(pathMax, left + right + node.val), max[0]);
 
