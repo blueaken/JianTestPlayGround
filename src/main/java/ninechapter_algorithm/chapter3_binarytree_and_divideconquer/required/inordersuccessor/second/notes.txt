@@ -1,0 +1,6 @@
+Time: O(h)
+
+可以考虑直接找P的右子树，可以简化一点。
+REF: http://blog.csdn.net/fightforyourdream/article/details/19860143
+
+还有一种可能是带PARENT指针的，应该更简单一点
