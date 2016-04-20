@@ -1,4 +1,4 @@
-package ninechapter_algorithm.chapter3_binarytree_and_divideconquer.otherDCpractice.mergesort;
+package ninechapter_algorithm.chapter3_binarytree_and_divideconquer.other.mergesort;
 
 import java.util.Arrays;
 

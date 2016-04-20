@@ -1,4 +1,4 @@
-package ninechapter_algorithm.chapter3_binarytree_and_divideconquer.otherDCpractice.convertsortedarraytobst;
+package ninechapter_algorithm.chapter3_binarytree_and_divideconquer.other.convertsortedarraytobst;
 
 import type.TreeNode;
 

@@ -1,4 +1,4 @@
-package ninechapter_algorithm.chapter3_binarytree_and_divideconquer.otherDCpractice.quicksort;
+package ninechapter_algorithm.chapter3_binarytree_and_divideconquer.other.quicksort;
 
 import java.util.Arrays;
 
