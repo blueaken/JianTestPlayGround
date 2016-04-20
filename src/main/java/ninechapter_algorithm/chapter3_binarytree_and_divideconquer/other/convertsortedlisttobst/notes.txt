@@ -1,0 +1,7 @@
+a naive way to follow the sorted array and traverse half the list on each level and the time complexity is O(nlogn)
+- the extra penalty from each level need access n/2 of the list and there are logN such level.
+
+there exists a neat solution of bottom up and which is actually an inorder traverse, thinking the result of inorder
+traverse on a BST is a sorted list.
+
+Ref: http://blog.csdn.net/linhuanmars/article/details/23904937
