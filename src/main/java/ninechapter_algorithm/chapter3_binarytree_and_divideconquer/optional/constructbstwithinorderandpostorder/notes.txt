@@ -1,0 +1,3 @@
+same idea as inorder and preorder - ref notes before
+
+note preorder and postorder do not identify a tree.
