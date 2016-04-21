@@ -1,0 +1,4 @@
+use parent attribute and found the 1st matching node in the path
+
+Time: O(h)
+Space: O(h)
