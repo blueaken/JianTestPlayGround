@@ -1,0 +1,4 @@
+don't like the nine chapter answer, the preorder serialization and deserialization works perfect. The lintcode answer
+has an issue on the test data when 94%, but I believe my solution is working.
+
+ref: http://www.geeksforgeeks.org/serialize-deserialize-binary-tree/
