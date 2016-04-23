@@ -1,0 +1,2 @@
+- dummy node needed since head can change
+- like the nine chapter creative way of build 2 lists and then combine them
