@@ -1,0 +1,1 @@
+inspired by partition list - solve the problem diff than list
