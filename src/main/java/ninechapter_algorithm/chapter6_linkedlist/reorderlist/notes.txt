@@ -1,0 +1,3 @@
+my solution is a O(N^2) - reverse N-1 times
+
+nine chapter solution is neat: find middle + reverse once + merge once = 3 O(N) = O(N)
