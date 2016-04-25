@@ -1,0 +1,5 @@
+interviewee probably ask what if there is no HashMap / use origin linked list to solve, it is important to know
+how to do it
+
+
+
