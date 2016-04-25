@@ -1,0 +1,13 @@
+- use both PriorityQueue and Divide and Conquer
+
+- PriorityQueue is sick to null so has to do null check
+
+- each PriorityQueue operation cose is O(k), total is O(nlogk), n is total nodes
+
+- interviewee may ask to implement without PriorityQueue, so it is important to know the DC solution
+
+- DC solution is still O(nlogk) - T(N) = O(N) + T(N/2)
+
+- the DC loop structure ref clean book
+
+NINE CHAPTE用递归来解决D&C，可以看一下，还有两两归并的方法。
