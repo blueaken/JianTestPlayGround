@@ -1,0 +1,1 @@
+similar to maxsubarray 2, note also need to consider the possibility to trade only 1 time
