@@ -1,0 +1,1 @@
+idea is to calculate 2 max sub array and find the maximum possible value
