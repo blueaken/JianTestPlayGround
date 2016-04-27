@@ -1,0 +1,2 @@
+nine chapter class talk prefix sum idea on this, not very much helpful, also ref -
+http://www.lintcode.com/zh-cn/problem/subarray-sum/
