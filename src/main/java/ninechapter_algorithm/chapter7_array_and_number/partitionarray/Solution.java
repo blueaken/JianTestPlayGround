@@ -43,8 +43,11 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        int[] nums = {3,2,2,1};
-        int k = 2;
+//        int[] nums = {3,2,2,1};
+//        int k = 2;
+
+        int[] nums = {2,0,2,2,1,2,2,1,2,0,0,0,1};
+        int k = 1;
 
         System.out.println(partitionArray(nums, k));
     }
