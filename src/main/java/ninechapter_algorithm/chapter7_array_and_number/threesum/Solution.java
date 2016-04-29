@@ -37,12 +37,12 @@ public class Solution {
                     list = new ArrayList<>();
                     start++;
                     end--;
-                    while (start < end && numbers[start] == numbers[start-1]) {
-                        start++;
-                    }
-                    while (start < end && numbers[end] == numbers[end+1]) {
-                        end--;
-                    }
+//                    while (start < end && numbers[start] == numbers[start-1]) {
+//                        start++;
+//                    }
+//                    while (start < end && numbers[end] == numbers[end+1]) {
+//                        end--;
+//                    }
                 } else if (sum < 0){
                     start++;
                 } else {
@@ -54,7 +54,9 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        int[] numbers = {-1,0,1,2,-1,-4};
+        //int[] numbers = {-1,0,1,2,-1,-4};
+
+        int[] numbers = {1,0,-1,-1,-1,-1,0,1,1,1};
 
         System.out.println(threeSum(numbers));
     }
