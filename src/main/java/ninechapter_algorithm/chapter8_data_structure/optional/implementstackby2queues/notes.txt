@@ -1,0 +1,3 @@
+http://blog.csdn.net/yangliuy/article/details/47086937
+
+similar to Implement queue with 2 stacks - notice details are not same
