@@ -3,7 +3,7 @@
 + 1 或 －1 可以代入一个小的值来算一下
 
 单调栈题目还有
-- maximum rectangle
+- maximal rectangle
 － max tree
 就这三道题 so far
 
