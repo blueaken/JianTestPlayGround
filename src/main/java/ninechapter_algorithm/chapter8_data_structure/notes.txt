@@ -1,0 +1,62 @@
+再次强调一下准备算法，又快又对是目标！
+
+================
+
+stack － 一头封闭一头通；queue － 两头都通
+
+bfs主要靠queue
+dfs主要靠stack
+
+diff between minstack and heap?
+pop - minstack use O(1) can only delete the top node in minStack, while heap use O(logN) can delete any node in Heap
+
+直方图：
+单调栈 存下标
+
+单调栈题目还有
+- Maximal Rectangle
+－ Max Tree
+就这三道题 so far
+
+问: 这个直方图复杂度 怎么分析？
+答复: 虽说里面有个while循环，但是每个元素仅入栈一次，出栈一次，所以总的复杂度是O(N)，a little tricky
+
+听众问题
+问: 可是令狐大哥说对数据结构来说，要按平均情况呀
+答复: 是这样的，数据结构一般都作为解决问题的辅助工具，我们分析问题的总复杂度是都是考虑最坏情况的，然后数据
+结构作为查询等等手段，是一系列操作的总和，我们分析单次操作的时候，往往用均摊复杂度去考虑，最经典的就是并查
+集的单次查询复杂度，就是常数级别。
+
+听众问题
+问: 老师 max tree 的solution 能解释下吗？
+答复: max tree这题就是经典的笛卡尔树，看看九章的solution或者网上搜搜笛卡尔树，我简单的说一下就是用栈维
+护树的最右的路径。
+
+
+Hash Table / Hash Map / Hash Set 的区别是什么？
+Hash Set可以看作只有Key的Hash Map。Hash Table和Hash Map不同是前者是线程安全的但效率很低。面试中用Hash
+Map就可以了。
+
+Hash Function 使命:对于任意的key 得到一个“固定”且“无规律”的介于0~capacity-1的整数
+
+hash一般情况用md5/sh1/sh2太浪费，慢
+进制转化 － 用31或33实践证明效果最好，最分散，冲突最少。看一下源码就知道Hash表实际复杂度为O（l）l是key的
+长度。
+
+冲突
+－ open hashing（要会），用链表处理冲突。也是Hash Map在Java中处理冲突的对策。
+- closed hashing （知道一下），遇到冲突放到下一个空位。
+
+hash表一定要自己实现一下。
+
+听众问题
+问: closed hash 需要会吗？ heap sort 需要会吗？
+答复: 理论上明白就好，常用语言基本都有hash和heap这些数据结构，需要手写heap的情况还是非常少滴：）
+
+LRU Cache 加红加粗 一定要会 高频
+
+Heap 不要求实现，但要知道原理
+siftup 向上调整
+siftdown 向下调整
+
+两种都写一下
