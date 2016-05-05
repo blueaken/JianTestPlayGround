@@ -1,4 +1,4 @@
-package ninechapter_algorithm.chapter1_strstr_to_search_problems.optional.palidromepartition;
+package ninechapter_algorithm.chapter1_strstr_to_search_problems.optional.palindromepartition;
 
 import java.util.ArrayList;
 import java.util.List;
