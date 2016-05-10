@@ -4,7 +4,14 @@ CG: 链表的题目就是这样，想起来道理很简单，实现中可能会�
 链表：
 基本操作要熟练
 reverse 3分钟 bug free
-4行交换
+4行交换 -
+
+temp = cur.next;
+cur.next = prev;
+prev = cur;
+cur = temp;
+
+
 
 分步骤实施
 
