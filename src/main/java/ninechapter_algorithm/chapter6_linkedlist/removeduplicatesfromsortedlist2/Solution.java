@@ -1,4 +1,4 @@
-package ninechapter_algorithm.chapter6_linkedlist.deleteduplicates2;
+package ninechapter_algorithm.chapter6_linkedlist.removeduplicatesfromsortedlist2;
 
 import type.ListNode;
 

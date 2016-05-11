@@ -1,0 +1,1 @@
+2 points and while loop to filter duplicates - take it as my template!
