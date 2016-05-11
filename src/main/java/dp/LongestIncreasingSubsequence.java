@@ -18,7 +18,7 @@ public class LongestIncreasingSubsequence {
     D[i] = max{1, D[j] + 1} (j = 1, 2, 3, ..., i-1 且 A[j] < A[i])
 
     解释一下这个方程，i， j在范围内:
-    如果 A[j] < A[i] ，则D[i] = D[j] + 1
+    如果 A[j] < A[i] ，则D[i] = max{D[j] + 1}
     如果 A[j] >= A[i] ，则D[i] = 1
      */
     public static void main(String[] args){
