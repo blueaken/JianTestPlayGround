@@ -1,0 +1,3 @@
+注意下面，fast ＝ head不行；后面merge sort / quick sort里面要用
+// 1->2->3 return 2
+// 1->2 return 1
