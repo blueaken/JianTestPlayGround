@@ -1,0 +1,3 @@
+quick sort still tricky -
+必须要三分，对两分不能有侥幸心理，必然死循环；
+用getTail（）来处left为null的情况
