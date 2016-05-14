@@ -1,0 +1,1 @@
+I like my 2nd solution with HashMap, much concise and easier to understand than 1st and nine chapter version
