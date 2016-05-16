@@ -1,0 +1,1 @@
+a good basic linked list operation practice, the nine chapter version is concise, can look at it next time
