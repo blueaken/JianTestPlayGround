@@ -1,0 +1,5 @@
+ref
+
+nine chapter: http://www.jiuzhang.com/solutions/convert-binary-search-tree-to-doubly-linked-list/
+
+the idea is to find and maintain doubly linked list relationship of the inorder predecessor and successor
