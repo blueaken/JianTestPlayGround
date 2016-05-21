@@ -1,4 +1,4 @@
-bruce solution can solve it in O(m+n), but the goal is to find O(log m+n) solution.
+bruce solution can solve it with merge sort in O(m+n), but the goal is to find O(log m+n) solution.
 
 The problem is similar to find topK elements - with a algorithm called "quick select". When k = (m+n)/2, then the
 median is found.
