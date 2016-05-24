@@ -1,0 +1,18 @@
+和Norman讨论了这道题，结合网上的帖子得到了下面的公式：
+
+local[i][k] = Max{local[i - 1][k] + nums[i](nums[i] is part of previous array), global[i - 1][k - 1] + nums[i]
+(nums[i] is a separate array)}，local考虑nums［i］一定取的情况
+
+global[i][k] = Max{local[i][k], global[i - 1][k]}, global考虑nums［i］可以不取的情形
+
+但用格子法验算了一下，发现当数组内正整数大于k的时候上面的公式才是正确的，因为上面的公式如果出现负数的话就用0来代替。和Norman讨论了之后
+觉得当正整数个数小于k的时候，问题就相当于求最大的k个数之和，只要简单排序一下就可。
+
+Time：O（kn）
+
+程序AC了，但网上帖子两种算法，都可以不需要分情况讨论，以后学习一下：
+
+Ref:
+http://www.jianshu.com/p/5045dda5ea1f
+
+http://blog.csdn.net/nicaishibiantai/article/details/44585383
