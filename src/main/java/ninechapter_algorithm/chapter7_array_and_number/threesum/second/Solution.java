@@ -1,11 +1,11 @@
-package ninechapter_algorithm.chapter7_array_and_number.threesum;
+package ninechapter_algorithm.chapter7_array_and_number.threesum.second;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
  * Author: blueaken
- * Date: 4/28/16 9:01 AM
+ * Date: 5/24/16 10:42
  */
 public class Solution {
     /**
@@ -20,30 +20,33 @@ public class Solution {
         }
 
         Arrays.sort(numbers);
-        ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < numbers.length - 2; i++) {
-            if (i > 0 && numbers[i] == numbers[i-1]) {
+            //remove duplicates on i
+            if ( i != 0 && numbers[i] == numbers[i - 1]) {
                 continue;
             }
+            int temp = numbers[i];
             int start = i + 1;
             int end = numbers.length - 1;
             while (start < end) {
-                int sum = numbers[i] + numbers[start] + numbers[end];
+                ArrayList<Integer> list = new ArrayList<>();
+                int sum = temp + numbers[start] + numbers[end];
                 if (sum == 0) {
-                    list.add(numbers[i]);
+                    list.add(temp);
                     list.add(numbers[start]);
                     list.add(numbers[end]);
-                    result.add(new ArrayList<>(list));
-                    list = new ArrayList<>();
+                    result.add(list);
                     start++;
-                    end--;
-                    while (start < end && numbers[start] == numbers[start-1]) {
+                    //remove duplicates on start
+                    while (start < end && numbers[start] == numbers[start - 1]) {
                         start++;
                     }
-                    while (start < end && numbers[end] == numbers[end+1]) {
+                    end--;
+                    //remove duplicates on end
+                    while (start < end && numbers[end] == numbers[end + 1]) {
                         end--;
                     }
-                } else if (sum < 0){
+                } else if (sum < 0) {
                     start++;
                 } else {
                     end--;
@@ -54,10 +57,11 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        //int[] numbers = {-1,0,1,2,-1,-4};
 
-        int[] numbers = {1,0,-1,-1,-1,-1,0,1,1,1};
+        //int[] test = {-1,0,1,2,-1,-4};
 
-        System.out.println(threeSum(numbers));
+        int[] test = {1,0,-1,-1,-1,-1,0,1,1,1};
+
+        System.out.println(threeSum(test));
     }
 }
