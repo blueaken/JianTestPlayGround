@@ -1,0 +1,6 @@
+f[n][k][target] - select k number of elements from array of n elements and the sum is target
+
+f[i][j][t] =  f[i - 1][j][t] + f[i - 1][j - 1][target - A[i]], target - A[i] > 0
+
+f[i - 1][j][t] - total solutions when A[i] is not used
+f[i - 1][j - 1][target - A[i]], target - A[i] > 0 - total solutions when A[i] is used
