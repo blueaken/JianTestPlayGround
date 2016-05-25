@@ -1,4 +1,4 @@
-package ninechapter_algorithm.chapter7_array_and_number.threesum2;
+package ninechapter_algorithm.chapter7_array_and_number.threesumclosest;
 
 import java.util.Arrays;
 
