@@ -1,0 +1,4 @@
+every time n & n - 1 will eliminate one digit
+
+- to use "n & 1 and >>" only works in positive number
+- a lazy solution is use Integer.bitCount(n) directly.
