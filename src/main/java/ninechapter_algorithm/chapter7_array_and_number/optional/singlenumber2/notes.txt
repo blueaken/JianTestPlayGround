@@ -1,0 +1,6 @@
+refer clean book solution -
+
+result |= (count[i] % 3) << i means the total number of 1s on position i mod 3 then times 2, the aggregate sum of all
+positions is the result.
+
+
