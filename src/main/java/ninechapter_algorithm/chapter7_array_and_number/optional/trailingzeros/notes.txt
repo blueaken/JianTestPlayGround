@@ -1,0 +1,4 @@
+一道数学题，可以转化为求因数中5的个数。九章的答案更加巧妙一些，可以防止TLE。
+
+ref:
+http://bookshadow.com/weblog/2014/12/30/leetcode-factorial-trailing-zeroes/
