@@ -1,0 +1,6 @@
+思路sort colors 1一样，为了省空间不能用Hashmap，只能花时间了。找到当前的minColor， maxColor，其余忽略，然后把min/max放到最前和最后。
+循环直到minColor ＝ maxColor。注意和sort color一样，交换maxColor的时候cur指针不动，因为交换回来的可能是一个minColor还要再处理。
+
+复杂度是O(n^2): T(n) = T(n-2) + n
+
+Ref：http://blog.csdn.net/nicaishibiantai/article/details/43306431
