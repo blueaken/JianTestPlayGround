@@ -1,0 +1,8 @@
+思路很简单，写起来很烦躁。分别左右两边求连续最大最小值，相当于把maximum subarray写四遍。。。
+然后比较leftMax-rightMin vs rightMax - leftMin
+
+有些细节要注意。
+
+REF:
+http://blog.csdn.net/nicaishibiantai/article/details/44490241
+http://www.jianshu.com/p/ad189dfc8191
