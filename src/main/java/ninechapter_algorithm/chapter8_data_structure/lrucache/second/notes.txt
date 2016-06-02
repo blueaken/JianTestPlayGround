@@ -1,0 +1,6 @@
+改正了first version命名上的一个问题，LRU cache （least recently Used）删除时应该寻找LinkedHashMap中队头的元素，因为队尾的元素都是
+刚刚使用过的。
+
+越发觉得LinkedHashMap solution比HashMap加双链表要好了。
+
+又练习了以下HashMap ＋ DoublyLinkedList solution
