@@ -30,7 +30,7 @@ public class Solution {
 
         Arrays.sort(numbers);
         for (int i = 0; i < numbers.length - 2; i++) {
-            //in case numbers[i] dupplicates
+            //in case numbers[i] duplicates
             if (i != 0 && numbers[i] == numbers[i - 1]) {
                 continue;
             }

@@ -25,14 +25,13 @@ public class Solution {
             if ( i != 0 && numbers[i] == numbers[i - 1]) {
                 continue;
             }
-            int temp = numbers[i];
             int start = i + 1;
             int end = numbers.length - 1;
             while (start < end) {
                 ArrayList<Integer> list = new ArrayList<>();
-                int sum = temp + numbers[start] + numbers[end];
+                int sum = numbers[i] + numbers[start] + numbers[end];
                 if (sum == 0) {
-                    list.add(temp);
+                    list.add(numbers[i]);
                     list.add(numbers[start]);
                     list.add(numbers[end]);
                     result.add(list);
