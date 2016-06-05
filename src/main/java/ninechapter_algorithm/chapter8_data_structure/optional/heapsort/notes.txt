@@ -1,3 +1,3 @@
-for fun, practice it myself, not - min heap creates reverse order sort. To get in order sort, uses max heap
+for fun, practice it myself, note - min heap creates reverse order sort. To get in order sort, uses max heap
 
 ref - http://codereview.stackexchange.com/questions/32606/implementation-of-heap-sort
