@@ -1,0 +1,4 @@
+redo with 2 queues
+
+like nine chapter answer with array list - redo next time
+ref - http://www.jiuzhang.com/solutions/implement-stack/
