@@ -1,1 +1,3 @@
 自己做了一遍，试用了用无名类写Comparator，感觉不错。最后的代码我感觉比九章的要简洁。
+
+试了Space O（k）的解法，果然其他都一样就heap的comparator从maxHeap变成minHeap，和Space O（n）的comparator比较一下，体会一下区别。
