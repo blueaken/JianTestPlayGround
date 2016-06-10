@@ -24,7 +24,7 @@
 
 Search Problems note:
 
-基本模式就是代循环的递归遍历所有的可能性，可以将Subset和Permutation作为基本模版。一些变化有：
+基本模式就是带循环的递归遍历所有的可能性，可以将Subset和Permutation作为基本模版。一些变化有：
 － input数组的元素是否可以无限制使用，是的话
 1. 递归使用start，而且递归变量也为i。如Combination Sum 1
 2. 循环从0开始，但是跳过已经用过的元素，如PERMUTATION.
