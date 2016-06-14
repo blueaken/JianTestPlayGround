@@ -22,6 +22,9 @@ Word Ladder － 图上的层次遍历
 
 Word Search 和 Surrounded Regions 这次没做下次完成。
 
+求所有 － DFS
+求最短 － BFS
+
 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 code ganker关于图的总结
 
