@@ -1,1 +1,2 @@
-用 UNION FIND做，貌似是高级算法。下次再说
+FAILED在86%上，
+应该用UNION FIND做，貌似是高级算法。下次再说
