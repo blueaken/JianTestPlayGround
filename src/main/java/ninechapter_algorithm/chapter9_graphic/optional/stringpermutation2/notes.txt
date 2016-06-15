@@ -1,0 +1,1 @@
+my solution is similar to permutation 2, it works when input string length is less than 10 and TLE after it.
