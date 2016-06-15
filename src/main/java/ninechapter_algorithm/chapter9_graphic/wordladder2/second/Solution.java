@@ -1,10 +1,10 @@
-package ninechapter_algorithm.chapter9_graphic.wordladder2;
+package ninechapter_algorithm.chapter9_graphic.wordladder2.second;
 
 import java.util.*;
 
 /**
  * Author: blueaken
- * Date: 5/6/16 15:44
+ * Date: 6/14/16 20:27
  */
 public class Solution {
     /**
@@ -25,31 +25,12 @@ public class Solution {
         Map<String, Integer> distance = new HashMap<>();
         Map<String, List<String>> lastVisited = new HashMap<>();
 
-        //build distance and lastVisited info table
-        bfs(distance, start, dict, lastVisited);
-        //find all paths
-        dfs(result, distance, lastVisited, end, start, new ArrayList<String>());
+        bfs(result, distance, start, dict, lastVisited);
         return result;
     }
 
-    private void dfs(List<List<String>> result, Map<String, Integer> distance,
-                     Map<String, List<String>> lastVisited, String cur, String start, List<String> path) {
-        path.add(cur);
-        if (cur.equals(start)) {
-            Collections.reverse(path);
-            result.add(new ArrayList<>(path));
-            Collections.reverse(path);
-        }
-        for (String next : lastVisited.get(cur)) {
-            if (distance.get(cur) == distance.get(next) + 1) {
-                dfs(result, distance, lastVisited, next, start, path);
-            }
-        }
-        path.remove(path.size() - 1);
-    }
-
-    private void bfs(Map<String, Integer> distance,
-                     String start, Set<String> dict, Map<String, List<String>> lastVisited) {
+    private void bfs (List<List<String>> result, Map<String, Integer> distance,
+                      String start, Set<String> dict, Map<String, List<String>> lastVisited) {
         Queue<String> queue = new LinkedList<>();
         queue.offer(start);
         distance.put(start, 0);
