@@ -1,3 +1,6 @@
 try both dfs and bfs and both ACed!
 - dfs, I like the relative straightforward to code. But space efficiency is much worse than bfs, especially in the
 case of graph.
+
+- bfs, the reason it need not Visited set is because each visited node is marked as new value and there is no need
+to reset for other start nodes as "word search"
