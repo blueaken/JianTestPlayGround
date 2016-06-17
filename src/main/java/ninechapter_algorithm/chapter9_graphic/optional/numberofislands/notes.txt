@@ -1,0 +1,3 @@
+try both dfs and bfs and both ACed!
+- dfs, I like the relative straightforward to code. But space efficiency is much worse than bfs, especially in the
+case of graph.
