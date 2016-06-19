@@ -1,4 +1,4 @@
 still need practice, ref - http://blog.csdn.net/linhuanmars/article/details/22777711
 
-和subset题类似，都是用的dfs i＋1的循环结构。不一样的地方是，每次加入的都是从index开始的字符串，从宏观上来看，都是从index0开始到
-index num－1结尾的各种组合。可以Debug体会一下。
+和subset题类似，都是用的dfs i＋1的循环结构。不一样的地方是，每次加入的都是从index开始的字符串，从宏观上来看，都是从index 0 开始到
+num－1 结尾的各种组合。可以Debug体会一下。
