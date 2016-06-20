@@ -48,7 +48,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        String s = "aab";
+        String s = "baab";
 
         System.out.println(minCut(s));
     }
