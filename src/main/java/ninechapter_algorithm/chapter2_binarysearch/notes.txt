@@ -1,6 +1,6 @@
 Chapter 2. binary search
 
-－ 工作上最好不要用递归 － 大型项目容易stack over flow
+－ 工作上最好不要用递归 － 大型项目容易stack over flow － 参考graphics题目一般上dfs马上over flow。
 
 － start+1 < end 模版
 － 使用start + (end - start) / 2 不会越界，当start和end接近2^31-1时 － 装逼
