@@ -1,0 +1,3 @@
+In case where AL == AM == AR, we can start++ / end-- to narrow the range.
+
+Or just use linear search.

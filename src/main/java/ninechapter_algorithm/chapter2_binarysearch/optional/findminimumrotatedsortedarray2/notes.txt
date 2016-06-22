@@ -4,4 +4,7 @@ For case where AL == AM == AR, the minimum could be on AM’s left or right side
 [1, 1, 1, 0, 1] or [1, 0, 1, 1, 1]). In this case, we could not discard either subarrays and
 therefore such worst case degenerates to the order of O(n).
 
+06/22/16
+But we can start++ / end-- to narrow the range, correct?
+
 Or just apply linear search on this as the nine chapter answer
