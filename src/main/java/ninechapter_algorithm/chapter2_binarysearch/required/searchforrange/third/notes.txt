@@ -1,0 +1,3 @@
+clean book template, worst case O(n).
+
+nine chapter template maybe better
