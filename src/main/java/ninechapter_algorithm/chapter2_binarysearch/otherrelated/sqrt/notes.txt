@@ -1,9 +1,9 @@
 - note the overflow condition when mid * mid
 - similar to wood cut, using clean book template to find the smallest number to break the equation and
- then return -1 value. but need to handle the case when x is perfect square. nine chapter template fits
- better here
-- my wood cut solution has similar bug on perfect cut case which is all wood has same length and k equals
- number of wood, ex [20,20,20], k = 3.
+ then return -1 value. but need to handle the case when x is perfect square.
+
+- as to wood cut solution has similar bug on perfect cut case which is all wood has same length and k equals
+ number of wood, ex [20,20,20], k = 3 or 5. basically all wood in L should not be of duplicate length.
 
 Code Ganker:
 实际面试遇到的题目可能不是对一个整数开方，而是对一个实数。方法和整数其实是一致的，只是结束条件换成左界和右界的差的绝对值小于某一个
