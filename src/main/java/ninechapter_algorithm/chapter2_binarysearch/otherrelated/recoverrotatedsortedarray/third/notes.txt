@@ -1,0 +1,1 @@
+should use binary search to find min index - like the 2nd version
