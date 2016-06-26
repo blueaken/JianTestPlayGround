@@ -9,7 +9,7 @@ import java.util.Stack;
  * Author: blueaken
  * Date: 4/15/16 3:01 PM
  */
-public class Solution_Interative {
+public class Solution_Iterative {
     /**
      * @param root: The root of binary tree.
      * @return: Inorder in ArrayList which contains node values.
