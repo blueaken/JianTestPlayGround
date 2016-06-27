@@ -1,0 +1,6 @@
+BFS and stop when the 1st leaf node is hit, thus can avoiding traverse the whole tree, in worst case, still need
+to traverse the whole tree though.
+
+using rightmost node to tell when to level up.
+
+ref - clean book solution
