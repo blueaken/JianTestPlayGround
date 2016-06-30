@@ -1,0 +1,1 @@
+start from the right child case - a little easy to code. Ref previous notes.
