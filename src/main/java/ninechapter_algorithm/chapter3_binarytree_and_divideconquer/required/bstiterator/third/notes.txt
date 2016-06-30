@@ -1,0 +1,1 @@
+redo with nine chapter solution style (lazy init) - ref nine chapter answer.
