@@ -1,14 +1,15 @@
 
 state: f[i][j]表示A的前i个字符最少要用几次编辑可以变成B的前j个字符
 
+－ if current char not equal
 3 operations allowed:
-if current char not equal -
 f[i-1][j]+1: delete 1 char from word1
 f[i][j-1]+1: add 1 char from word1
 f[i-1][j-1]+1: replace 1 char from word 1
 
-f[i-1][j-1]: do nothing but start from the diagonal grid
 - if current char equals
+f[i-1][j-1]: do nothing but use the number from the diagonal grid
+
 
 function: f[i][j]
 = MIN(f[i-1][j]+1, f[i][j-1]+1, f[i-1][j-1]) // A[i - 1] == B[j - 1], 从下面的视频看可以直接用f[i-1][j-1]
