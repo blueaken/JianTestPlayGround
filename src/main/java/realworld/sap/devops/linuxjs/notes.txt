@@ -1,0 +1,33 @@
+2. how to use java to simulate linux ls command. See code in linuxls folder.
+thoughts:
+Old JDK has a performance issue since it makes a native system call for every single file. On a low latency
+interface, this is not that big of a deal - but on a network with even moderate latency, it really adds up.
+If you profile your algorithm above, you'll find that the bulk of the time is spent in the pesky isDirectory()
+call - that's because you are incurring a round trip for every single call to isDirectory().
+
+JDK 7 fixes this with a completely new interface for this sort of thing (NIO), which should bring native level
+performance to these sorts of operations.
+
+If you can't wait for JDK7, one strategy for addressing this latency is to go multi-threaded and use an
+ExecutorService with a maximum # of threads to perform your recursion. It's not great (you have to deal with
+locking of your output data structures), but it'll be a heck of a lot faster than doing this single threaded.
+
+Note both IO and NIO can use multiply-threads to utilize more cpu-resources, more details
+ref: http://gee.cs.oswego.edu/dl/cpjslides/nio.pdf
+
+=============
+Ref:
+http://stackoverflow.com/questions/17349862/how-to-read-files-in-multithreaded-mode
+http://stackoverflow.com/questions/17220892/read-the-30million-user-ids-one-by-one-from-the-big-file/17220973#17220973
+
+Inspired by the answer of above threads - "Your bottleneck is most likely the indexing, not the file reading.
+assuming your indexing system supports multiple threads, you probably want a producer/consumer setup with one
+thread reading the file and pushing each line into a BlockingQueue (the producer), and multiple threads pulling
+lines from the BlockingQueue and pushing them into the index (the consumers)." can use a BlockingQueue to store
+each subDirectory found so as to avoid multiple read of subdirectory.
+
+My strategy will be using one thread (the producer) putting all the directory into the BlockingQueue and multiple
+threads (the consumers) pulling directory from the BlockingQueue and reading the files. See the code in
+/linux/Solution_MultiThread.java folder.
+
+It looks the multi thread code works well and the test time on "/Users/blueaken/Desktop" is 300 ms vs 15 ms.

@@ -1,0 +1,102 @@
+1. find which process has io issue on linux?
+
+top
+dstat/iostat
+iotop
+
+can check which process has io exception.
+
+ref: http://h2ofly.blog.51cto.com/6834926/1621481
+
+2. how to use java to simulate linux ls command. See code in linuxls folder.
+thoughts:
+Old JDK has a performance issue since it makes a native system call for every single file. On a low latency
+interface, this is not that big of a deal - but on a network with even moderate latency, it really adds up.
+If you profile your algorithm above, you'll find that the bulk of the time is spent in the pesky isDirectory()
+call - that's because you are incurring a round trip for every single call to isDirectory().
+
+JDK 7 fixes this with a completely new interface for this sort of thing (NIO), which should bring native level
+performance to these sorts of operations.
+
+If you can't wait for JDK7, one strategy for addressing this latency is to go multi-threaded and use an
+ExecutorService with a maximum # of threads to perform your recursion. It's not great (you have to deal with
+locking of your output data structures), but it'll be a heck of a lot faster than doing this single threaded.
+
+Note both IO and NIO can use multiply-threads to utilize more cpu-resources, more details
+ref: http://gee.cs.oswego.edu/dl/cpjslides/nio.pdf
+
+=============
+Ref:
+http://stackoverflow.com/questions/17349862/how-to-read-files-in-multithreaded-mode
+http://stackoverflow.com/questions/17220892/read-the-30million-user-ids-one-by-one-from-the-big-file/17220973#17220973
+
+Inspired by the answer of above threads - "Your bottleneck is most likely the indexing, not the file reading.
+assuming your indexing system supports multiple threads, you probably want a producer/consumer setup with one
+thread reading the file and pushing each line into a BlockingQueue (the producer), and multiple threads pulling
+lines from the BlockingQueue and pushing them into the index (the consumers)." can use a BlockingQueue to store
+each subDirectory found so as to avoid multiple read of subdirectory.
+
+My strategy will be using one thread (the producer) putting all the directory into the BlockingQueue and multiple
+threads (the consumers) pulling directory from the BlockingQueue and reading the files. See the code in
+/linux/Solution_MultiThread.java folder.
+
+It looks the multi thread code works well and the test time on "/Users/blueaken/Desktop" is 300 ms vs 15 ms.
+
+=================
+
+4. DI的优势是什么？（除了代码简洁）
+   － 看看老文：http://www.cnblogs.com/leoo2sk/archive/2009/06/17/di-and-ioc.html#。DI可以使代码
+   更加符合OCP原则。在系统中提供一个获取点，客户类仍然依赖服务类的接口。当客户类需要服务类时，从获取点主动取得
+   指定的服务类，具体的服务类类型由获取点的配置决定。使增加修改服务类对客户类代码不会有任何影响。
+
+   可以看到，这种方法变被动为主动，使得客户类在需要时主动获取服务类，而将多态性的实现封装到获取点里面。获取点
+   可以有很多种实现，也许最容易想到的就是建立一个Simple Factory作为获取点，客户类传入一个指定字符串，以获取
+   相应服务类实例。如果所依赖的服务类是一系列类，那么依赖获取一般利用Abstract Factory模式构建获取点，然后，
+   将服务类多态性转移到工厂的多态性上，而工厂的类型依赖一个外部配置，如XML文件。不需要修改代码。
+
+   Simple Factory   － 根据输入生产一个类对象
+   Abstract Factory － 根据输入生产一系列的类对象
+
+   不过，不论使用Simple Factory还是Abstract Factory，都避免不了判断服务类类型或工厂类型，这样系统中总要
+   有一个地方存在不符合OCP的if…else或switch…case结构，这种缺陷是Simple Factory和Abstract Factory以及
+   依赖获取本身无法消除的，而在某些支持反射的语言中（如C#），通过将反射机制的引入彻底解决了这个问题（
+   后面讨论）。
+
+   回想上面Dependency Locate的例子，我们虽然使用了多态性和Abstract Factory，但对OCP贯彻的不够彻底。在理
+   解这点前，朋友们一定要注意潜在扩展在哪里，潜在会出现扩展的地方是“新的组件系列”而不是“组件种类”，也就是说，
+   这里我们假设组件就三种，不会增加新的组件，但可能出现新的外观系列，如需要加一套Ubuntu风格的组件，我们可以新
+   增UbuntuWindow、UbuntuButton、UbuntuTextBox和UbuntuFactory，并分别实现相应接口，这是符合OCP的，因
+   为这是扩展。但我们除了修改配置文件，还要无可避免的修改FactoryContainer，需要加一个分支条件，这个地方破坏
+   了OCP。依赖注入本身是没有能力解决这个问题的，但如果语言支持反射机制（Reflection），则这个问题就迎刃而解。
+
+   我们想想，现在的难点是出在这里：对象最终还是要通过“new”来实例化，而“new”只能实例化当前已有的类，如果未来
+   有新类添加进来，必须修改代码。如果，我们能有一种方法，不是通过“new”，而是通过类的名字来实例化对象，那么我
+   们只要将类的名字作为配置项，就可以实现在不修改代码的情况下，加载未来才出现的类。
+
+=====
+
+5. 最好的项目是什么？Notification － Java部分micro service分离Push Notification和eMail模块代码
+逻辑。DB部分用Cassandra来代替Oracle，取得performance方面的优势。
+－ NO SQL DB Vs Relationship DB：
+－ Table based vs Varied format － key value pair
+- One major difference is Relationship DB has scheme, which is a nightmare for Scrum
+team, whose schema almost changes every sprint
+－ NO SQL easy to scale by adding new servers, while Relationship DB scale by upgrading hardward
+- Relationship DB is good at transacton based application
+- a concern of NOSQL is its maturity. Google discard Mongo DB after some accident in
+production.
+- after all, NOSQL is good for modern internet usage if used wisely.
+
+ref：http://www.infoq.com/cn/news/2014/01/nosql-vs-rdbms
+
+－ Master的研究方向是什么 － 答：关系型数据库研究
+
+6. Why cassandra is good at read?
+It can be taken as a AP system but can be tuned with refactor parameter.
+ref: http://stackoverflow.com/questions/20205797/which-part-of-the-cap-theorem-does-cassandra-sacrifice-and-why
+
+
+=====
+my questions:
+why this devops position need java background?
+
