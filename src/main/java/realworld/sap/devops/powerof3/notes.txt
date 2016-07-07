@@ -1,0 +1,4 @@
+ref: https://www.hrwhisper.me/leetcode-power-of-three/
+
+－ 对数法不错
+－ 又发现一个能把思路讲清楚的大牛，cool
