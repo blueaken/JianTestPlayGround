@@ -10,9 +10,7 @@
 //ABCEAB, LCEAB, AWEAB, ABCEL, LCEL,AWEL
 
 //121 + 2
-ABA, LA, AV,
-ABAB, LAB, AVB,
-ABL, LL
+ABA, LA, AV => ABAB, LAB, AVB + ABL, LL
 
 //16 + 3
 //-> AF,
