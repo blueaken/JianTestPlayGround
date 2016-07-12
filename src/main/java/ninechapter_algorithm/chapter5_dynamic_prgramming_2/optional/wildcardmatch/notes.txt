@@ -1,0 +1,5 @@
+refer Tushar Roy's video:
+https://www.youtube.com/watch?v=3ZDZ-N0EPV0
+
+the code can be optimized to combine multiple '*'s in the pattern and in this case, the init only need to check if
+res[0][1] is true or not.
