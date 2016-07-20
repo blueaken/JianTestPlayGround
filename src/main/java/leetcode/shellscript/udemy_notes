@@ -1,0 +1,17 @@
+Wildcards:
+exe 1: For "extra credit" make sure gracefully handle instances where there are no ".jpg" files in the
+       current directory. (Hint: Man bash and read the section on the nullglob option.)
+
+SJ: research it and figure out can use "shopt -s nullglob" and "shopt -u nullglob" to start / shut down
+nullglob option. "shopt" alone shows the current shell script options.
+
+Test it with "echo *.jpg *.txt" and when nullglob is off, it shows all the jpg file names and "*.txt" as text.
+When nullglob is on it only shows jpg file names. The nullglob will treat wildcards pattern text as null if there
+is no match.
+
+Then I think it is why shell script does not set nullglob as true by default, since it is not ideal in a number of
+cases, for example: "ls *.txt", when nullglob is on the "*.txt" is treat as null string, then it will show all the
+files and directories under current folder, which is not ideal.
+
+ref: http://unix.stackexchange.com/questions/204803/why-is-nullglob-not-default
+
