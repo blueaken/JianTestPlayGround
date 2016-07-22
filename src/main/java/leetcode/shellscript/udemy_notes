@@ -16,8 +16,8 @@ files and directories under current folder, which is not ideal.
 ref: http://unix.stackexchange.com/questions/204803/why-is-nullglob-not-default
 
 Logging:
-- facility feels like just a text in system.log file, not a new log file. To create application's own log file,
-simply use echo "message" >customer log file name
+- facility feels like (SJ: not sure) just a text in system.log file, not a new log file. To create application's
+own log file, simply use echo "message" >customer log file name
 
 - to use "logger" command has advantage of some built-in features like add pid with -i, etc.
 
@@ -30,4 +30,18 @@ While Loop:
 
   Therefore >/dev/null 2>&1 is redirect the output of your program to /dev/null. Include both the Standard Error
   and Standard Out.
+
+Debugging:
+-x: very good debug option added after shbang bash. It displays commands as they will execute, including all
+expansions and substitutions.
+
+-e: script stop on first failed command.
+
+- to make vi syntax highlight is cool
+ref: http://stackoverflow.com/questions/24666518/how-to-turn-on-syntax-highlighting-in-vim-7-3-osx
+
+Scripts used to create this course:
+- Jason shares his script to create audio files and the ones to convert pdf files intp png files
+- interesting and looke shell script is very powerful in many places to automate the work
+- can use it as part of template
 
