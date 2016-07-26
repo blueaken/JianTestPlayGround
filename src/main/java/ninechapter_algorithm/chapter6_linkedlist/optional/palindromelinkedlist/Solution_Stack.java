@@ -8,7 +8,7 @@ import java.util.Stack;
  * Author: blueaken
  * Date: 5/17/16 09:54
  */
-public class Solution {
+public class Solution_Stack {
     /**
      * @param head a ListNode
      * @return a boolean
@@ -62,7 +62,7 @@ public class Solution {
         test.next = new ListNode(0);
         test.next.next = new ListNode(1);
 
-        Solution solution = new Solution();
+        Solution_Stack solution = new Solution_Stack();
         System.out.println(solution.isPalindrome(test));
     }
 }

@@ -1,0 +1,2 @@
+ref CG's solution - find a way of another linked list reverse format
+http://blog.csdn.net/linhuanmars/article/details/19957455

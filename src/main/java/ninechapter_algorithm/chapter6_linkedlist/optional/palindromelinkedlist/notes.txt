@@ -1,4 +1,4 @@
-this is really embrassment - at first I think reverse the whole list and compare it will work but if the list is
+this is really embarrassment - at first I think reverse the whole list and compare it will work but if the list is
 reversed then the original order is lost unless we copy the original but it will not be space O(1).
 
 There are 2 ways to solve it:
