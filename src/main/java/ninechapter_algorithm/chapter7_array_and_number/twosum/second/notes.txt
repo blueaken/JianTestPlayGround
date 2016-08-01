@@ -1,2 +1,2 @@
-note the without hashmap solution result is value not index, practice it since it is the base of 3 sum and 4 sum too.
+note the without hashmap solution result is value, not index, practice it since it is the base of 3 sum and 4 sum too.
 Time is O(nlogn + n) = O(nlogn) (sort + search).
