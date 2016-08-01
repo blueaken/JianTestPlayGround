@@ -1,0 +1,9 @@
+原来这次的题目就是leetcode 308，教训是以后GOOGLE 面试一定要做做最新题。
+
+这次循环介绍，开始练练275之后的leetcode题目。
+
+－Tushar Roy's video 关于 Segment tree：https://www.youtube.com/watch?v=ZBHKZF5w4YU
+
+－1d版本leetcode 303：https://leetcode.com/problems/range-sum-query-immutable/
+
+原来是线段树 － google的面试果然变态啊。如果年轻个十岁，也许会继续刷题。但是现在还是在其它公司先发展其它方面的能力。
