@@ -42,7 +42,7 @@ public class FilteringIterator<E> implements Iterator<E> {
     }
 
     private E nextMatch() {
-        E oldMatch = nextElement;
+        E currentMatch = nextElement;
 
         while (iterator.hasNext()) {
             E o = iterator.next();
@@ -51,12 +51,12 @@ public class FilteringIterator<E> implements Iterator<E> {
                 hasNext = true;
                 nextElement = o;
 
-                return oldMatch;
+                return currentMatch;
             }
         }
 
         hasNext = false;
 
-        return oldMatch;
+        return currentMatch;
     }
 }
