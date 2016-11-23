@@ -1,0 +1,3 @@
+almost did it by myself, as CG said - 这道题是LeetCode中AC率最低的题目，确实是比较难。另一方面是它有很多细节需要实现。
+
+思路上仍然参考九章的先bfs，在dfs。参考了前一版本和九章的notes。下次争取自己完成。

@@ -1,0 +1,8 @@
+a lot of details to notice - the order of dictionary when value equals && use a customer class or the Map.Entry as
+Heap object type, etc.
+
+not difficult to code but surely many details to watch - learns a lot
+
+ref:
+http://stackoverflow.com/questions/17211291/comparator-for-map-entryk-v
+http://www.jiuzhang.com/solutions/top-k-frequent-words/

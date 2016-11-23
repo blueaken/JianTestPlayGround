@@ -1,0 +1,9 @@
+重新学习了一下topK的算法 －
+O（k）－ 可以用merge sort，找到前k个就可以停止；
+O（logk）－ 重新调试学习了一下九章的答案，加入了A key 等于 B key的处理；在测试中加入了一个好用的test case：
+        //good test case: cover both of the following case
+        // 1. when the number diff of two arrays are big, at this time Integer.MAX_VALUE of the small array will play
+        // which puts the small array out of the compare before their number are close
+        // 2. when A_start is out of scope of A array, at this time use B array directly
+
+

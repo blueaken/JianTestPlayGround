@@ -1,0 +1,5 @@
+这次做下来，感觉这题和word break 2几乎一模一样，唯一区别就是把一个是用字典来validate，一个是看是否valid ip来validate。
+
+自己做出来的！
+
+CG大神的方法也是蛮妙的 － http://blog.csdn.net/linhuanmars/article/details/24683699

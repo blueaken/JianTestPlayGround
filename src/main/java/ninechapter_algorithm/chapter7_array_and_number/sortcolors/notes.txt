@@ -1,0 +1,9 @@
+at first I think it is similar to partition array but it is not since partition array does not need to distinguish
+between greater and equal case.
+
+use count sort to solve it (there is a better count sort version)
+
+and find a way to solve it in just one traverse
+
+ref:
+http://www.cnblogs.com/yuzhangcmu/p/4048668.html

@@ -1,0 +1,6 @@
+read:
+http://www.cnblogs.com/lookbackinside/p/4418203.html
+
+http://www.tanglei.name/blog/shell-problems-in-leetcode.html
+
+still confused.

@@ -1,0 +1,3 @@
+figure out using clean book template:
+1. the original template actually the smallest length
+2. modify with equal condition and the minus 1 of the end to make it work for longest length

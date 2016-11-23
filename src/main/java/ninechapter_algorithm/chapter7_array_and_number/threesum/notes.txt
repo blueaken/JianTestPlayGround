@@ -1,0 +1,5 @@
+ref: http://blog.csdn.net/linhuanmars/article/details/38555885 and nine chapter solution
+
+not difficult to code but need to think about how to avoid duplicates
+
+time is O(nlogn + n^2) = O(n^2), which is better than brute force O(n^3)

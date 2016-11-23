@@ -1,0 +1,7 @@
+note the order of map.put(numbers[i], i) has to be after comparison otherwise the newly add row can affect the result
+test case: {1,0,-1} 0.
+
+in case, interviewee ask a solution without hash map, can sort the input array then find the target step by step.
+Time is O(nlogn + n) = O(nlogn) (sort + search). Note the result is value instead of index.
+
+Both is better than the brute force O(n^2)

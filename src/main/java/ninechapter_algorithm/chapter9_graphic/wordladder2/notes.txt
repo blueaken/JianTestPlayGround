@@ -1,0 +1,8 @@
+CG:  这道题是LeetCode中AC率最低的题目，确实是比较难。一方面是因为对时间有比较严格的要求（容易超时），另一方面是它有很多细节需要实现。
+思路上和Word Ladder是比较类似的，但是因为是要求出所有路径，仅仅保存路径长度是不够的，而且这里还有更多的问题，那就是为了得到所有路径，
+不是每个结点访问一次就可以标记为visited了，因为有些访问过的结点也会是别的路径上的结点，所以访问的集合要进行回溯（也就是标记回未访问）。
+所以时间上不再是一次广度优先搜索的复杂度了，取决于结果路径的数量。
+
+NineChapter: 1st BFS then DFS. I like this better.
+Ref class notes and solution - http://www.jiuzhang.com/solutions/word-ladder-ii/
+

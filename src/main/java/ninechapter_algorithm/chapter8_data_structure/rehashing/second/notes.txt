@@ -1,0 +1,1 @@
+second version 重新分配了原来的Node，没有象first version那样产生了新的Node。下次可以再试试first version那样的方案。

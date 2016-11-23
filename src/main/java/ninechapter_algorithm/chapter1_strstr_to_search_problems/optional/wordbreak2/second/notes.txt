@@ -1,0 +1,9 @@
+solve it by myself! much concise than previous version
+
+ref - palindrome partition solution
+
+and note it will TLE on leetcode OJ, reason behind ref - http://blog.csdn.net/linhuanmars/article/details/22452163
+
+---------------
+
+look at the word break 1 for fun too, it is a DP problem and use a different loop to attack the problem

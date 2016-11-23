@@ -1,0 +1,1 @@
+redo with preorder solution with StringTokenizer class, which avoids create POJO. And works perfect here.

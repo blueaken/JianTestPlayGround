@@ -1,0 +1,3 @@
+受merge method的思路写出来，clean book上有更加简明的思路，把L1和L2为null的情况放入循环内处理。下次可以学习。
+
+think it twice，还是应该按clean book上处理，因为余下的链表val可能都为9

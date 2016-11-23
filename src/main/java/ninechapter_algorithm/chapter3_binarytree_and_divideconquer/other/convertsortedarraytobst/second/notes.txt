@@ -1,0 +1,1 @@
+ref previous notes - recursively traverse the array from the mid node

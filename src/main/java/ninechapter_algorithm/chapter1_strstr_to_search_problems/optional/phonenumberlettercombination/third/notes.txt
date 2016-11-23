@@ -1,0 +1,4 @@
+用start来控制循环次数，可以看作组合模版的变例，或者组合、排列模版之后的新模版。
+
+CG的观点 － 这种题目递归和非递归的方法都得掌握，因为模型太简单，所以一般两种都会考查～
+Ref：http://blog.csdn.net/linhuanmars/article/details/19743197

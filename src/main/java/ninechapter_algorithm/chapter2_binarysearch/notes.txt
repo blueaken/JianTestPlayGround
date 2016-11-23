@@ -1,0 +1,63 @@
+Chapter 2. binary search
+
+－ 工作上最好不要用递归 － 大型项目容易stack over flow － 参考graphics题目一般上dfs马上over flow。
+
+－ start+1 < end 模版
+－ 使用start + (end - start) / 2 不会越界，当start和end接近2^31-1时 － 装逼
+直接用end + start会overflow
+
+wood cut && search in rotated sorted array
+－ binary search两种类型：二分index vs 二分答案
+－ 三步翻转法 数组原地翻转 相关 － recover rotated sorted array
+
+Code Ganker的两分查找总结：
+http://blog.csdn.net/linhuanmars/article/details/31354941
+
+＝＝＝＝＝＝＝＝＝＝＝
+
+三种遇到的模版：个人还是喜欢clean book上的，理解起来比较清楚。
+        //template 1 - clean book
+        while (start < end){
+            int mid = (start + end) / 2;
+            if(nums[mid] < target){
+                start = mid + 1;
+            } else {
+                end = mid;
+            }
+        }
+
+when loop ends， start equals end，the left index would be the target。
+if missed， left index would be the one greater than target unless it is the end of the array。
+
+        //template 2 - nine chapter
+//        while(start + 1< end){
+//            int mid = start + (end - start) / 2;
+//            if(nums[mid] == target){
+//                start = mid ;
+//            }else if(nums[mid] < target){
+//                start = mid ;
+//            }else{
+//                end = mid;
+//            }
+//        }
+九章课上讲的模版，有点绕, 四点要素:
+1. start + 1 < end
+2. start + (end - start) / 2
+3. A[mid] ==, <, >
+4. A[start] A[end] ? target
+
+可以知道一下，还是喜clean book的。
+
+        //template 3 - code ganker
+//        while(start <= end)
+//        {
+//            int mid = (start + end)/2;
+////            if(nums[mid]==target)
+////                return mid;
+//            if(nums[mid]<target)
+//                start = mid+1;
+//            else
+//                end = mid-1;
+//        }
+code ganker的模版：http://blog.csdn.net/linhuanmars/article/details/20278967
+就是当循环结束时，如果没有找到目标元素，那么l一定停在恰好比目标大的index上，r一定停在恰好比目标小的index上。

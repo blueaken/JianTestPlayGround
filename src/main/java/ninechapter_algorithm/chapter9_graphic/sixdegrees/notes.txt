@@ -1,0 +1,8 @@
+bfs solution - use similar way of tree level traverse to count path level by level
+
+dfs solution - has bug, asked on nine chapter for answers
+
+求所有 － DFS
+求最短 － BFS
+
+本题BFS合适，DFS jie解暂时没有

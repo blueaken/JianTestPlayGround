@@ -1,0 +1,1 @@
+same as level order traverse 1, the only diff is each time add list to the header of the result list

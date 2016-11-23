@@ -1,0 +1,10 @@
+ref clean book solution
+
+Let us denote that:
+f(k) = Maximum sum of subarray ending at index k.
+Then,
+f(k) = max( f(k-1) + A[k], A[k] )
+
+
+There is another Divide & Conquer solution with Time O(nlogn) from T(n) = T(n/2) + O(n)
+can refer clean book

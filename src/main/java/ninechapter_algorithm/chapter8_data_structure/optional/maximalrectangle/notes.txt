@@ -1,0 +1,7 @@
+ref both nine chapter class notes on rectangle
+and CG's post - http://blog.csdn.net/linhuanmars/article/details/24444491
+
+I like CG's solution on calculate each row's height and it has a small DP on it. After each row's height array is
+figured out then it the pretty much the same as get largest rectangle in histogram. Good if you solve it first.
+
+The time is O(mn) - the best possible, which is brilliant.

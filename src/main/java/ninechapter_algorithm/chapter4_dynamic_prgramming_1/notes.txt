@@ -1,0 +1,45 @@
+搜索题一定要会, 出现概率远大于DP！
+
+Triangle -
+记忆化+搜索 － O（N^2）- N is the height of the triangle, every node visited once
+就是DP
+
+why DP is faster?
+a: 避免重复计算 － 2^N或N! -> N^2
+
+DP实现方式：多重循环 vs 记忆化搜索
+
+2维DP，一般初始化i，0 and 0，i
+
+不要学贪心法，很少出现，而且没有一个规律可以总结
+
+什么时候使用DP？
+
+满足下面三个条件之一：
+● 求最大值最小值
+● 判断是否可行
+● 统计方案个数
+
+什么情况下不使用DP？
+求出所有具体的方案而非方案个数
+http://www.lintcode.com/problem/palindrome-partitioning/
+N皇后？
+
+输入数据是一个集合而不是序列
+http://www.lintcode.com/problem/longest-consecutive-sequence/
+
+
+写code时注意－
+if 越少越好，所以最好不要init和dp本体放在一起
+
+====================================
+
+Coder Ganker comment on DP:
+http://blog.csdn.net/linhuanmars/article/details/22358863
+
+我们总结一下动态规划题目的基本思路。首先我们要决定要存储什么历史信息以及用什么数据结构来存储信息。然后是最重要的递推式，就是如从存储的
+历史信息中得到当前步的结果。最后我们需要考虑的就是起始条件的值。
+
+动态规划的题目在LeetCode中占有相当的比例，不过却没有什么通法，因为每道题会有不同的性质和获取信息的角度。但是总体来说基本思路就如同我
+上面介绍的那样，根据步骤出来之后基本上问题也就解决了，大家可以多练习熟悉一下哈。
+

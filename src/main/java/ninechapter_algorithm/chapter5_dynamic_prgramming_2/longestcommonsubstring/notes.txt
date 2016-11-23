@@ -1,0 +1,14 @@
+note the diff between subsequence and substring, which subsequence doesn't need to be consecutive, while substring need
+
+state: f[i][j]表示前i个字符配上前j个字符的LC Substring的长度(如果有的话)
+
+function: f[i][j]
+= f[i-1][j-1] + 1 // A[i - 1] == B[j - 1]
+= 0 // A[i - 1] != B[j - 1]，如果不符合就存零，这样前面substring结果不会影响后面的substring结果
+
+intialize: f[i][0] = 0 f[0][j] = 0
+
+answer: MAX(f[n][m])
+
+also ref:
+//https://www.youtube.com/watch?v=BysNXJHzCEs

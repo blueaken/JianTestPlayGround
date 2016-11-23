@@ -1,0 +1,1 @@
+tried dp solution, but still like the greedy version for its simple to code and work well

@@ -1,0 +1,1 @@
+similar to implement queue by linked list 1 - it is really easy to use LinkedList

@@ -1,0 +1,3 @@
+still refer previous notes:
+- cur must move when 0
+- cur cannot move when 2 (since 0 could be swapped back)

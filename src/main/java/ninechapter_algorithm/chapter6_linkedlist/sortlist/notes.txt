@@ -1,0 +1,12 @@
+Merge Sort更加合适，每次两分。
+1. 利用链表的性质,MERGE可以直接挂上
+2. 找中点时注意，如果FAST = HEAD的话会死循环。需要另外返回一个PreSlow来解决。可以看以前写得 SORT.SORTLIS里面的处理方法
+// 1->2->3 return 2
+// 1->2 return 1
+
+问题：每次都需要找中点,时间复杂度还是O(nlogn)？
+CG答：因为这个找中点过程和merge是并列的，也就是复杂度严格来说是O((n+n)*logn)=O(2nlogn)，所以还是O(nlogn)哈～
+
+Quick Sort每次要三分比较麻烦，两分的话会死循环，也练习了一下
+
+空间两者都是O（logN），如果是堆排序的空间要O（N）

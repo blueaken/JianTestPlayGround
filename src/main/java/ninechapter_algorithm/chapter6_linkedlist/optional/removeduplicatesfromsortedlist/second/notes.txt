@@ -1,0 +1,1 @@
+use 2 pointers and while loop to filter duplicates, a little more complex than nine chapter but it is fine

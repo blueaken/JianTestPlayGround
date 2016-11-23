@@ -1,0 +1,7 @@
+very similar to top k frequent words - even simpler.
+
+note: I still used array size of heap to make code simpler. To use O(k) space, need to maintain k size heap, and after
+the end need to reverse order the heap poll() result. Can practice for fun next time.
+
+- try the space O(k) solution, it turns out not difficult to code, since it needs a minHeap instead of maxHeap as
+ space O(n) solution.

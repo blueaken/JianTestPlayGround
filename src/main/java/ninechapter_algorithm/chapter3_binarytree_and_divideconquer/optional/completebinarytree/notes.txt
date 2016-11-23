@@ -1,0 +1,4 @@
+use level traverse to solve the problem
+
+nine chapter use divide & conquer recursive solution, which is much complex than mine. but can have a try as practice
+next time

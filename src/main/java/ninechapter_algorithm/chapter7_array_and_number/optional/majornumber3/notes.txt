@@ -1,0 +1,9 @@
+思路和Majority NumberII 一样，维护k-1个candidate 在map里面，key为数字值，value为出现次数。先找到这k-1个candidate后，扫描所有元素，
+如果该元素存在在map里面，update map；
+如果不存在，
+1： 如果map里面有值为count= 0，那么删除掉这个元素，加入新元素；
+2：map里面没有0出现，那么就每个元素的count--.
+
+剩下的map里面的值都有可能是majority，所以重新扫描数组，记录下每一个元素出现次数，次数最大的就是majority
+
+ref: http://blog.csdn.net/nicaishibiantai/article/details/43636799

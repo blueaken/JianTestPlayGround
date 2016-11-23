@@ -1,0 +1,3 @@
+my solution is to build an inorder list while init, and write both recursive and iterative solutions;
+
+nine chapter solution is to find the node in the next() method, which I like it since it is more memory efficient.

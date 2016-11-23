@@ -1,0 +1,2 @@
+basically it is a tree problem, in order traverse provide better time O(n) than mid point O(nlogn), which would be
+O(n) if it is a sorted array

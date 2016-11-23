@@ -1,0 +1,3 @@
+- use dummy head since the head can change
+- reverse basic operation as 东邪，见课程截图
+- CG: 链表的题目就是这样，想起来道理很简单，实现中可能会出些小差错，还是熟能生巧

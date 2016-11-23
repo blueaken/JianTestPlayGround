@@ -1,0 +1,5 @@
+a naive way is to test every integer one by one but since the n can be very large this solution is time consuming
+O(n^2)
+
+I consider use heap to store the min of 2/3/5 factor but the contains method of Priority Queue cost O(n). Better way
+to do is just a simply DP solution. remember the previous 2/3/5 factor index is generate the next candidate from them

@@ -1,0 +1,10 @@
+I figured it out with LinkedHashMap since it has O(1) read/write performance and also keep the order of creating as
+LRU cache needs;
+
+The nine chapter and code ganker use the relative complex solution with a HashMap and a double direction node, which
+also achieve O(1) read/write performance. And a dummy head and dummy tail to maintain the double linked list.  Don't
+understand why these guys didn't figure it out the LinkedHashMap solution, but I will practice this solution for the
+practice purpose.
+
+ref:
+http://www.jiuzhang.com/solutions/lru-cache/

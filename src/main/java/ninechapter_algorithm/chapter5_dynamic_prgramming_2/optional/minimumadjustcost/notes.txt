@@ -1,0 +1,12 @@
+res[i][v]: 当有前i 个数组元素时，转化成v所需要的最小调整代价
+
+
+方程： res[i][v] = Math.min((Math.abs(v - A.get(i)) + res[i-1][k]), res[i][v])， ｜v － k｜ <= target,
+      k是前面一个值，取最小值是因为对 ｜v － k｜ <= target， 会有多个k满足条件
+
+init: 第一行为第一个数调整到j所需的代价
+
+结果：最后一列中最小值 MIN(res[n-1][x])
+
+ref：
+http://www.cnblogs.com/yuzhangcmu/p/4153927.html

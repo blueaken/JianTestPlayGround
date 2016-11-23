@@ -1,0 +1,50 @@
+Trie - https://en.wikipedia.org/wiki/Trie
+
+why num of threads is not the more the better?
+- time of thread switch on one machine
+- CPU number limited
+
+问: 老师 mutex 和 这几个有啥区别
+答复: mutex是单位最小的锁。具体的话，你google吧，一句话讲不清楚
+
+问: 进程不share memory
+答复: 是的
+
+问: 老师为何要用多个机器分布式的启动爬虫呢？刚才网络又断了，什么都没听到啊！
+答复: 1. 因为单机受到CPU数限制——主要原因。 2. 网络端口数限制（65535）——次要原因 3. 网络带宽 4. 与网站之间的连接速度（比如中国的网站放一个爬虫在中国效果肯定比在美国好）
+
+问: 有的网页更新快，有些更新慢
+答复: bingo!
+
+问: 关联节点多
+答复: yes
+
+问: 门户网站优先级高？
+答复: yes
+
+问: 是个大seed
+答复: yes
+
+问: priority怎么得到的？
+答复: 好问题，这个水比较深。你可以粗布的理解为，可以通过一些算法学习，或者预先标记一些白名单。
+
+问: 能不能再细讲一下scheduler的功能？？？
+答复: 一个web server，负责接收crawler 要urls的请求，一次返回给crawler 比如 1000个urls。然后scheduler就会去DB（task table）里读出1000个可以抓取的urls来给crawler。
+
+问: 老师刚才crawler中的task的功能是什么呢？
+答复: 一个task就是一次抓取的意思。里面就包含了要抓取的url的信息之类的。
+
+问: craw到的新的页面是存到db里下次再爬还是继续爬
+答复: 网页存在网页的db，然后parse一下这个网页，把新的urls再丢给 task table
+
+问: 加quota还是会循环爬啊，感觉不能完全解决这个问题啊
+答复: 本来crawler就是一个死循环。。。加quota的作用是，别全都抓一个网站去，也给别的网站一些机会。
+
+问: 老师, Google Suggestion Needs: 6 * 6 * 500m 的第一个6 是如何来的?
+答复: 一次搜索均6个字符，人均一天搜6次
+
+问: 这个LIKE的SQL statement真的是可行的方法吗？ 用LIKE的话实际上是非常非常慢的。。就算index了这个column也没用的吧
+答复: 不可行，但是你要知道为什么。
+
+问: 可以再说下like为什么慢吗？刚才没听清楚
+答复: like操作，会做index的range query，这个相比直接select key=xxx 来说肯定要慢。然后其次还有就是有一个order by，这个过程会排序，就更慢了，。。

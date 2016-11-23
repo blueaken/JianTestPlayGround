@@ -1,0 +1,34 @@
+real interview question from Morgan Stanley:
+
+# Write a routine to read a text file and count up
+# the number of times that each word occurs in the file
+# (case insensitive is okay).  Then return a list of words,
+# sorted by frequency of occurrence.
+
+looks easy but to write an elegant solution not easy.
+
+ref: http://stackoverflow.com/questions/109383/how-to-sort-a-mapkey-value-on-the-values-in-java
+
+original problem:
+
+/*
+# Exercise 1
+
+# Write a routine to read a text file and count up
+# the number of times that each word occurs in the file
+# (case insensitive is okay).  Then return a list of words,
+# sorted by frequency of occurrence.
+
+Example:
+<file.txt>
+apple test metro
+metro host client
+test apple
+apple
+
+Output:
+apple
+metro
+test
+client
+*/

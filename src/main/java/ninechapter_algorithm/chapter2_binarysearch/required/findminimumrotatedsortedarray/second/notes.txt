@@ -1,0 +1,2 @@
+1st version (from clean book) using nums[start] >= nums[end], which means when nums[start] < nums[end] the array is
+not rotated any more and can return nums[start] directly. It does not affect the result but does improve performance.

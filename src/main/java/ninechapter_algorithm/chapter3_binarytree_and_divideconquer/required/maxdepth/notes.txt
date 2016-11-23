@@ -1,0 +1,1 @@
+DC is obviously better than traverse solution, but it is still important to know how to traverse

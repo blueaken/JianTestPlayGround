@@ -1,0 +1,6 @@
+can use DP to solve
+- ref: http://www.voidcn.com/blog/qq508618087/article/p-4959619.html
+but although the time is O(mn), the space is O(mn).
+
+To achieve the best solution, consider using the solution of maximum rectangle
+

@@ -1,0 +1,6 @@
+clean book template, worst case O(n).
+
+nine chapter template maybe better,
+
+try clean book template to found right bound but failed. so far only nine chapter template works for right
+bound. it looks clean book template find left bound then linear search on right bound is clean code to me.

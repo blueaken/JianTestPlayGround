@@ -1,0 +1,9 @@
+did the home work on lintcode
+
+Map Reduce 是面试中经常会考察的内容，有很多的面试题，如果你不知道Map Reduce的话，就得不到面试官期望的解决方案。
+http://www.jiuzhang.com/qa/686/ 这就是一个实际的面试例子。
+
+map / reduce 都在内存中做，结果输出到硬盘
+
+问: 有一道面试题：100TB data， remove duplicates，用map reduce该是怎么个思路？
+答复: 把 hash(item) 作为key，然后map到各自机器上，各自机器 remove duplicates 之后合并在一起

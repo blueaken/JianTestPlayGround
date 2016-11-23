@@ -1,0 +1,7 @@
+time complexity:  O(N) - can visit every node
+
+in the case of only one node is in the tree: {1,2,3}, 2, 5, this solution will return the existing node 2, ACed.
+may need to consider alternative to return null in this case?
+
+in case of binary tree: another solution is to compare the value - http://www.cnblogs.com/springfor/p/4141924.html
+

@@ -1,0 +1,9 @@
+my thoughts - if a number is power of 2 then it must have only one 1 in its binary format, like: 1, 10, 100, 1000, etc
+so the problem transferred to count the number of 1s and see if it equals 1.
+but this is a O(n)
+
+for O(1), there is a further thought of above, since only one 1, then n - 1 is the opposite of n, like: 100 vs 011
+
+or use Integer.bitCount(n)
+
+ref: nine chapter and http://www.java-fries.com/2014/05/fastest-way-to-check-if-a-number-is-power-of-2/

@@ -1,0 +1,6 @@
+Solution 1 -
+follow Tushar Roy's 1st part of video, it works fine but out of memory since it is O(kN^2)
+
+follow the 2nd part of the video and get the solution works on unit tests, but still out of memory, even the
+ time has been improved to O(nk). Will leave it alone for now consider it very unlikely to hit this in real
+ interview in Shanghai.

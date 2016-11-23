@@ -1,0 +1,5 @@
+need 2 bfs
+- 1st for total number of nodes
+- 2nd to tell if it is complete via current node number when null is hit
+
+refer previous notes

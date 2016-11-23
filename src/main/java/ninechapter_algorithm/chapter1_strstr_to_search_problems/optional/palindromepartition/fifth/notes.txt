@@ -1,0 +1,5 @@
+ref 4th notes only!
+
+－－－－－－
+
+看了palindrome partition 2，确实如CG说的和word break几乎一样。

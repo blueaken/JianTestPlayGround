@@ -1,0 +1,1 @@
+similar to reverse, think through the relationship of current, next and next.next.

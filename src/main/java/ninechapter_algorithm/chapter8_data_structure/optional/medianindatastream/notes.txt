@@ -1,0 +1,4 @@
+用课上提示的minHeap加上maxheap方法做的，根据题意保持maxHeap的size比minHeap少。成功AC！
+
+看了九章的答案，感觉他就不用中间tempMean的方法好帅，下次要练习一下。
+－ http://www.jiuzhang.com/solutions/median-in-data-stream/

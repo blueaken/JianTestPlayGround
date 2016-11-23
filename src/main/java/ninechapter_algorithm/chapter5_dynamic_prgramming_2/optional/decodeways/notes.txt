@@ -1,0 +1,33 @@
+//init thought
+
+//12 + 3
+//-> ABC, LC, AW
+//123 + 5
+//-> ABCE, LCE, AWE
+//1235 + 1
+//ABCEA, LCEA, AWEA
+//12351 + 2
+//ABCEAB, LCEAB, AWEAB, ABCEL, LCEL,AWEL
+
+//121 + 2
+ABA, LA, AV => ABAB, LAB, AVB + ABL, LL
+
+//16 + 3
+//-> AF,
+
+//f[i] = 2*f[i-1], if char[i-1]char[i] is valid code
+//f[i] = f[i-1], if char[i-1]char[i] is not valid code
+
+f[0] = 1
+
+ref 九章答案
+http://www.jiuzhang.com/solutions/decode-ways/
+
+//分区间讨论 －
+有两种方式：
+第一种新加进来的数字不然就是自己比较表示一个字符，那么解析的方式有res[i-1]种，
+第二种就是新加进来的数字和前一个数字凑成一个字符，解析的方式有res[i-2]种（因为上一个字符和自己凑成了一个）
+
+（1）00：res[i]=0（无法解析，没有可行解析方式）；
+（2）所有非‘0’的至少res[i-1]种
+（3）10-26：需要再加上res[i-2]（两种情况都可行）；

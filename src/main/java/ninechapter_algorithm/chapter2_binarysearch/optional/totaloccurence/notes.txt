@@ -1,0 +1,2 @@
+a easy bs question - but the time performance on the worst case scenario can be improved by calculating the left
+bound and right bound just as "search for a range" question.

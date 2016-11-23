@@ -1,0 +1,4 @@
+the only tricky part is k can be longer than total len.
+
+CG's solution is better, and I like the way to calibrate the length first then rotate
+－ http://blog.csdn.net/linhuanmars/article/details/21903027

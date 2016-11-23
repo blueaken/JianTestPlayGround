@@ -1,0 +1,9 @@
+since int[] cannot fit in PriorityQueue create a customer type Element instead, as far as the row and col info is
+stored with the Element class then the rest is easy.
+
+it is similar to merge k sorted lists and if Priority Queue is not allowed by the interviewee then we can divide
+and conquer
+- from top to end
+- 2 and 2 pairs
+
+这道题用array做有些别扭，没有用list那么酣畅淋漓 ：）

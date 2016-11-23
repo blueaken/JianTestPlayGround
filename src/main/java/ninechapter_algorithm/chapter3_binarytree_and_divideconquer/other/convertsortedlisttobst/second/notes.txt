@@ -1,0 +1,1 @@
+ref previous notes, simulate inorder traverse via position change

@@ -1,0 +1,2 @@
+- need dummy head since the head can change
+- nine chapter solution is more concise

@@ -1,0 +1,32 @@
+
+标红的题 反复做 体会
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+quick select
+
+median
+问: 时间复杂度怎么分析
+答复: A每次丢一半，所以最多丢logN次（A就丢完了）， 同样如果丢B的，也每次丢一班，那么最多丢logM次，所以复杂度O(logN + logM) = O(logNM)
+问: 『A每次丢一半，所以最多丢logN次（A就丢完了）， 同样如果丢B的，也每次丢一班，那么最多丢logM次，所以复杂度O(logN + logM) = O(logNM)』，老师这里是丢A的一半吗？ 应该是丢k的一半吧
+答复: 我说错了，sorry, sorry，那就是每次丢k的一半 ，复杂度O(logK), lol
+
+stock profit 和 max subarray 其实一回事
+
+ subarray 一定要想到 prefix sum 思路
+ 问: 第七剑感觉很重要啊
+答复: 恩是啊，经典：任何一个subarray 的和 都可以表示成两个前缀和的差
+
+问: 那要是让你返回subarray 而不是sum呢 我昨天面试的时候面试官就要求要返回subarray itself而不是sum
+答复: 那就记录一下前面最小的preSum的位置呀，有了位置 就能把subarray取出来了lol
+
+2 sum 没有hashmap怎么做？
+数组排序后夹逼，一定要会，3sum和4sum会用到。
+
+问: 基数排序不是负数不能用么
+答复: 计数排序，如果有负数，我们有两种处理方式，1.给每个数加一个偏移量，把负数都变成正数，2.用hashtable来做统计的计数数组
+
+sort color － 三分 partition 最多掌握到三分
+
+＝＝＝＝＝＝＝＝
+
+不少NOTE记在题里

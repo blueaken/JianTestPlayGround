@@ -1,0 +1,11 @@
+dfs - the diff is there are multiple start points at each step, find it and dfs on each one.
+
+self made it, lots of details to look at:
+1. Set contains for customer class
+2. backtrack add/remove new chars has to be paired
+
+finally I believe the algorithm is correct but got TLE on 95%
+
+I like the nine chapter solution though - redo it
+妙！用reset current position的办法来代替visited Set并且防止traverse back，当然如果当前尝试fail了还是要复位的。
+AC了。

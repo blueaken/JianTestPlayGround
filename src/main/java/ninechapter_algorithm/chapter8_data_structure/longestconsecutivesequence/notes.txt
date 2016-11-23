@@ -1,0 +1,4 @@
+easier to sort then solve, but it is O(nlogn), to get O(n) need the help of HashSet and the idea of graphic DFS
+
+Ref - http://blog.csdn.net/linhuanmars/article/details/22964467
+and nine chapter answer

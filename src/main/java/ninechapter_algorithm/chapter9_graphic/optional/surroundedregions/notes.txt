@@ -1,0 +1,14 @@
+interesting problem - tried dfs and bfs and both works
+
+- similar to "number of islands" dfs coding is easier but less space efficiency
+- bfs can use the help of extra Node class but can also use coding to bypass it, as CG says:
+"其实这里用一个数据结构存也可以，只是为了面试时不用多搞一个数据结构，所以编码了一下"
+
+CG： 可以看到上面代码用的是广度优先搜索，用一个队列来维护，当然也可以用深度优先搜索，但是如果使用递归，会发现LeetCode过不了，这是
+因为在图形中通常图片（或者说这里的矩阵）一般会很大，递归很容易导致栈溢出，所以即使要用深度优先搜索，也最好使用非递归的实现方式哈。
+
+nine chapter solution is more time efficient and can pass leetcode OJ.
+
+ref:
+http://blog.csdn.net/linhuanmars/article/details/22904855
+http://www.jiuzhang.com/solutions/surrounded-regions/

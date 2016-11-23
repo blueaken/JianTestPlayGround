@@ -1,0 +1,9 @@
+bfs or dfs?
+both works but use bfs on graph if possible.
+dfs uses recursive for each node and in graph the recursive level will be very big. this is unlike the tree situation
+ where the recursive is for each level.
+
+bfs in graph needs the help of HashMap in additional of Queue, which is the only data structure in tree bfs. HashMap
+stores the visited info to avoid infinite loop
+
+i use 3 steps for clean logic, can use 2 steps while more practised. Time is the same － O（n）

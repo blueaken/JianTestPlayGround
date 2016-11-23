@@ -1,0 +1,3 @@
+note: a path is from root to leaf!
+
+use preorder traverse, calc the root val before recursive to avoid duplicate on leaf node

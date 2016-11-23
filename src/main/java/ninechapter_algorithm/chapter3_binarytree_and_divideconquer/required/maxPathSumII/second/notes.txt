@@ -1,0 +1,1 @@
+no need to store temp max of subtree since the result path have to go through root, no need recursive helper now

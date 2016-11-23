@@ -1,0 +1,1 @@
+O（n）解法还是要想一下，HashMap巧妙，参考：http://www.cnblogs.com/yuzhangcmu/p/4174507.html

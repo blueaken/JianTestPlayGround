@@ -1,0 +1,7 @@
+
+It is easy if allow O(n) space - using HashMap and count. But if only O(1) space allowed then we need to think about it.
+
+ref:
+https://lefttree.gitbooks.io/leetcode/content/highFreq/MajorityNumber.html
+http://www.cnblogs.com/yuzhangcmu/p/4175046.html
+

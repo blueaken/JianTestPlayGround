@@ -1,0 +1,6 @@
+有些晕的一道题，应该很简单。但是和toplargestknumbers 1混起来有点confusing。前面是直接使maxHeap，这题本身是数据结构的反而用的是
+minHeap。
+
+最后reverse order的时候，也可以用ListIterator来反向访问minHeap，不过面试的时候为了代码清晰，还是按咋九章的答案写吧。
+
+ref － http://www.jiuzhang.com/solutions/top-k-largest-number-ii/

@@ -1,0 +1,16 @@
+bruce solution can solve it with merge sort in O(m+n), but the goal is to find O(log m+n) solution.
+
+The problem is similar to find topK elements - with a algorithm called "quick select". When k = (m+n)/2, then the
+median is found.
+Ref: http://blog.csdn.net/linhuanmars/article/details/19905515
+
+the case of equal size is well explained below -
+Ref : IDeserve -  https://www.youtube.com/watch?v=MHNTl_NvOj0
+and the code of different size can be found：
+http://www.ideserve.co.in/learn/find-median-of-two-sorted-arrays
+（the solution above is slightly diff than kth smallest）
+
+find kth smallest element:
+https://www.youtube.com/watch?v=tmu50Fs4v54
+
+看了阿里社招的文章，没有心情深究KTH ELEMENT SOLUTION，直接抄答案了。下次还是应该自己做一遍。

@@ -1,0 +1,2 @@
+nine chapter use one loop to find preV1 and preV2 and a if statement to ensure v1 is always before v2. practice next
+time

@@ -1,0 +1,60 @@
+＝＝＝＝＝＝＝＝＝
+Graph section:
+
+BFS优先 因为不用递归。对图来说DFS的深度会很深。
+图的BFS 除了queue还需要Hash Map来存储是否访问过的信息，不然陷入死循环
+
+刷题bug free and fast很重要！再重复一遍。
+
+top sort 判断result size是不是和graph size一样？可以来判断这张图是不是存在循环依赖
+
+geeksforgeeks 老印网站用DFS来做是有问题的
+BFS一定要掌握，DFS optional
+
+==============
+Search section:
+
+permutation 和 subset程序比较一下
+
+n皇后问题，子函数要分开写，清楚。
+
+Word Ladder － 图上的层次遍历
+
+Word Search 和 Surrounded Regions 这次没做下次完成。
+
+求所有 － DFS
+求最短 － BFS
+
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+code ganker关于图的总结
+
+http://blog.csdn.net/linhuanmars/article/details/39366817
+
+图的算法跟树一样是准备面试中必不可少的一块，不过图的方法很容易概括，面试中考核的无非就是两种搜索算法：深度优先搜索和广度优先搜索。
+LeetCode中关于图的问题有以下几个：
+Clone Graph
+Word Ladder
+Word Ladder II
+Longest Consecutive Sequence
+Word Search
+Surrounded Regions
+
+先来看看最基础的Clone Graph，很简单就是要复制一个图，常见的两种搜索算法（深度和广度）都可以用，具体细节就不在这里解释了，不熟悉的朋友可以
+看看相关资料。建议大家还是两种都要练一练，因为在解决具体问题中这两种方法还是很常用的。
+
+接下来的这些题都是基于图算法的应用，Word Ladder和Word Ladder II是比较典型的，看起来好像是字符串操作的题目，实际上这里得转换成图的角度
+来考虑，因为字符集比较小的缘故（26个小写字母），也就是说对于一个单词来说，改变其中一个字符可以有25条边（除去他自己），所以总共有（25*单
+词的长度L）条边。找到是否有满足一个单词转成另一个单词就是在这个图中找到一条路径。所以我们可以把问题转换成图用广度优先搜索来解决，找到即可
+停止。
+
+Word Ladder是广度优先搜索的应用，而Longest Consecutive Sequence则是深度优先搜索的应用。题目要求是找出最长的连续整数串，如果把数字看
+成结点，与它相邻的整数连有边，那么找到最长的连续串就是在这个图中找最长路径。因为是最长路径，这里用深度优先搜索是比较适合的。
+
+Word Search也是一道深度优先搜索的题目，是把上下左右相邻的结点看成有边联结，然后进行深度搜索就可以了，小细节是这里从每个点出发字符就可以
+重用，所以要重置一下访问结点。
+
+Surrounded Regions要用一个图形学中很常用的填充算法：Flood fill 算法，其实本质还是一个深度优先搜索，跟Word Search一样是把相邻的上下左
+右看成连边，然后进行搜索填充。
+
+图的问题其实本质都是两种搜索算法，难点主要在于对于具体问题如何想到转换成图的问题，然后用这两种搜索来解决，这也是算法中的一个分支，面试中也
+是常客哈。

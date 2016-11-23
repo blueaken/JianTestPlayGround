@@ -1,0 +1,8 @@
+this is really embarrassment - at first I think reverse the whole list and compare it will work but if the list is
+reversed then the original order is lost unless we copy the original but it will not be space O(1).
+
+There are 2 ways to solve it:
+1. find the middle point and reverse the part after middle node. Compare if it is the same from the first half.
+
+2. Not need to reverse but when finding the middle point, use stack to copy the front half's values and compare it
+with the 2nd half. Note this method the find mid point method need to return the node after mid point.

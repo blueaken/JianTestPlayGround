@@ -1,0 +1,12 @@
+I got the idea of this problem is to put the sum of each position into an array and then sort it and found the least
+diff and then return the index back. I tried but there are still 2 questions:
+
+1. why the sum array need be sorted?
+2. the result on idea is different then the lintcode OJ.
+
+I read the online posts and nine chapter answers, but still got the same result. Will leave it alone and move forward
+for now.
+
+ref:
+http://www.cnblogs.com/lishiblog/p/4187961.html
+http://www.jiuzhang.com/solutions/subarray-sum-closest/

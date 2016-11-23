@@ -1,0 +1,2 @@
+if there is not extra space allowed, we can try to scan the linked list for each element, which is O(n^2),
+not time efficient

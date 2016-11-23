@@ -1,0 +1,17 @@
+m x n 2d array with 2 apis, it is running under the infinite incoming data steam env (what does this mean? it is
+the key to this question)
+
+void update(int x, int y, int value) - upsert the value on position x : y;
+int query(int x1, int y1, int x2, int y2) - return the subrectangle area from x1 : y1 to x2 : y2.
+
+under the following 3 conditions the best solution:
+1. update frequent
+a: this is just normal 2d array, since each update call can be done in constant time.
+
+2. query frequent
+a: my answer is to maintain a sum hash map in update operation (sum from 0 : 0 to x : y), note may need to update
+the other fields of the sum map. Then the query operation can be done in constant time: big rectangle minus small
+rectangle (4 rectangles in the formula)
+
+3. both frequent
+- not answered.

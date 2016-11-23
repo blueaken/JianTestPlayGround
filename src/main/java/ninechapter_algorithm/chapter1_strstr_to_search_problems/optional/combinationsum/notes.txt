@@ -1,0 +1,10 @@
+The problem allows unlimited use of any element of the input array, which says the template of permutation and
+subset cannot be used directly here and need some modification.
+
+注意在实现中for循环中第一步有两个判断，
+1. 如果当前元素比目标大，则可直接跳出目前的for循环；
+2. 因为在这里每个数可以重复使用，所以重复的元素也就没有作用了，所以应该进入下一个for循环；
+
+
+Ref:
+http://blog.csdn.net/linhuanmars/article/details/20828631

@@ -1,0 +1,1 @@
+very similar to 3 sum, just add another layer of loop outside, which makes the time O(N^3) beating brute force O(N^4)
