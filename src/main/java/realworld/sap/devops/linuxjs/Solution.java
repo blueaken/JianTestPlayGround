@@ -26,7 +26,9 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        String test = "/Users/blueaken/Desktop";
+        //String test = "/Users/blueaken/Desktop";
+        String test = "/Users/jianshen/Desktop";
+
         Solution solution = new Solution();
         long start = System.currentTimeMillis();
         solution.listFilesAndFolders(test);
