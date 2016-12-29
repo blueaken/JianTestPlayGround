@@ -1,0 +1,103 @@
+tested with Mysql on Macbook account jianshen - DB Name: books
+===============================
+
+CREATE TABLE  `books`.`company` (
+  `companyId` bigint(20) unsigned NOT NULL,
+  `companyName` varchar(30) NOT NULL,
+  PRIMARY KEY (`companyId`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE  `books`.`employeeHired` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `companyId` bigint(20) unsigned NOT NULL,
+  `numHired` int(4) unsigned,
+  `fiscalQuarter` int(4) unsigned,
+  PRIMARY KEY (`id`),
+  KEY `FK_employeeHired_companyId` (`companyId`),
+  CONSTRAINT `FK_employeeHired_companyId` FOREIGN KEY (`companyId`)
+  REFERENCES `company` (`companyId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into company
+(companyId, numHired, fiscalQuarter)
+values
+(3, "Jane Electricity"),
+(6, "Hillary Plumbing"),
+(9, "John Lawn Company"),
+(19, "Dave Cookie Company");
+
+insert into employeeHired
+(companyId, numHired, fiscalQuarter)
+values
+(3, 3, 3),
+(3, 2, 4),
+(19, 4, 1),
+(6, 2, 1);
+
+select *
+from company c, employeeHired e
+where c.companyId = e.companyId
+and e.fiscalQuarter = 4
+and e.numHired > 0;
+
+select c.companyName
+from company c
+where c.companyId not in
+(
+select e.companyId
+from employeeHired e
+where e.numHired > 0
+);
+
+select c.companyName, SUM(e.numHired)
+from company c, employeeHired e
+where c.companyId = e.companyId
+group by c.companyName;
+
+select c.companyName, SUM(e.numHired)
+from company c left join employeeHired e on c.companyId = e.companyId
+group by c.companyName;
+
+select c.companyName, COALESCE(SUM(e.numHired), 0) AS 'Total Hired'
+from company c left join employeeHired e on c.companyId = e.companyId
+group by c.companyName;
+
+
+===============================
+CREATE TABLE  `books`.`test` (
+  `num` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into test
+(num)
+values
+(5),
+(23),
+(-6),
+(7);
+
+select MAX(num) from test;
+
+select distinct num
+from test
+where num not in
+(select less.num
+from test more, test less
+where less.num < more.num
+);
+===============================
+
+
+===============================
+select *
+from address_PIE
+where apartment = null;
+
+select *
+from address_PIE
+where apartment is null;
+
+insert into address_PIE
+(street, apartment, city)
+values
+("456 Greenburge Dr.", "D3", "Beaverton");

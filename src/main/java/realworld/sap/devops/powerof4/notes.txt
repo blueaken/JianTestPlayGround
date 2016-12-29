@@ -1,3 +1,5 @@
 ref: https://www.hrwhisper.me/leetcode-power-four/
 
 bit solution确实巧妙
+
+基本的loop solution一定要掌握
