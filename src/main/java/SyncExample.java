@@ -25,5 +25,13 @@ public class SyncExample {
         Thingie thingie2 = new Thingie();
         new MyThread(thingie1).start();
         new MyThread(thingie2).start();
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+
+        }
+
+        System.out.print("for debug");
     }
 }
