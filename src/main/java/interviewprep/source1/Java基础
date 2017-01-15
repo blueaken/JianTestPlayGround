@@ -1,0 +1,264 @@
+1. 公共类1个java文件只能有一个，且必须和文件名同名。其他的类数量没有限制。
+
+2. goto是Java的保留字，但没有在Java中使用。在象break和continue中可以看出goto的影子。
+
+3. &&和&都可以作为逻辑比较符，&&还有短路功能，&还可以作为位运算符。
+
+4. break; 可以用标号，但我一般用一个boolean变量表示找到，并退出循环。
+
+5. switch后的参数只要可以隐式转化为int，就可以，比如short/byte; 但long和String不行。
+
+6. 前面一个由于结果是int，编译时会报告需要强制类型转换；后一个直接用 += , 可以编译。
+
+7. Unicode汉字编码2个字节长，16位长，char也是2个字节，因此可以存放。
+
+8. 2<<3 最省内存，效率高
+
+9. 参考Java math包BigInteger类，需要一个表示符号的成员，和一个表示数值的字节数组成员byte[]。
+
+10. final修饰对象时，引用不能变，但引用变量还是可以变的。比如：
+
+final StringBuilder a = new StringBuilder("immutable");
+a = new StringBuilder(""); //编译时报错
+a.append("abc"); //可以编译
+
+11. ＝＝比较变量的值是否相等，当变量指向的数据是对象时，比较是否指向同一个地址；equals比较两个独立的对象的内容是否相同，可以被重载。
+
+12. 静态变量是类的变量，实例变量是对象实例化后实例的一部分。
+
+13. 不可以，非static方法需有实例。
+
+14. 一个是对象，提供一些与整数相关的方法，和最大值、最小值的常量。一个是原始类型。
+
+15. 12；－11.
+
+16.
+a. username可能为空，会出现空指针错。应改为 if("zxx".equals(username)) {...}
+b. 可以简化为 return x==1;
+
+17. 当前类、同一package、子类、其他package.
+
+18. 不可以
+
+19. constructor不可以被继承，因此不能override, 但可以被overload.
+
+20. 接口可以继承接口。抽象类与普通类的区别是不能创建实例对象，和允许有abstract方法。
+
+21. super.clone();
+
+22. 封装 （高内聚、低耦合）、抽象、多态、继承
+
+23. 父类或接口定义的引用变量，可以指向子类／实现类的实例对象。
+
+24.
+在语法上的区别：
+a. 抽象类可以有构造方法，接口不行。
+b. 抽象类可以有普通方法，接口中所以方法必须是抽象的。
+c. 抽象类访问方法可以是public, protected, 接口中抽象方法必须是public, 且默认为public abstract.
+d. 抽象类中可以包含静态方法，接口不行。
+e. 1个类可以实现多个接口，但只能继承一个抽象类。
+
+两者在应用上的区别：
+接口经常用在系统框架设计上，定义模块之间的通信契约。抽象类在代码实现方面发挥作用，用来实现代码重用。比如模版模式。可以举一个servlet的例子。
+也可以看看左潇龙的设计模式系列中讲到的Java源码ClassLoader中使用模版模式的例子。jdk源码中提供了findClass（），交给用户决定是否需要实现。
+
+25.
+abstract的方法不可以是static, 因为抽象的方法要被子类实现。
+
+native方法表示该方法要用另一种依赖平台的语言实现，不存在被子类访问的问题，所以，它也不能是抽象的。比如FileOutputStream类要和硬件打交道，
+底层的实现是操作系统相关的api，例如在windows中用c来实现。所以，查看jdk源码，可以发现FileOutputStream的open方法为
+private native void open(String name) throws FileNotFoundException;
+
+关于synchronized和abstract合用，在我的工作经历中没有见过。我想原因是因为synchronized应该是作用在一个具体的方法上才有意义。而且，方法
+上的synchronized同步使用的同步锁是this，抽象方法无法确定this是什么。
+
+26. 内部类是在类里面定义的类；内部类当中不能定义静态成员，内部类可以访问外部类的成员变量。内部类可以定义在方法外，也可以定义在方法内。在
+方法外定义的内部类可以加static关键字，成为static nested class, 访问时可以不实例外部类，比如：Outer.Inner inner = new Outer.Inner();
+
+Static Nested Class不可以访问外部类的非静态成员变量。
+
+27. 可以。如果不是静态内部类就没有什么限制。
+
+28. 有点偏，可以。工作遇到过Comparable 和 Runnable
+
+29. 脑筋急转弯题
+
+30. 不是。
+
+31. 不变，String是Immutable类。
+
+32. 不。String是final类。
+
+33. 一个，在字符串常量缓冲区。
+
+34. 一个是不可变类，一个用来修改String变量。还有String覆盖了equals()和hashCode()方法。
+
+35. split
+
+36. array有length属性, String有length()方法。
+
+37. 1个
+
+38. 会的。在return之后？可以看一下解释，有点意思。
+
+39. 2； 同38. finally里面的语句比return和break后执行。
+
+40. 省略
+
+41. runtime exception不需要在程序中声明／处理；非runtime exception需要在程序中抛出处理。
+
+42. error不能恢复的错误，exception表示如果程序正常运行不会出现的问题。是一种设计／解决方案。
+
+43. 省略。
+
+44. Null Pointer Excpetion, ArithmethicException, ArrayIndexOutOfBoundException, ClassCastException
+
+45. 省略
+
+46.
+Before Java 5 there are 2 ways:
+a.
+Implement Runnable接口:
+public class MyRunnable implements Runnable {
+    public void run() {
+        //Code
+    }
+}
+//Started with a "new Thread(new MyRunnable()).start()" call
+
+b.
+Extends Thread类：
+public class MyThread extends Thread {
+    public MyThread() {
+        super("MyThread");
+    }
+    public void run() {
+        //Code
+    }
+}
+//Started with a "new MyThread().start()" call
+
+Which is better? IMO, implements Runnable is the preferred way to do it. You're not really specialising the thread's
+behaviour. You're just giving it something to run. That means composition is the philosophically "purer" way to go.
+http://stackoverflow.com/questions/541487/implements-runnable-vs-extends-thread
+
+Since Java 5, 可以使用线程池。
+ExecutorService pool = Executors.newFixedThread(3);
+for (int i = 0; i < 3; i++) {
+    pool.execute(newRunnable(){public void run(){}});
+}
+
+synchronized可以来同步方法；
+
+反对使用stop():
+因为stop()太暴力，强行把执行到一半的线程终止。很容易造成数据不一致。
+
+反对使用suspend():
+因为suspend()在导致线程暂停时，不会释放任何资源，直到相应线程的resume为止。如果resume()先于suspend()执行，会造成线程一直挂起下去。可以用
+wait()/notify()来代替。
+
+47. sleep是Thread方法，不会释放锁。wait是Object方法，会释放锁。
+可以运行一下当前的例子
+
+48. 异步不需要等待执行结果，只需要发送请求即可，然后可以执行其他的任务；
+当调用一个需要很长时间来执行的方法，异步的效率会更高；
+线程间对共享数据的操作应该用同步。
+
+49. synchronized相当于同步类的当前实例，static synchronized相当于同步类的所以实例？
+要留意的是：synchronized并不能继承，子类覆盖父类synchronized方法时，一定也要在前面加上synchronized关键字；
+
+50. extend Thread, implement Runnable, thread pool;
+synchronized, wait/notify;
+
+51. start()
+
+52.
+a. 如果非同步方法可以；
+b. 如果方法内部调用wait, 则同步方法也可以；
+
+
+53.
+runnable running blocked wait suspend done
+
+54.
+相同点：都能进行同步；
+不同点在于Reentrant Lock可以有更精确的线程定义和性能。synchronized可以自动释放锁，ReentrantLock则需要手动，在finally block里释放。
+ReentrantLock还可以
+－ lockInterruptibly() - 优先相应中断；
+－ new ReentrantLock(true) - 公平锁，效率很低；
+－ tryLock（）－ 非阻塞方式获得锁，如果成功返回true，失败返回false。该方法不等待，立即返回。
+等等。
+
+55.
+见Code55，还是答案上的好。
+
+56. 关键是用wait/notify来同步两个线程的切换。程序很长，看答案上的。
+
+57. List, Map, Set, 三大接口衍生。
+
+58. Comparable / Comparator
+
+59. 都实现了list接口，相当于动态数组。可以用序号来访问元素。Vector线程安全，ArrayList不是。
+
+60. 同上类似，都实现了Map接口。HashTable线程安全, HashMap不是。
+另外HashMap可以用null来做key, HashTable不行。
+
+61. List是单列数据的集合，可以重复，是有序的；Map是key/value pair的集合，key不能重复，是无序的。
+
+62. List和Set是继承Collection接口，Collection接口下还有Queue接口；Map继承Map接口。
+
+63. 看一下答案，可以随意发挥。
+
+64.
+他们都可以使用插入序号直接索引元素。ArrayList和Vector都是使用数组方式存储数据，索引很快但是插入元素要涉及到数组元素移动这样的内存操作，比较慢。
+LinkedList是使用双向链表来实现存储，索引的话需要向前或向后遍历，但插入元素只需要记录前后项即可，所以插入速度较快。
+
+65.
+a.
+Vector newVector = new Vector();
+for (int i = 0; i < newVector.size(); i++) {
+    Object obj = vector.get();
+    if (!newVector.contains(obj)) {
+        newVector.add(obj);
+    }
+}
+
+b. HashSet set = new HashSet(vector);
+
+66.
+Collection是集合类的上级接口，继承它的有Set和List。Collections是集合类的辅助类，它提供一系列静态方法实现对各种集合的搜索、排序等操作。
+
+67. 用equals()方法来判断。"=="是判断变量指向的数据是否相等，如果两个对象的值完全一样但"=="也会认为不等，因为他们的地址不一样。这种情况
+可以重写equals()来解决。
+
+68.
+List －
+ArrayList
+LinkedList
+Vector
+
+Set －
+TreeSet
+HashSet
+
+Queue －
+PriorityQueue
+LinkedList
+
+Map －
+HashMap
+LinkedHashMap
+TreeMap
+
+69.
+对。如果对象要存储在HashMap/HashSet里，那么当两个对象equals（）为true时，hashcode（）也必需为true。否则的话，不一定要覆盖hash（）
+方法（从编程规范角度还是应该覆盖）。
+
+70.
+取决于加入TreeSet时add()方法用的哪个对象。注意把对象加入TreeSet时必须实现Comparable接口。
+这篇文章和后面的评论不错：
+http://byandby.iteye.com/blog/651385
+
+实验代码见Code70.
+
+
