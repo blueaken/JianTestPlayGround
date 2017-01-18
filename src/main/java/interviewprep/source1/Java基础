@@ -38,7 +38,7 @@ b. 可以简化为 return x==1;
 
 17. 当前类、同一package、子类、其他package.
 
-18. 不可以
+18. 不可以。参考答案，解释得比较完善。
 
 19. constructor不可以被继承，因此不能override, 但可以被overload.
 
@@ -73,7 +73,7 @@ private native void open(String name) throws FileNotFoundException;
 上的synchronized同步使用的同步锁是this，抽象方法无法确定this是什么。
 
 26. 内部类是在类里面定义的类；内部类当中不能定义静态成员，内部类可以访问外部类的成员变量。内部类可以定义在方法外，也可以定义在方法内。在
-方法外定义的内部类可以加static关键字，成为static nested class, 访问时可以不实例外部类，比如：Outer.Inner inner = new Outer.Inner();
+方法外定义的内部类可以加static关键字，成为static nested class, 访问时可以不依赖实例外部类，比如：Outer.Inner inner = new Outer.Inner();
 
 Static Nested Class不可以访问外部类的非静态成员变量。
 
@@ -261,4 +261,62 @@ http://byandby.iteye.com/blog/651385
 
 实验代码见Code70.
 
+71.
+类：
+Collection类，Thread类
+
+(要让人家感觉你对J2EE很熟悉不能只列core java中的东西，要多多列你在ssh项目中涉及的那些东西。)
+String, Integer, java.util.Date, System, BufferReader, BufferWriter;
+
+包：
+java.util;
+
+java.lang; java.io;java.sql, org.hibernate, javax.servlet;
+
+接口：
+Runnable, Callable, Comparator, Comparable,
+
+List, Set, Map, Queue, Servlet, HttpServletRequest, Session(Hiberate)
+
+72. （需要学习）
+字节流和字符流。
+字节流继承于InputStream和OutputStream。
+字符流继承于InputStreamReader和OutputStreamWriter。
+
+73. （需要学习）
+计算机中的一切最终都是二进制的字节形式存在。如果要写"中国"这样的字符到计算机，首先要得到其对应的字节，然后将字节写入输出流。读取时，首先
+读到的是字节，可是我们需要把它显示成字符，因此需要字符流的包装类。
+
+底层设备永远只接受字节数据，要写字符串到底层设备，需要将其先转换为相应的字节。
+
+字符向字节转换时，要注意编码问题。因为字符串转换成字节，本质上是转换成该字符的某种编码的字节形式。
+（参考示例代码）
+
+74.
+有时我们需要把Java对象存储到字节流上传出，或者从字节流上恢复成对象。在这个过程中我们需要写代码把Java对象转换成某个格式的字节流再传输。Java
+OutputStream提供了writeObject方法来做这个工作，要调用这个方法，需要被序列化的类要实现Serializable接口。这是一个mini接口，没有要实现
+的方法，只是为了标注该对象是可以被序列化的。
+
+75.
+ClassLoader和它的子类来实现, 负责在运行时查找和装入类文件的类。
+
+ClassLoader种类：bootstrap (Core Java类)，Ext（扩展类），App（classpath参数制定），用户自定义类加载器。
+
+76. ～ 80. 略
+
+81 － 好题
+Java中是否会发生内存泄漏？
+内存泄漏是指对象不再被使用后仍然停留在内存里。JVM提供垃圾回收机制（GC）来管理内存，当一个对象不再被引用时，GC会把它清除出内存。Java使用
+有向图的方式管理GC，可以解决当两个对象相互引用时，只要它们和根进程是不可达的，那么GC也将回收它们。
+
+Java有两种情况会造成内存泄漏：
+1个是长期对象引用短期对象，短期对象结束后会造成内存泄漏；比如:
+- 缓存系统，加载一个对象进入缓存（比如静态全局map中），之后不再使用。
+- 堆栈或者队列加入一个对象，然后用缩小size的方式出栈。参考Bad Stack 1. (BadStack2 没有明白)
+
+还有一个是短期对象引用长期对象，短期对象将一直不能被回收。比如：
+－ java7之前的substring的内存泄漏bug。参考：http://www.importnew.com/14105.html
+
+还有一种现象也会造成内存泄漏：象HashSet／HashMap之类的容器存入对象后，如果参与计算hashcode的参数发生改变，那这个对象将不能被外部访问到，
+也会造成内存泄漏。
 
