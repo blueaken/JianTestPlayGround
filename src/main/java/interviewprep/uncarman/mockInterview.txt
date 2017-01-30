@@ -1,0 +1,103 @@
+01/22/2017
+
+String x = "123";
+
+String x = new String("123");
+
+
+private static final int x = 0;
+
+private String s = new String("123");
+
+Young: S0/S1 eden
+
+Old
+
+Perm Java 8 中Meta 空间
+
+-Xmx
+
+-Xmn
+
+-Xss
+
+-Xms
+
+--XX:PermSize
+
+--Xx:SurvivorRatio
+
+-XX:SurvivorRatio:8
+
+-Xmx:1024m -Xms:1024m -Xmn:512m -Xss:512k
+
+eden:409.6m
+51.2m
+
+-XX:NewRatio:2
+
+--PermSize:128M
+
+--XX:PermSize:128M
+
+--ParNew  --CMS
+
+类型装载系统
+
+loading linking initilization
+
+validation   preparing decode
+
+custom class loader=>
+
+app class loader=>
+
+extended class loader=>
+
+system boot class loader
+
+验证类是否加载的验证顺序
+
+Executors
+
+newFixedThreadPool
+newCachedThreadPool
+newScheduledThreadPool
+
+ExecutorService->Executor
+
+ReadWriteLock
+Basic Object Lock
+
+减少锁的时间
+减少锁粒度
+锁分离
+锁粗化
+
+java.util.concurrent.atomic
+
+ThreadLocal
+volatile
+LongAdder
+
+全无锁>原子操作>高性能锁>线程同步容器>synchronized
+
+public class User{
+    private static class SingletonHolder{
+        private static instance = new User();
+    }
+
+    public static User getInstance(){
+        return SingletonHolder.instance;
+    }
+}
+
+public static User instance = new User();
+
+============
+
+Kafka
+
+
+Storm
+

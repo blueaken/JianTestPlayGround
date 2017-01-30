@@ -1,4 +1,4 @@
-package interviewprep.source1;
+package interviewprep.source1.code55;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -44,15 +44,6 @@ class JobManager {
     private int j;
 
     public synchronized void inc() {
-        LinkedList<Integer> linkedList = new LinkedList<>();
-        linkedList.get(0);
-
-        ArrayList<Integer> arrayList = new ArrayList<>();
-        arrayList.get(0);
-
-        Vector<Integer> vector = new Vector<>();
-        vector.get(0);
-
         j++;
         System.out.println(j);
     }

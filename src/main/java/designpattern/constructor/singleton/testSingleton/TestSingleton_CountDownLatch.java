@@ -1,4 +1,4 @@
-package designpattern.singleton.testSingleton;
+package designpattern.constructor.singleton.testSingleton;
 
 import java.util.Collections;
 import java.util.HashSet;

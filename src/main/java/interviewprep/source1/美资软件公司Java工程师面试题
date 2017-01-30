@@ -1,0 +1,8 @@
+
+
+＝＝＝＝＝＝＝＝
+1,堆和栈的区别,有一个64k 的字符串,是放到堆上,还是放到栈上,为什么？
+String和其他Java原始数据都是放到常量池里。除非是new String（"xxx"）这种情况是放在堆内存。
+
+https://zhidao.baidu.com/question/72861368.html?qbl=relate_question_2&word=String%D3%A6%B8%C3%B7%C5%B5%BD%B6%D1%BB%B9%CA%C7%D5%BB%C0%EF
+

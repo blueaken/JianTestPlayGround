@@ -215,7 +215,7 @@ LinkedList是使用双向链表来实现存储，索引的话需要向前或向�
 
 65.
 a.
-Vector newVector = new Vector();
+Vector new Vector = new Vector();
 for (int i = 0; i < newVector.size(); i++) {
     Object obj = vector.get();
     if (!newVector.contains(obj)) {

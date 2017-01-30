@@ -1,4 +1,4 @@
-package designpattern.singleton.testSingleton;
+package designpattern.constructor.singleton.testSingleton;
 
 /**
  * Created by jianshen on 11/22/16.

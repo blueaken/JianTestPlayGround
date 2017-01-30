@@ -1,4 +1,4 @@
-package interviewprep.source1;
+package interviewprep.source1.code26;
 
 /**
  * Created by jianshen on 1/10/17.

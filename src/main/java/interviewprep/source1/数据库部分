@@ -1,0 +1,6 @@
+23. JDBC中PreparedStatement和Statement相比的优点？
+0. 数据库会缓存PrepareStatement的SQL语句，重复使用的话可以避免多次编译。
+1. PreparedStatement会在数据库中先编译，执行的时候效率高。
+2. PreparedStatement可以有效防止SQL注入这种情况。
+
+http://yangfei520.blog.51cto.com/1041581/304484/
