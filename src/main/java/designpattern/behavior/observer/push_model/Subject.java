@@ -1,4 +1,4 @@
-package designpattern.observer.push_model;
+package designpattern.behavior.observer.push_model;
 
 import java.util.ArrayList;
 import java.util.List;

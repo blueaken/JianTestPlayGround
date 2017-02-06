@@ -1,4 +1,4 @@
-package designpattern.observer.pull_model;
+package designpattern.behavior.observer.push_model2;
 
 /**
  * Author: blueaken
