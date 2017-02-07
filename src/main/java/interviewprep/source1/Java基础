@@ -148,13 +148,13 @@ for (int i = 0; i < 3; i++) {
     pool.execute(newRunnable(){public void run(){}});
 }
 
-synchronized可以来同步方法；
+synchronized可以来同步方法；(Thread.stop(), Thread.suspend(), Thread.resume(), Thread.sleep() vs. Object.wait(), Object.notify())
 
 反对使用stop():
 因为stop()太暴力，强行把执行到一半的线程终止。很容易造成数据不一致。
 
 反对使用suspend():
-因为suspend()在导致线程暂停时，不会释放任何资源，直到相应线程的resume为止。如果resume()先于suspend()执行，会造成线程一直挂起下去。可以用
+因为suspend()在导致线程暂停时，不会释放任何锁资源，直到相应线程的resume为止。如果resume()先于suspend()执行，会造成线程一直挂起下去。可以用
 wait()/notify()来代替。
 
 47. sleep是Thread方法，不会释放锁。wait是Object方法，会释放锁。
