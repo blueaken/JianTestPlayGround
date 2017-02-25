@@ -14,7 +14,7 @@ import java.util.HashMap;
 
 // Need to find a way to let new Class generated, to fill up Perm quickly.
 
-// Fig
+// Figure out with the right way to generate classes and it works as expected
 
 public class PermTest {
     public static void main(String[] args) {
