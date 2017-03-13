@@ -4,6 +4,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.LongAdder;
 
 /**
  * Created by jianshen on 3/9/17.
@@ -15,9 +16,11 @@ public class Atomic {
 
     private AtomicLong account = new AtomicLong(0L);
     private long count = 0;
+    private LongAdder lAccount = new LongAdder();
 
     static CountDownLatch cdlsync = new CountDownLatch(TASK_COUNT);
     static CountDownLatch cdlatomic = new CountDownLatch(TASK_COUNT);
+    static CountDownLatch cdladdr = new CountDownLatch(TASK_COUNT);
 
     //有锁的加法
     protected synchronized long inc() {
@@ -95,9 +98,41 @@ public class Atomic {
         exe.shutdown();
     }
 
+    public class LongAdderThread implements Runnable {
+        protected String name;
+        protected long starttime;
+        public LongAdderThread(long starttime) {
+            this.starttime = starttime;
+        }
+
+        @Override
+        public void run() {
+            long v = lAccount.sum();
+            while (v < TARGET_COUNT) {
+                lAccount.increment();
+                v = lAccount.sum();
+            }
+            long endtime = System.currentTimeMillis();
+            System.out.println("LongAdderThread spend:" + (endtime - starttime) + "ms" + " v=" +v);
+            cdladdr.countDown();
+        }
+    }
+
+    public void testLongAdderAtomic() throws InterruptedException{
+        ExecutorService exe = Executors.newFixedThreadPool(MAX_THREADS);
+        long starttime = System.currentTimeMillis();
+        LongAdderThread longAdderThread = new LongAdderThread(starttime);
+        for (int i = 0; i < TASK_COUNT; i++) {
+            exe.submit(longAdderThread);
+        }
+        cdladdr.await();
+        exe.shutdown();
+    }
+
     public static void main(String[] args) throws InterruptedException {
         Atomic atomic = new Atomic();
         atomic.testSync();
         atomic.testAtomic();
+        atomic.testLongAdderAtomic();
     }
 }
