@@ -1,6 +1,4 @@
-package lintcode.colleciton.selected.phase1;
-
-import java.util.Arrays;
+package lintcode.colleciton.selected.phase1_prototype;
 
 public class APlusB_bit_solution_1 {
     /**

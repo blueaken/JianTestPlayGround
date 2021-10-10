@@ -1,4 +1,4 @@
-package lintcode.colleciton.selected.phase1.related;
+package lintcode.colleciton.selected.phase1_prototype.related;
 
 public class ReverseInteger_413 {
     /**

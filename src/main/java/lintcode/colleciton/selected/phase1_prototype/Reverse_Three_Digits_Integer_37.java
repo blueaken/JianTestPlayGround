@@ -1,4 +1,4 @@
-package lintcode.colleciton.selected.phase1;
+package lintcode.colleciton.selected.phase1_prototype;
 
 public class Reverse_Three_Digits_Integer_37 {
     /**
