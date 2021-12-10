@@ -6,6 +6,7 @@ public class SumofTwoStrings_1343 {
      * @param B: a string
      * @return: return the sum of two strings
      */
+    //Key Idea；how to build the String backward?
     public String SumofTwoStrings(String A, String B) {
         // write your code here
         int posA = A.length() - 1;
