@@ -24,8 +24,12 @@ public class TreeNodeUtil {
         for (int i = 0; i < list.size() / 2; i++) {
             TreeNode cur = list.get(i);
             if (cur != null) {
-                cur.left = list.get(2 * i + 1);
-                cur.right = list.get(2 * i + 2);
+                if ((2*i+1) < list.size()) {
+                    cur.left = list.get(2 * i + 1);
+                }
+                if ((2*i+2) < list.size()) {
+                    cur.right = list.get(2 * i + 2);
+                }
             }
         }
         return list.get(0);
