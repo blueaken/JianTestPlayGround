@@ -1,6 +1,7 @@
 package lintcode.colleciton.selected.phase6_recursion;
 
 import type.TreeNode;
+import util.TreeNodeUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,9 +36,10 @@ public class InorderTraversal_Iterative_67 {
     }
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(3);
+        int[] input = {1,2,3};
+        TreeNode root = TreeNodeUtil.buildTree(input);
+
+//        TreeNodeUtil.printTree(root);
 
         System.out.println(inorderTraversal(root).toString());
     }
