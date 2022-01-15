@@ -4,7 +4,6 @@ import type.TreeNode;
 import util.TreeNodeUtil;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class BinaryTreePathSum_376 {
