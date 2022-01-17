@@ -23,7 +23,7 @@ public class ParentTreeNodeUtil {
             }
         }
 
-        for (int i = 0; i < list.size() / 2; i++) {
+        for (int i = 0; i < list.size(); i++) {
             ParentTreeNode cur = list.get(i);
             if (cur != null) {
                 if ((2*i+1) < list.size()) {
@@ -31,6 +31,9 @@ public class ParentTreeNodeUtil {
                 }
                 if ((2*i+2) < list.size()) {
                     cur.right = list.get(2 * i + 2);
+                }
+                if ((i-1) >= 0) {
+                    cur.parent = list.get((i-1)/2 );
                 }
             }
         }

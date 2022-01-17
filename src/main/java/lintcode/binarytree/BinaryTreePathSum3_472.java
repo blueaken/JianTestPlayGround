@@ -2,7 +2,6 @@ package lintcode.binarytree;
 
 import type.ParentTreeNode;
 import util.ParentTreeNodeUtil;
-import util.TreeNodeUtil;
 
 import java.util.ArrayList;
 import java.util.List;
