@@ -1,6 +1,7 @@
 package lintcode.binarytree;
 
 import type.TreeNode;
+import type.TreeNodeResultType_LC;
 import util.TreeNodeUtil;
 
 public class LongestConsecutive2_614 {
@@ -14,13 +15,13 @@ public class LongestConsecutive2_614 {
         return dfs (root).max_length;
     }
 
-    private ResultType dfs (TreeNode node) {
+    private TreeNodeResultType_LC dfs (TreeNode node) {
         if (node == null) {
-            return new ResultType(0,0,0);
+            return new TreeNodeResultType_LC(0,0,0);
         }
 
-        ResultType left = dfs(node.left);
-        ResultType right = dfs(node.right);
+        TreeNodeResultType_LC left = dfs(node.left);
+        TreeNodeResultType_LC right = dfs(node.right);
 
         //每一轮递归这3个值都要重置
         int up = 0;
@@ -58,7 +59,7 @@ public class LongestConsecutive2_614 {
         //经过 root 计算出来的长度
         int length = up + 1 + down;
         length = Math.max(length, max_length);
-        return new ResultType(length, up, down);
+        return new TreeNodeResultType_LC(length, up, down);
     }
 
     public static void main(String[] args) {
@@ -69,16 +70,5 @@ public class LongestConsecutive2_614 {
 
         LongestConsecutive2_614 solution = new LongestConsecutive2_614();
         System.out.println(solution.longestConsecutive2(root));
-    }
-}
-
-class ResultType {
-    int max_length;
-    int max_up;
-    int max_down;
-    ResultType (int length, int up, int down) {
-        this.max_length = length;
-        this.max_up = up;
-        this.max_down = down;
     }
 }
