@@ -40,14 +40,8 @@ public class ThreeSum_57 {
                     }
                     k--;
                 } else if (sum < 0) {
-                    while (j < k && numbers[j] == numbers[j+1]) {
-                        j++;
-                    }
                     j++;
                 } else {
-                    while (j < k && numbers[k] == numbers[k-1]) {
-                        k--;
-                    }
                     k--;
                 }
 
@@ -57,8 +51,8 @@ public class ThreeSum_57 {
     }
 
     public static void main(String[] args) {
-        int[] input = {2,7,11,15};
-//        int[] input = {1,0,-1,-1,-1,-1,0,1,1,1};
+//        int[] input = {2,7,11,15};
+        int[] input = {1,0,-1,-1,-1,-1,0,1,1,1};
 
         ThreeSum_57 solution = new ThreeSum_57();
         System.out.println(solution.threeSum(input).toString());
