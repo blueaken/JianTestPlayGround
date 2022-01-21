@@ -31,7 +31,7 @@ public class TwoSum_56 {
     }
 
     public static void main(String[] args) {
-        int[] input = {2,7,11,15};
+        int[] input = {2,2,2,7,7,7,11,15};
         int k = 9;
 
         TwoSum_56 solution = new TwoSum_56();
