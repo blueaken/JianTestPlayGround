@@ -12,7 +12,7 @@ public class Heapify_130 {
     //1. 如果一个堆的左右子堆都是最小堆，那么根节点经过SinkDown之后，得到的堆也是最小堆
     //2. 对一个堆数组 (n-2)/2对应的是最后一个元素的父节点，从这个节点开始向前对每一个节点进行SinkDown，最后得到一个
     //完整的堆。
-    //时间复杂度是n/2 + n/4 + n/8 + ... = n
+    //时间复杂度是O(n/2 + n/4 + n/8 + ...) = O(n)
     public void heapify(int[] A) {
         // write your code here
         int len = A.length;
