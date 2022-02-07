@@ -1,0 +1,32 @@
+Chapter 2. binary search
+
+－ 工作上最好不要用递归 － 大型项目容易stack over flow － 参考graphics题目一般上dfs马上over flow。
+
+－ start+1 < end 模版
+－ 使用start + (end - start) / 2 不会越界，当start和end接近2^31-1时 － 装逼
+直接用end + start会overflow
+
+wood cut && search in rotated sorted array
+－ binary search两种类型：二分index vs 二分答案
+－ 三步翻转法 数组原地翻转 相关 － recover rotated sorted array
+
+Code Ganker的两分查找总结：
+http://blog.csdn.net/linhuanmars/article/details/31354941
+
+＝＝＝＝＝＝＝＝＝＝＝
+
+三种遇到的模版：个人还是喜欢clean book上的，理解起来比较清楚。
+        //template 1 - clean book
+        while (start < end){
+            int mid = start + (end - start) / 2;
+            if(nums[mid] < target){
+                start = mid + 1;
+            } else {
+                end = mid;
+            }
+        }
+
+//Note: ref previous note, using clean book template, the benefits are:
+     //1. when loop ends， start equals end
+     //2. if hit - the left index would be the target & if there exist duplicates left index would be the 1st one
+     //3. if missed - left index would be the one greater than target unless it is the end of the array
