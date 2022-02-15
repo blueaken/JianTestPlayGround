@@ -29,4 +29,5 @@ http://blog.csdn.net/linhuanmars/article/details/31354941
 //Note: ref previous note, using clean book template, the benefits are:
      //1. when loop ends， start equals end
      //2. if hit - the left index would be the target & if there exist duplicates left index would be the 1st one
-     //3. if missed - left index would be the one greater than target unless it is the end of the array
+     //3. if missed - left index would be the one greater than target unless it is the end of the array, and right index
+     //   is in the same position as left at this time
