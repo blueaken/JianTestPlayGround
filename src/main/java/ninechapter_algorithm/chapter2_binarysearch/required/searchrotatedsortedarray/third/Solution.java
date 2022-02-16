@@ -43,8 +43,11 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        int[] test = {6,8,9,1,3,5};
-        int target = 5;
+//        int[] test = {6,8,9,1,3,5};
+//        int target = 5;
+
+        int[] test = {4,3};
+        int target = 3;
 
         Solution solution = new Solution();
         System.out.println(solution.search(test, target));

@@ -39,4 +39,15 @@ public class Solution_SelfCook {
         }
         return A[start] == target ? start : -1;
     }
+
+    public static void main(String[] args) {
+//        int[] test = {6,8,9,1,3,5};
+//        int target = 5;
+
+        int[] test = {4,3};
+        int target = 3;
+
+        Solution_SelfCook solution = new Solution_SelfCook();
+        System.out.println(solution.search(test, target));
+    }
 }
