@@ -12,6 +12,7 @@ public class KClosestNumbers_460 {
      * @param k: An integer
      * @return: an integer array
      */
+    //Idea: 先用BS找到closest index, 再从2边分别加入设置好比较逻辑的heap, 使用heap可以简化代码
     public int[] kClosestNumbers(int[] A, int target, int k) {
         // write your code here
         if (k < 0) {
