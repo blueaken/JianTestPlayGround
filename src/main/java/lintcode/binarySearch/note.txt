@@ -31,3 +31,36 @@ http://blog.csdn.net/linhuanmars/article/details/31354941
      //2. if hit - the left index would be the target & if there exist duplicates left index would be the 1st one
      //3. if missed - left index would be the one greater than target unless it is the end of the array, and right index
      //   is in the same position as left at this time
+
+        //template 2 - nine chapter
+//left direction:
+//        while(start + 1< end){
+//            int mid = start + (end - start) / 2;
+//            if(nums[mid] == target){
+//                start = mid ;
+//            }else if(nums[mid] < target){
+//                start = mid ;
+//            }else{
+//                end = mid;
+//            }
+//        }
+
+//right direction:
+//        while(start + 1< end){
+//            int mid = start + (end - start) / 2;
+//            if(nums[mid] == target){
+//                start = mid ;
+//            }else if(nums[mid] < target){
+//                end = mid ;
+//            }else{
+//                start = mid;
+//            }
+//        }
+
+九章课上讲的模版，有点绕, 四点要素:
+1. start + 1 < end
+2. start + (end - start) / 2
+3. A[mid] ==, <, >
+4. A[start] A[end] ? target
+
+这个模板的分析Ref - https://www.lintcode.com/problem/61/solution/32944
