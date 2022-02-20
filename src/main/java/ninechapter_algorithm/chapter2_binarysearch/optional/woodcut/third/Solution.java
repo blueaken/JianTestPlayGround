@@ -41,4 +41,15 @@ public class Solution {
         }
         return result;
     }
+
+    public static void main(String[] args) {
+//        int[] input = {232, 124, 456};
+//        int k = 7;
+
+        int[] input = {123, 123, 123};
+        int k = 3;
+
+        Solution solution = new Solution();
+        System.out.println(solution.woodCut(input, k));
+    }
 }
