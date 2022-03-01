@@ -6,7 +6,7 @@ public class BestTimeToBuyAndSellStock3_151 {
      * @return: Maximum profit
      */
     //Idea: 状态机DP，参考 https://www.lintcode.com/problem/151/solution/16609,
-    //      任然有些不明白，先写在这里
+    //      任然有些不明白，先写在这里。和背包问题相似，也许可以从那里入手
     public int maxProfit(int[] prices) {
         int n = prices.length;
         int K = 2;
