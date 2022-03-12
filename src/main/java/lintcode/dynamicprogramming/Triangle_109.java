@@ -19,18 +19,13 @@ public class Triangle_109 {
         res[0][0] = triangle[0][0];
         for (int i = 1; i < row; i++) {
             res[i][0] = res[i-1][0] + triangle[i][0];
+            res[i][i] = res[i-1][i-1] + triangle[i][i];
         }
 
         //dp
-        for (int i = 1; i < row; i++) {
-            int curCol = triangle[i].length;
-            for (int j = 1; j < curCol; j++) {
-                if (j < curCol - 1) {
-                    res[i][j] = Math.min(res[i-1][j], res[i-1][j-1]) + triangle[i][j];
-                } else {
-                    res[i][j] = res[i-1][j-1] + triangle[i][j];
-                }
-
+        for (int i = 2; i < row; i++) {
+            for (int j = 1; j < i; j++) {
+                res[i][j] = Math.min(res[i-1][j], res[i-1][j-1]) + triangle[i][j];
             }
         }
 
