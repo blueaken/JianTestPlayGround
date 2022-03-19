@@ -19,6 +19,8 @@ DP擅长把O（2^n）-> O(n^2)
    n = s1.length()
    m = s2.length()
 
+   可以用Tushar的列mxn分析的方法，直观
+
 做题参考课堂笔记
 
 - 背包问题：参考阅读材料《背包九讲》：http://love-oriented.com/pack/
