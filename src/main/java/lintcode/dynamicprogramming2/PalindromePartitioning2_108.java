@@ -1,14 +1,11 @@
-package ninechapter_algorithm.chapter5_dynamic_prgramming_2.palindromepartitioning2.fourth;
+package lintcode.dynamicprogramming2;
 
-/**
- * Author: blueaken
- * Date: 7/7/16 11:43
- */
-public class Solution {
+public class PalindromePartitioning2_108 {
     /**
      * @param s a string
      * @return an integer
      */
+    //Idea: ref previous note, get the idea, but very error prone
     public static int minCut(String s) {
         // write your code here
         if (s == null) {
@@ -44,8 +41,10 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        String s = "eee";
+//        String input = "aab";
+        String input = "leet";
 
-        System.out.println(minCut(s));
+        PalindromePartitioning2_108 solution = new PalindromePartitioning2_108();
+        System.out.println(solution.minCut(input));
     }
 }
