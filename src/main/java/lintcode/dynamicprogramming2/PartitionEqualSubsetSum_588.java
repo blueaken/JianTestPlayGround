@@ -9,6 +9,7 @@ public class PartitionEqualSubsetSum_588 {
      */
     //Idea: 等价背包问题，能否达到总价值的一半，
     //      Ref - https://www.youtube.com/watch?v=s6FhG--P7z0&list=PLrmLmBdmIlpsHaNTPP_jHHDx_os9ItYXr
+    //      Note - 数组不需要排序
     public boolean canPartition(int[] nums) {
         // write your code here
         if (nums == null || nums.length == 0) {
@@ -28,7 +29,6 @@ public class PartitionEqualSubsetSum_588 {
         }
 
         //init
-        Arrays.sort(nums);
         int len = nums.length;
         boolean[][] res = new boolean[len+1][target+1];
         for (int i = 0; i <= len; i++) {
