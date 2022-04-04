@@ -22,6 +22,10 @@ public class LongestPalindromeSubseq_667 {
         for (int len = 2; len <= size; len++) {
             for (int start = 0; start < size - len + 1; start++) {
                 int end = start + len - 1;
+                //handle special case when len == 2
+                if (len == 2 && s.charAt(start) == s.charAt(end)) {
+                    res[start][end] = 2;
+                }
                 if (s.charAt(start) == s.charAt(end)) {
                     res[start][end] = 2 + res[start+1][end-1];
                 } else {
