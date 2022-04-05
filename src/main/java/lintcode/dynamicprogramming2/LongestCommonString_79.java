@@ -33,4 +33,12 @@ public class LongestCommonString_79 {
         }
         return max;
     }
+
+    public static void main(String[] args) {
+        String A = "abcdaf";
+        String B = "acbcf";
+
+        LongestCommonString_79 solution = new LongestCommonString_79 ();
+        System.out.println(solution.longestCommonSubstring(A, B));
+    }
 }
