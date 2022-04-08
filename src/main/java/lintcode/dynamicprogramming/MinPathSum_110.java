@@ -34,4 +34,11 @@ public class MinPathSum_110 {
 
         return res[row-1][col-1];
     }
+
+    public static void main(String[] args) {
+        int[][] grid = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
+
+        MinPathSum_110 solution = new MinPathSum_110();
+        System.out.println(solution.minPathSum(grid));
+    }
 }
