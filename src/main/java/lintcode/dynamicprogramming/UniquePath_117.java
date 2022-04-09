@@ -29,7 +29,7 @@ public class UniquePath_117 {
     }
 
     public static void main(String[] args) {
-        int m = 1, n = 3;
+        int m = 4, n = 6;
         UniquePath_117 solution = new UniquePath_117();
         System.out.println(solution.uniquePaths(m, n));
     }
