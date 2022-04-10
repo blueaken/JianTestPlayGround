@@ -37,4 +37,14 @@ public class InterleavingString_29 {
         }
         return res[m][n];
     }
+
+    public static void main(String[] args) {
+        String s1 = "aab";
+        String s2 = "axy";
+//        String s3 = "aaxaby"; //true
+        String s3 = "abaaxy"; //false
+
+        InterleavingString_29 solution = new InterleavingString_29();
+        System.out.println(solution.isInterleave(s1, s2, s3));
+    }
 }
