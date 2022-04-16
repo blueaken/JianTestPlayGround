@@ -80,7 +80,7 @@ public class Solution {
 //
 //        System.out.println("id to short url: " + idToShortURL(3971));
 
-        String shortURL1 = longToShort(longURL1);
+//        String shortURL1 = longToShort(longURL1);
 
         String shortURL2 = longToShort(longURL2);
 

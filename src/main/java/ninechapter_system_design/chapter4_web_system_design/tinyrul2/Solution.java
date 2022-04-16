@@ -99,4 +99,19 @@ public class Solution {
         int id = this.shortURLtoID(url.substring(1));
         return id2url.get(id);
     }
+
+    public static void main(String[] args) {
+        String longURL1 = "http://www.lintcode.com/faq/?id=10";
+
+        Solution solution = new Solution();
+
+//        String shortURL1 = solution.longToShort(longURL1);
+//
+//        System.out.println("short url 1 from long: " + shortURL1);
+//
+//        System.out.println("long url 1 from short:" + solution.shortToLong(shortURL1));
+
+        System.out.println(solution.shortToLong(solution.longToShort("http://www.lintcode.com/faq/?id=10")));
+
+    }
 }
