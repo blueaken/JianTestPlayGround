@@ -19,6 +19,7 @@ public class NQueens_33 {
      *          we will sort your return value in output
      */
     // Ref - https://www.youtube.com/watch?v=xouin83ebxE & previous notes, make necessary modifications
+    //     - use this as template for permutation questions?
     public List<List<String>> solveNQueens(int n) {
         // write your code here
         List<List<String>> res = new ArrayList<>();
