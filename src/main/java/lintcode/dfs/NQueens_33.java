@@ -48,10 +48,8 @@ public class NQueens_33 {
             return;
         }
         for (int col = 0; col < n; col++) {
-            boolean foundSafe = true;
-
             //check if this row and col is under attack from any previous queen
-            foundSafe = isSafe(row, col, positions);
+            boolean foundSafe = check(row, col, positions);
 
             if (foundSafe) {
                 positions[row] = new Position (row, col);
@@ -60,7 +58,7 @@ public class NQueens_33 {
         }
     }
 
-    private boolean isSafe (int row, int col, Position[] positions) {
+    private boolean check (int row, int col, Position[] positions) {
         for (int queen = 0; queen < row; queen++) {
             if (positions[queen].row == row || positions[queen].col == col
                     || positions[queen].row - positions[queen].col == row - col
