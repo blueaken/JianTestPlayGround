@@ -20,11 +20,11 @@ public class Solution {
         }
 
         Collections.sort(nums);
-        helper(nums, result, new ArrayList<Integer>());
+        helper(nums, 0, result, new ArrayList<Integer>());
         return result;
     }
 
-    private void helper(ArrayList<Integer> nums, ArrayList<ArrayList<Integer>> result,
+    private void helper(ArrayList<Integer> nums, int start, ArrayList<ArrayList<Integer>> result,
                         ArrayList<Integer> list) {
         if (list.size() == nums.size()) {
             result.add(new ArrayList<>(list));
@@ -36,7 +36,7 @@ public class Solution {
                 continue;
             }
             list.add(nums.get(i));
-            helper(nums, result, list);
+            helper(nums, i, result, list);
             list.remove(list.size() - 1);
         }
     }
@@ -47,7 +47,6 @@ public class Solution {
         nums.add(2);
         nums.add(3);
         nums.add(4);
-        nums.add(5);
 
         Solution solution = new Solution();
         System.out.println(solution.permute(nums).size());
