@@ -40,4 +40,17 @@ public class Solution {
             list.remove(list.size() - 1);
         }
     }
+
+    public static void main(String[] args) {
+        ArrayList<Integer> nums = new ArrayList<>();
+        nums.add(1);
+        nums.add(2);
+        nums.add(3);
+        nums.add(4);
+        nums.add(5);
+
+        Solution solution = new Solution();
+        System.out.println(solution.permute(nums).size());
+        System.out.println(solution.permute(nums));
+    }
 }

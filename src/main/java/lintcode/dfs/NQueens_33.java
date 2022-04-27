@@ -54,6 +54,7 @@ public class NQueens_33 {
             if (foundSafe) {
                 positions[row] = new Position (row, col);
                 rec (n, row + 1, positions, res);
+                //better to delete the last element of array here
             }
         }
     }
