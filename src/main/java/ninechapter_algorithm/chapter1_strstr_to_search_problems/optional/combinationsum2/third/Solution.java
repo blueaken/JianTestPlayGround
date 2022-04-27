@@ -1,5 +1,7 @@
 package ninechapter_algorithm.chapter1_strstr_to_search_problems.optional.combinationsum2.third;
 
+import lintcode.dfs.CombinationSum_135;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -43,5 +45,13 @@ public class Solution {
             rec(result, num, target - num[i], list, i + 1);
             list.remove(list.size() - 1);
         }
+    }
+
+    public static void main(String[] args) {
+        int[] input = {7,1,2,5,1,6,10};
+        int target = 8;
+
+        Solution solution = new Solution ();
+        System.out.println(solution.combinationSum2(input, target));
     }
 }
