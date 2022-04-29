@@ -1,5 +1,6 @@
 package lintcode.prefixsum;
 
+// ref - https://www.youtube.com/watch?v=PwDqpOMwg6U
 public class RangeSumQuery2DMatrix_665 {
     private int[][] sum;
 
@@ -15,7 +16,7 @@ public class RangeSumQuery2DMatrix_665 {
     }
 
     public int sumRegion(int row1, int col1, int row2, int col2) {
-        //use matrix sum base
+        //convert to matrix sum base
         row1++; col1++; row2++; col2++;
 
         return sum[row2][col2] - sum[row1-1][col2] - sum[row2][col1-1] + sum[row1-1][col1-1];
