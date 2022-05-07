@@ -1,0 +1,14 @@
+试了Tushor的video中的DFS solution，确实基本都TLE了，重新看以前notes，重贴在下面：
+
+＝＝＝＝＝＝＝＝＝
+Graph section:
+
+BFS优先 因为不用递归。对图来说DFS的深度会很深。
+图的BFS 除了queue还需要Hash Map来存储是否访问过的信息，不然陷入死循环
+
+刷题bug free and fast很重要！再重复一遍。
+
+top sort 判断result size是不是和graph size一样？可以来判断这张图是不是存在循环依赖
+
+geeksforgeeks 老印网站用DFS来做是有问题的
+BFS一定要掌握，DFS optional
