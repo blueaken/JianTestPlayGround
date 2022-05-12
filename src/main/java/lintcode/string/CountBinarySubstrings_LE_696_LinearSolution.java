@@ -1,4 +1,4 @@
-package lintcode.strings;
+package lintcode.string;
 
 // using DP LPS template, O(N^2) time, get TLE. Ref to solutions get O(N), not an easy question for sure.
 // Ref - https://leetcode.com/problems/count-binary-substrings/solution/

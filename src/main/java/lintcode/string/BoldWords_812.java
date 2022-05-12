@@ -1,4 +1,4 @@
-package lintcode.strings;
+package lintcode.string;
 
 public class BoldWords_812 {
     /**

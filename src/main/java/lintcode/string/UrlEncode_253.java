@@ -1,4 +1,4 @@
-package lintcode.strings;
+package lintcode.string;
 
 import java.util.Collections;
 import java.util.Comparator;

@@ -1,4 +1,4 @@
-package lintcode.strings;
+package lintcode.string;
 
 // using DP LPS template, O(N^2) time, get TLE
 public class CountBinarySubstrings_LE_696 {
