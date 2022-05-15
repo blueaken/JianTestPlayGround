@@ -1,6 +1,7 @@
 package lintcode.binarytree;
 
 import type.TreeNode;
+import util.TreeNodeUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,5 +33,12 @@ public class BinaryTreePaths_480 {
         }
         dfs(node.left, path, res);
         dfs(node.right, path, res);
+    }
+
+    public static void main(String[] args) {
+        BinaryTreePaths_480 solution = new BinaryTreePaths_480();
+        int[] input = {0,1,-999,3,2};
+        TreeNode root = TreeNodeUtil.buildTree(input);
+        System.out.println(solution.binaryTreePaths(root));
     }
 }
