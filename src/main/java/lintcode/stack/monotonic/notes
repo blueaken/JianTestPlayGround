@@ -1,0 +1,6 @@
+基础模板Ref - https://www.bilibili.com/video/BV17z4y1y7tS?spm_id_from=333.999.0.0
+
+三步:
+1. 维持单调递增栈
+2. 放入最后结果array
+3. 当前元素入栈
