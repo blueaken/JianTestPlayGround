@@ -41,4 +41,11 @@ public class SumSubarrayMins_LE_907 {
         }
         return ans;
     }
+
+    public static void main(String[] args) {
+        SumSubarrayMins_LE_907 solution = new SumSubarrayMins_LE_907();
+        int[] input = {3,1,2,4};//17
+
+        System.out.println(solution.sumSubarrayMins(input));
+    }
 }
