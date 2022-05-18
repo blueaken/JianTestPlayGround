@@ -56,4 +56,19 @@ public class TopologicalSort_127 {
         }
         stack.add(node);
     }
+
+    public static void main(String[] args) {
+        DirectedGraphNode node0 = new DirectedGraphNode(0);
+        DirectedGraphNode node1 = new DirectedGraphNode(1);
+
+        node0.neighbors.add(node1);
+        node1.neighbors.add(node0);
+
+        ArrayList<DirectedGraphNode> graph = new ArrayList<>();
+        graph.add(node0);
+        graph.add(node1);
+
+        TopologicalSort_127 solution = new TopologicalSort_127();
+        System.out.println(solution.topSort(graph).toString());
+    }
 }
