@@ -32,6 +32,13 @@ public class SumSubarrayMins_LE_907_MonoStack {
         //PLE, start form left
         for (int i = 0; i < size; i++) {
             // use ">=" to deal with duplicate elements
+            // **Note:** If we get duplicate elements like [3, 1, 2, 4, 2], we need to go until we get <= element from the left and < element from the right or the vice versa.
+            //Same for the generation of greater counts.
+
+            // For example,  the subarray [2,1,2], both 0th and 2nd element are maximum.
+            //If we calculate for both the indices for this case, the answer would be greater than the actual answer.
+            //To prevent that we need to once consider the indices from left and ignore them from the right or
+            //consider the indices from right and ignore them from the left.
             while (!stack.isEmpty() && stack.peek()[0] >= arr[i]) {
                 stack.pop();
             }
