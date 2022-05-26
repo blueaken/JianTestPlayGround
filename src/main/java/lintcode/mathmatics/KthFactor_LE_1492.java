@@ -1,4 +1,4 @@
-package lintcode.math;
+package lintcode.mathmatics;
 
 import java.util.ArrayList;
 import java.util.List;
