@@ -109,9 +109,10 @@ public class AllNodesDistanceKBinaryTree_LE_863_AnnotateParent {
             if (target == null) {
                 target = searchTarget(root.left, val);
             }
-            if (target == null)
+            if (target == null) {
                 target = searchTarget(root.right, val);
             }
+        }
         return target;
     }
 }
