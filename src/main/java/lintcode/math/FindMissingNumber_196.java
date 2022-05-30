@@ -1,6 +1,4 @@
-package lintcode.mathmatics;
-
-import java.util.Arrays;
+package lintcode.math;
 
 public class FindMissingNumber_196 {
     /**

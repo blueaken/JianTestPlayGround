@@ -1,4 +1,4 @@
-package lintcode.mathmatics;
+package lintcode.math;
 
 public class PoorPigs_1228 {
     /**

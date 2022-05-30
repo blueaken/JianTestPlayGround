@@ -1,4 +1,4 @@
-package lintcode.mathmatics;
+package lintcode.math;
 
 public class NumPairsDivisibleBy60_LE_1010 {
     /*
