@@ -7,7 +7,7 @@ import java.util.List;
 public class SearchSuggestion_LE_1268 {
     /*
         - brute force is a good choice, because the length of string is less than 1000.
-        - Time O(M*N), M - lenght of searchWord, N - length of products array
+        - Time O(M*N), M - length of searchWord, N - length of products array
     */
     public List<List<String>> suggestedProducts(String[] products, String searchWord) {
         Arrays.sort(products);

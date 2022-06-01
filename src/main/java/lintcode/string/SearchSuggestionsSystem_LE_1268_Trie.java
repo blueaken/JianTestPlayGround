@@ -1,14 +1,16 @@
 package lintcode.string;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SearchSuggestionsSystem_LE_1268_Trie {
     /*
         - Brute force is a good choice, because the length of string is less than 1000.
-        - Time O(M*N), M - lenght of searchWord, N - length of products array
+        - Time O(M*N), M - length of searchWord, N - length of products array
         - Trie + DFS - Trie usually fits for word prefix problems.
-        - The question akss for a sorted result, and a preorder traversal of a trie always result in a sorted result. We need to limit the word traversal to 3 though.
+        - The question aks for a sorted result, and a preorder traversal of a trie always result in a sorted result. We need to limit the word traversal to 3 though.
         - Time - O(M) to build the Trie tree, where M is the number of chars in products. For each prefix search, O(len(prefix)) to find the representative Tire node, and dfs to find at most 3 words is O(1).
         - Space is O(26n) = O(n), n is the number of nodes in the Trie.
         - ref https://leetcode.com/problems/search-suggestions-system/solution/
@@ -31,7 +33,8 @@ public class SearchSuggestionsSystem_LE_1268_Trie {
 
     class Trie {
         class Node {
-            private Node[] children = new Node[26];
+//            private Node[] children = new Node[26];
+            private Map<Character, Node> children = new HashMap<>();
             boolean isEnd = false;
         };
         Node root, cur;
@@ -45,10 +48,10 @@ public class SearchSuggestionsSystem_LE_1268_Trie {
         public void insert(String word) {
             cur = this.root;
             for (char c : word.toCharArray()) {
-                if (cur.children[c - 'a'] == null) {
-                    cur.children[c - 'a'] = new Node();
+                if (!cur.children.containsKey(c)) {
+                    cur.children.put(c, new Node());
                 }
-                cur = cur.children[c - 'a'];
+                cur = cur.children.get(c);
             }
             cur.isEnd = true;
         }
@@ -57,12 +60,12 @@ public class SearchSuggestionsSystem_LE_1268_Trie {
             cur = this.root;
             this.resultBuffer = new ArrayList<>();
             for (char c : prefix.toCharArray()) {
-                if (cur.children[c - 'a'] == null) {
+                if (!cur.children.containsKey(c)) {
                     return this.resultBuffer;
                 }
-                cur = cur.children[c - 'a'];
+                cur = cur.children.get(c);
             }
-            //prefix exisits, dfs return all the words start with it in the resultBuffer, limit the size to 3
+            //prefix exists, dfs return all the words start with it in the resultBuffer, limit the size to 3
             dfs(cur, prefix);
             return this.resultBuffer;
         }
@@ -78,8 +81,8 @@ public class SearchSuggestionsSystem_LE_1268_Trie {
 
             //dfs on all possible path, in lexicographical order
             for (char c = 'a'; c <= 'z'; c++) {
-                if (cur.children[c - 'a'] != null) {
-                    dfs(cur.children[c - 'a'], word + c);
+                if (cur.children.containsKey(c)) {
+                    dfs(cur.children.get(c), word + c);
                 }
             }
 
@@ -90,11 +93,11 @@ public class SearchSuggestionsSystem_LE_1268_Trie {
          */
         public boolean search(String word) {
             cur = this.root;
-            for (char c: word.toCharArray()) {
-                if (cur.children[c - 'a'] == null) {
+            for (char c : word.toCharArray()) {
+                if (!cur.children.containsKey(c)) {
                     return false;
                 }
-                cur = cur.children[c - 'a'];
+                cur = cur.children.get(c);
             }
             return cur.isEnd;
         }
