@@ -30,21 +30,27 @@ public class WordSearch2_LE_212_BackTracking_With_Trie {
             children = new HashMap<>();
             word = null;
         }
+
+        //O(m) - m is the number of chars of the products
+        public void insert(String word) {
+            Trie cur = this;
+            for (char c : word.toCharArray()) {
+                if (!cur.children.containsKey(c)) {
+                    cur.children.put(c, new Trie());
+                }
+                cur = cur.children.get(c);
+            }
+            cur.word = word;
+        }
     }
 
     public List<String> findWords(char[][] board, String[] words) {
 
         //build the Trie, Time - O(M * L), M - the number of words, L - the longest length of word
         Trie root = new Trie();
-        for (String word : words) {
-            Trie node = root;
-            for (char c : word.toCharArray()) {
-                if (!node.children.containsKey(c)) {
-                    node.children.put(c, new Trie());
-                }
-                node = node.children.get(c);
-            }
-            node.word = word;
+        //add all words to trie.
+        for (String w : words) {
+            root.insert(w);
         }
 
         //backtracking each cell of the board, Time - O(N * 3 ^ (L - 1)), N - the number of cells of the board, L - the longest length of word

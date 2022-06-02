@@ -14,94 +14,73 @@ public class SearchSuggestionsSystem_LE_1268_Trie {
         - Time - O(M) to build the Trie tree, where M is the number of chars in products. For each prefix search, O(len(prefix)) to find the representative Tire node, and dfs to find at most 3 words is O(1).
         - Space is O(26n) = O(n), n is the number of nodes in the Trie.
         - ref https://leetcode.com/problems/search-suggestions-system/solution/
+
+        - refactor to remove the Node class and put Trie related function into Trie class itself as much as possible, have to expose startWith fun & dfs into the main class, so as to handle variable result buffer; now understand why the previous solution use a Node class inside Trie class, which encapsulates the variable result buffer and makes the main class as concise as possible
+        - this solution fail in a corner case, visit later
     */
-    public List<List<String>> suggestedProducts(String[] products, String searchWord) {
-        Trie trie = new Trie();
-        List<List<String>> result = new ArrayList<>();
-        //add all words to trie.
-        for (String w : products) {
-            trie.insert(w);
-        }
-        String prefix = new String();
-        for (char c : searchWord.toCharArray()) {
-            prefix += c;
-            result.add(trie.getWordsStartsWith(prefix));
-        }
-
-        return result;
-    }
-
     class Trie {
-        class Node {
-//            private Node[] children = new Node[26];
-            private Map<Character, Node> children = new HashMap<>();
-            boolean isEnd = false;
-        };
-        Node root, cur;
-        List<String> resultBuffer;
+        private Map<Character, Trie> children;
+        boolean isEnd;
 
-        Trie() {
-            this.root = new Node();
+        Trie () {
+            children = new HashMap<>();
         }
 
         //O(m) - m is the number of chars of the products
         public void insert(String word) {
-            cur = this.root;
+            Trie cur = this;
             for (char c : word.toCharArray()) {
                 if (!cur.children.containsKey(c)) {
-                    cur.children.put(c, new Node());
+                    cur.children.put(c, new Trie());
                 }
                 cur = cur.children.get(c);
             }
             cur.isEnd = true;
         }
 
-        public List<String> getWordsStartsWith(String prefix) {
-            cur = this.root;
-            this.resultBuffer = new ArrayList<>();
-            for (char c : prefix.toCharArray()) {
-                if (!cur.children.containsKey(c)) {
-                    return this.resultBuffer;
-                }
-                cur = cur.children.get(c);
-            }
-            //prefix exists, dfs return all the words start with it in the resultBuffer, limit the size to 3
-            dfs(cur, prefix);
-            return this.resultBuffer;
+    }
+
+    public List<List<String>> suggestedProducts(String[] products, String searchWord) {
+        Trie root = new Trie();
+        List<List<String>> result = new ArrayList<>();
+        //add all words to trie.
+        for (String w : products) {
+            root.insert(w);
         }
 
-        public void dfs(Node cur, String word) {
-            //bottom case
-            if (resultBuffer.size() == 3) {
-                return;
+        String prefix = new String();
+        List<String> resultBuffer = new ArrayList<>();
+        Trie node = root;
+        for (char c : searchWord.toCharArray()) {
+            prefix += c;
+            if (!node.children.containsKey(c)) {
+                result.add(resultBuffer);
             }
-            if (cur.isEnd) {
-                resultBuffer.add(word);
-            }
-
-            //dfs on all possible path, in lexicographical order
-            for (char c = 'a'; c <= 'z'; c++) {
-                if (cur.children.containsKey(c)) {
-                    dfs(cur.children.get(c), word + c);
-                }
-            }
-
+            node = node.children.get(c);
+            dfs(node, prefix, resultBuffer);
+            result.add(resultBuffer);
+            resultBuffer = new ArrayList<>();
         }
 
-        /*
-            for fun - not related to the problem
-         */
-        public boolean search(String word) {
-            cur = this.root;
-            for (char c : word.toCharArray()) {
-                if (!cur.children.containsKey(c)) {
-                    return false;
-                }
-                cur = cur.children.get(c);
-            }
-            return cur.isEnd;
+        return result;
+    }
+
+    private List<String> dfs(Trie cur, String word, List<String> resultBuffer) {
+        //bottom case
+        if (resultBuffer.size() == 3) {
+            return resultBuffer;
+        }
+        if (cur.isEnd) {
+            resultBuffer.add(word);
         }
 
+        //dfs on all possible path, in lexicographical order
+        for (char c = 'a'; c <= 'z'; c++) {
+            if (cur.children.containsKey(c)) {
+                dfs(cur.children.get(c), word + c, resultBuffer);
+            }
+        }
+        return resultBuffer;
     }
 
     public static void main(String[] args) {
