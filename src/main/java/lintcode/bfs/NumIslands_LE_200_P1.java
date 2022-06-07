@@ -3,10 +3,6 @@ package lintcode.bfs;
 import java.util.LinkedList;
 import java.util.Queue;
 
-/*
-    Idea - BFS, traverse the grid, explore each island element, mark all its neighbor island element to water element, and count;
-    - Time is O(N), N is the number of cells
-*/
 public class NumIslands_LE_200_P1 {
     /*
         Idea
