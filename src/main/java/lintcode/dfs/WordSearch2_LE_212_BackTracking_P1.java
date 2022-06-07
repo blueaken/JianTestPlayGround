@@ -3,7 +3,7 @@ package lintcode.dfs;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WordSearch2_LE_212_BackTracking {
+public class WordSearch2_LE_212_BackTracking_P1 {
     /*
         - gut feeling, dfs(backtracking), similar to word search I
         - Time is O(M * N * 3^L), M is the number of words, N is the number of cells on the board, L is the average length of the words and get TLE with no surprise
@@ -16,51 +16,50 @@ public class WordSearch2_LE_212_BackTracking {
     public List<String> findWords(char[][] board, String[] words) {
         List<String> res = new ArrayList<>();
         boolean[] found = new boolean[words.length];
-        for (int n = 0; n < words.length; n++) {
+        for (int k = 0; k < words.length; k++) {
             for (int i = 0; i < board.length; i++) {
-                if (!found[n]) {
-                    for (int j = 0; j < board[0].length; j++) {
-                        if (backtracking(i, j, 0, words[n], board)) {
-                            found[n] = true;
-                            res.add(words[n]);
-                            break;
-                        }
-                    }
-                } else {
+                if (found[k]) {
                     break;
+                }
+                for (int j = 0; j < board[0].length; j++) {
+                    if (dfs(board, i, j, 0, words[k])) {
+                        res.add(words[k]);
+                        found[k] = true;
+                        break;
+                    }
                 }
             }
         }
         return res;
     }
 
-    private boolean backtracking(int i, int j, int pos, String word, char[][] board) {
+    private boolean dfs(char[][] board, int row, int col, int pos, String word) {
         if (pos == word.length()) {
             return true;
         }
 
-        if (i < 0 || i == board.length || j < 0 || j == board[0].length
-                || board[i][j] != word.charAt(pos)) {
+        if (row < 0 || row == board.length || col < 0 || col == board[0].length || board[row][col] != word.charAt(pos)) {
             return false;
         }
 
         int[] dx = {1, -1, 0, 0};
         int[] dy = {0, 0, 1, -1};
-        board[i][j] = '#'; //mark as visited
+        board[row][col] = '#';
         boolean ret = false;
-        for (int k = 0; k < 4; k++) {
-            ret = backtracking(i + dx[k], j + dy[k], pos + 1, word, board);
+        for (int i = 0; i < 4; i++) {
+            ret = dfs(board, row + dx[i], col + dy[i], pos + 1, word);
             if (ret) {
                 break;
             }
         }
-        board[i][j] = word.charAt(pos);//always backtracking, not matter found or not for next search
+        board[row][col] = word.charAt(pos);
         return ret;
     }
 
     public static void main(String[] args) {
-        WordSearch2_LE_212_BackTracking solution = new WordSearch2_LE_212_BackTracking();
-//        char[][] board = {{'o','a','a','n'},{'e','t','a','e'},{'i','h','k','r'},{'i','f','l','v'}};
+        WordSearch2_LE_212_BackTracking_P1 solution = new WordSearch2_LE_212_BackTracking_P1();
+
+        //        char[][] board = {{'o','a','a','n'},{'e','t','a','e'},{'i','h','k','r'},{'i','f','l','v'}};
 //        String[] words = {"oath","pea","eat","rain"};
 //        //[oath, eat]
 
