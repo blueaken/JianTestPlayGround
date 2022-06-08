@@ -4,8 +4,8 @@ import java.util.*;
 
 public class AnalyzeUserWebsiteVisitPattern_LE_1152 {
     /*
-        - the desciption is kinda confusion, but it is fine for me
-        - use brute force is straighttforward and best for this problem
+        - the description is kinda confusion, but it is fine for me
+        - use brute force is straightforward and best for this problem
         - Time is O(N^3), N - is the size of website one user visits
     */
     public List<String> mostVisitedPattern(String[] username, int[] timestamp, String[] website) {
