@@ -14,7 +14,7 @@ public class SubArrayRanges_LE_2104 {
         }
         int size = nums.length;
 
-        //step 1. for each array element calculate the PLE and NLE, for the minimum occurence
+        //step 1. for each array element calculate the PLE and NLE, for the minimum occurrence
         Stack<int[]> stack = new Stack<>();
         long[] left_less = new long[size];
         for (int i = 0; i < size; i++) {
@@ -36,7 +36,7 @@ public class SubArrayRanges_LE_2104 {
         }
         stack.clear();
 
-        //step 2. for each array element calculate the PGE and NGE, for the maximum occurence
+        //step 2. for each array element calculate the PGE and NGE, for the maximum occurrence
         long[] left_greater = new long[size];
         for (int i = 0; i < size; i++) {
             while (!stack.isEmpty() && stack.peek()[0] <= nums[i]) {
@@ -63,5 +63,13 @@ public class SubArrayRanges_LE_2104 {
             sum += nums[i] * (left_greater[i] * right_greater[i] - left_less[i] * right_less[i]);
         }
         return sum;
+    }
+
+    public static void main(String[] args) {
+        SubArrayRanges_LE_2104 solution = new SubArrayRanges_LE_2104();
+        int[] nums = {1,2,3}; //4
+        //        int[] nums = {4,-2,-3,4,1}; //59
+
+        System.out.println(solution.subArrayRanges(nums));
     }
 }

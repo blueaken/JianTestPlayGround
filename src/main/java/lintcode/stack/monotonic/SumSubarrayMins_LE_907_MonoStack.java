@@ -8,7 +8,7 @@ public class SumSubarrayMins_LE_907_MonoStack {
         1. use the lps dp template to found the list of sub arrays, then sum the mins
         Time - O(N^3) + O(N), simplified to O(N^3), Space - O(N^2).
 
-        2. with Monotonic Stack, to any element A[i], found the position of PLE and NLE, then the numer of subarray between is m*n, m - the distance to PLE, n - the distance to NLE. For each subarray, the min is A[i]. A[i]*m*n is the A[i] part contribute to the answer.
+        2. with Monotonic Stack, to any element A[i], found the position of PLE and NLE, then the number of subarray between is m*n, m - the distance to PLE, n - the distance to NLE. For each subarray, the min is A[i]. A[i]*m*n is the A[i] part contribute to the answer.
         Ref - https://leetcode.com/problems/sum-of-subarray-minimums/discuss/178876/stack-solution-with-very-detailed-explanation-step-by-step
         Time - O(N + N + N), simplified to O(N), Space - O(N)
 
