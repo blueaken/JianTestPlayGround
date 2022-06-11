@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SearchSuggestionsSystem_LE_1268_Trie {
+public class SearchSuggestionsSystem_LE_1268_Trie_P1 {
     /*
         - Brute force is a good choice, because the length of string is less than 1000.
         - Time O(M*N), M - length of searchWord, N - length of products array
@@ -19,6 +19,7 @@ public class SearchSuggestionsSystem_LE_1268_Trie {
         - this solution fail in a corner case, visit later
         - bug fixed 6/11/2022, ACed
     */
+
     class Trie {
         private Map<Character, Trie> children;
         boolean isEnd;
@@ -67,14 +68,13 @@ public class SearchSuggestionsSystem_LE_1268_Trie {
             result.add(resultBuffer);
             resultBuffer = new ArrayList<>();
         }
-
         return result;
     }
 
-    private List<String> dfs(Trie cur, String word, List<String> resultBuffer) {
+    private void dfs(Trie cur, String word, List<String> resultBuffer) {
         //bottom case
         if (resultBuffer.size() == 3) {
-            return resultBuffer;
+            return;
         }
         if (cur.isEnd) {
             resultBuffer.add(word);
@@ -86,11 +86,11 @@ public class SearchSuggestionsSystem_LE_1268_Trie {
                 dfs(cur.children.get(c), word + c, resultBuffer);
             }
         }
-        return resultBuffer;
+        return;
     }
 
     public static void main(String[] args) {
-        SearchSuggestionsSystem_LE_1268_Trie solution = new SearchSuggestionsSystem_LE_1268_Trie();
+        SearchSuggestionsSystem_LE_1268_Trie_P1 solution = new SearchSuggestionsSystem_LE_1268_Trie_P1();
 //        String[] products = {"mobile","mouse","moneypot","monitor","mousepad"};
 //        String searchWord = "mouse";
 ////        [
