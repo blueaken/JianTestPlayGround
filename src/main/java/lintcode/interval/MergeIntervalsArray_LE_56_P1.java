@@ -18,7 +18,7 @@ public class MergeIntervalsArray_LE_56_P1 {
                 res.getLast()[1] = Math.max(res.getLast()[1], intervals[i][1]);
             }
         }
-        return res.toArray(new int[res.size()][]);
+        return res.toArray(new int[res.size()][2]);
     }
 
     public static void main(String[] args) {
