@@ -1,6 +1,7 @@
 package lintcode.dynamicprogramming2;
 
 public class NumRollsToTarget_LE_1155 {
+    //try dp
     public int numRollsToTarget(int n, int k, int target) {
         if (n == 0 && target == 0) {
             return 1;
@@ -15,7 +16,7 @@ public class NumRollsToTarget_LE_1155 {
 
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= target; j++) {
-                //sikp the calculation if j bigger than max possible value
+                //skip the calculation if j bigger than max possible value
                 if (j > i * k) {
                     continue;
                 }
