@@ -5,7 +5,8 @@ import java.util.LinkedList;
 
 public class MergeIntervalsArray_LE_56_P1 {
     /*
-        Time - O(NLogN), Space - O(N)
+        - Time: O(NLogN), Space: O(N)
+        - related PartitionLabels_LE_763
     */
     public int[][] merge(int[][] intervals) {
         Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
