@@ -3,7 +3,7 @@ package lintcode.string;
 import java.util.HashMap;
 import java.util.Map;
 
-public class IntToRoman_12 {
+public class IntToRoman_LE_12 {
     /*
         1. there are multiple combinations of roman number to integer, choose the largest possible one.
         2. try solve it with just the 7 formal number without 6 additional 2 number combinations, just in case.
