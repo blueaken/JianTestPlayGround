@@ -1,9 +1,10 @@
-package lintcode.stack;
+package lintcode.linkedlist;
 
-import java.util.Stack;
 import type.ListNode;
 
-public class MaxTwinSumLinkedList_LE_2130 {
+import java.util.Stack;
+
+public class MaxTwinSumLinkedList_LE_2130_P1 {
     /*
         - 1. find the size of the list
         - 2. init a stack of half list size and push the first half list
@@ -11,12 +12,8 @@ public class MaxTwinSumLinkedList_LE_2130 {
         - Time is O(N), need 2 iteration of the list, Space is O(N), for the stack
     */
     public int pairSum(ListNode head) {
-        if (head == null) {
-            return 0;
-        }
-
-        int size = 0;
         ListNode node = head;
+        int size = 0;
         while (node != null) {
             node = node.next;
             size++;
@@ -25,15 +22,27 @@ public class MaxTwinSumLinkedList_LE_2130 {
         Stack<Integer> stack = new Stack<>();
         node = head;
         int count = size / 2, max = 0;
-        while(node != null) {
+        while (node != null) {
             if (count > 0) {
                 stack.push(node.val);
                 count--;
             } else {
-                max = Math.max(max, node.val + stack.pop());
+                int cur = node.val + stack.pop();
+                max = Math.max(max, cur);
             }
             node = node.next;
         }
         return max;
+    }
+
+    public static void main(String[] args) {
+        //4,2,2,3
+        ListNode head = new ListNode(4);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(2);
+        head.next.next.next = new ListNode(3);
+
+        MaxTwinSumLinkedList_LE_2130_P1 solution = new MaxTwinSumLinkedList_LE_2130_P1();
+        System.out.println(solution.pairSum(head));
     }
 }
