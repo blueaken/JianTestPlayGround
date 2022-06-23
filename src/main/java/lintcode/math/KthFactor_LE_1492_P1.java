@@ -3,12 +3,12 @@ package lintcode.math;
 import java.util.ArrayList;
 import java.util.List;
 
-public class KthFactor_LE_1492 {
+public class KthFactor_LE_1492_P1 {
     /*
         - gut feel is brute force - Time is also efficient O(N)
         - ref the solution link, only need scan from 1 to sqrt(n), remain k-- in the process. Since all factors has a pair relation, get the result from N / factors(factors.size - k).
         - Note a correction for perfect square is required, since it has a hidden duplicate factor not in the list.
-        - Time is O(sqrt(n)), space is O(min(k, squrt(n))) to store the list of factors
+        - Time is O(sqrt(n)), space is O(min(k, sqrt(n))) to store the list of factors
     */
     public int kthFactor(int n, int k) {
         List<Integer> factors = new ArrayList<>();
@@ -23,23 +23,27 @@ public class KthFactor_LE_1492 {
             }
         }
 
-        //adjust if n is a perfect square
+        //adjust for perfect square number
         if (sqrtN * sqrtN == n) {
             k++;
         }
 
-        return k <= factors.size() ? n / factors.get(factors.size() - k) : -1;
+        if (k <= factors.size()) {
+            return n / factors.get(factors.size() - k);
+        } else {
+            return -1;
+        }
     }
 
     public static void main(String[] args) {
-        KthFactor_LE_1492 solution = new KthFactor_LE_1492();
+        KthFactor_LE_1492_P1 solution = new KthFactor_LE_1492_P1();
+//        int n = 12;
+//        int k = 3;
+//        //3
+
 //        int n = 12;
 //        int k = 5;
 //        //6
-
-//        int n = 15;
-//        int k = 3;
-//        //5
 
         int n = 16;
         int k = 5;
