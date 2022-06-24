@@ -9,47 +9,47 @@ import java.util.Stack;
  * You should not remove it, and you can define some classes to implement it.
  */
 
-abstract class Node {
-    public abstract int evaluate();
-    // define your fields here
-};
+//abstract class Node {
+//    public abstract int evaluate();
+//    // define your fields here
+//};
 
-class TreeNode extends Node {
-    String val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode (String val) {
-        this.val = val;
-    }
-
-    @Override
-    public int evaluate() {
-        return dfs(this);
-    }
-
-    private int dfs(TreeNode node) {
-        if (node.left == null && node.right == null) {
-            return Integer.valueOf(node.val);
-        }
-
-        String cur = node.val;
-        int res = 0;
-        if (cur.equals("+")) {
-            res = dfs(node.left) + dfs(node.right);
-        }
-        if (cur.equals("-")) {
-            res = dfs(node.left) - dfs(node.right);
-        }
-        if (cur.equals("*")) {
-            res = dfs(node.left) * dfs(node.right);
-        }
-        if (cur.equals("/")) {
-            res = dfs(node.left) / dfs(node.right);
-        }
-        return res;
-    }
-}
+//class TreeNode extends Node {
+//    String val;
+//    TreeNode left;
+//    TreeNode right;
+//
+//    TreeNode (String val) {
+//        this.val = val;
+//    }
+//
+//    @Override
+//    public int evaluate() {
+//        return dfs(this);
+//    }
+//
+//    private int dfs(TreeNode node) {
+//        if (node.left == null && node.right == null) {
+//            return Integer.valueOf(node.val);
+//        }
+//
+//        String cur = node.val;
+//        int res = 0;
+//        if (cur.equals("+")) {
+//            res = dfs(node.left) + dfs(node.right);
+//        }
+//        if (cur.equals("-")) {
+//            res = dfs(node.left) - dfs(node.right);
+//        }
+//        if (cur.equals("*")) {
+//            res = dfs(node.left) * dfs(node.right);
+//        }
+//        if (cur.equals("/")) {
+//            res = dfs(node.left) / dfs(node.right);
+//        }
+//        return res;
+//    }
+//}
 
 /**
  * This is the TreeBuilder class.
@@ -62,25 +62,25 @@ class TreeNode extends Node {
     - dfs the tree and evaluate the result
  */
 public class BuildExpressionTreeWithEvaluateFun_LE_1628 {
-    Node buildTree(String[] postfix) {
-        Set<String> operators = new HashSet<>();
-        operators.add("+");
-        operators.add("-");
-        operators.add("*");
-        operators.add("/");
-
-        Stack<TreeNode> stack = new Stack<>();
-        for (String s : postfix) {
-            TreeNode node = new TreeNode(s);
-            if (operators.contains(s)) {
-                node.right = stack.pop();
-                node.left = stack.pop();
-            }
-            stack.push(node);
-        }
-
-        return stack.pop();
-    }
+//    Node buildTree(String[] postfix) {
+//        Set<String> operators = new HashSet<>();
+//        operators.add("+");
+//        operators.add("-");
+//        operators.add("*");
+//        operators.add("/");
+//
+//        Stack<TreeNode> stack = new Stack<>();
+//        for (String s : postfix) {
+//            TreeNode node = new TreeNode(s);
+//            if (operators.contains(s)) {
+//                node.right = stack.pop();
+//                node.left = stack.pop();
+//            }
+//            stack.push(node);
+//        }
+//
+//        return stack.pop();
+//    }
 
     /**
      * Your TreeBuilder object will be instantiated and called as such:
@@ -90,9 +90,9 @@ public class BuildExpressionTreeWithEvaluateFun_LE_1628 {
      */
 
     public static void main(String[] args) {
-        BuildExpressionTreeWithEvaluateFun_LE_1628 solution = new BuildExpressionTreeWithEvaluateFun_LE_1628();
-        String[] postfix = {"3", "4", "+", "2", "*", "7", "/"};//2
-        Node expTree = solution.buildTree(postfix);
-        System.out.println(expTree.evaluate());
+//        BuildExpressionTreeWithEvaluateFun_LE_1628 solution = new BuildExpressionTreeWithEvaluateFun_LE_1628();
+//        String[] postfix = {"3", "4", "+", "2", "*", "7", "/"};//2
+//        Node expTree = solution.buildTree(postfix);
+//        System.out.println(expTree.evaluate());
     }
 }
