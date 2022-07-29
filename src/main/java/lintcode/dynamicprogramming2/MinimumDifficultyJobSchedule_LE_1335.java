@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class MinimumDifficultyJobSchedule_LE_1335 {
 
     /*
-        ref - https://www.youtube.com/watch?v=eRBpfoWujQM, 花花酱讲得不错，虽然他用的是Python;
+        ref - https://www.youtube.com/watch?v=eRBpfoWujQM, 花花酱讲得不错，虽然他用的是C++;
         - Init - dp[0][0] = 0, others to -1
         - Transition - dp[i][k] = min{dp[j][k-1] + max(jobDiff[j+1 ~ i])}, j >= k - 1, j < i;
         - Answer - dp[n][d]
