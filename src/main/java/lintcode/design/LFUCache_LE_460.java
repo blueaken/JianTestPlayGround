@@ -14,7 +14,6 @@ public class LFUCache_LE_460 {
         Integer key;
         Integer value;
         Integer freq;
-        //pointer to the node in the list in Java?
 
         CacheNode(Integer key, Integer value, Integer freq) {
             this.key = key;
