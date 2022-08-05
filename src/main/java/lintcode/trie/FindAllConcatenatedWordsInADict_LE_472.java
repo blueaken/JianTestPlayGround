@@ -8,7 +8,7 @@ import java.util.List;
 
 public class FindAllConcatenatedWordsInADict_LE_472 {
     /*
-        - similar to wordbreak 139/140, 字典树 + DFS, DFS通过记忆化优化
+        - similar to word break 139/140, 字典树 + DFS, DFS通过记忆化优化
         - ref https://www.youtube.com/watch?v=dsnTJscs4BA
     */
 
