@@ -21,6 +21,7 @@ public class SlidingWindowMaximum_LE_239_Opt {
             }
             dq.addLast(i);
             if (i - k + 1 >= 0) {
+                //when there is k elements in the window
                 ans[i - k + 1] = nums[dq.getFirst()];
                 //note if the window's first element is the current max, pop it to avoid effect next calc
                 if (i - k + 1 == dq.getFirst()) {
