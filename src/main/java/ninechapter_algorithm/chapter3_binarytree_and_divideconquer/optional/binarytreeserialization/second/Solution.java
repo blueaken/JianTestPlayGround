@@ -1,6 +1,7 @@
 package ninechapter_algorithm.chapter3_binarytree_and_divideconquer.optional.binarytreeserialization.second;
 
 import type.TreeNode;
+import util.TreeNodeUtil;
 
 import java.util.StringTokenizer;
 
@@ -70,6 +71,6 @@ public class Solution {
 
         String serialization = solution.serialize(treeNode);
         System.out.println(serialization);
-        solution.deserialize(serialization);
+        TreeNodeUtil.printTree(solution.deserialize(serialization));
     }
 }
