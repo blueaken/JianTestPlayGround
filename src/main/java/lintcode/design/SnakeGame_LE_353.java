@@ -80,7 +80,7 @@ public class SnakeGame_LE_353 {
             //2 - move without food
             snake.offerFirst(newHead);
             snake.pollLast();
-            map.remove(tail); //remove tail first in case the new head is the tail
+            map.remove(tail); //note: need to remove tail first in map in case the new head is the tail
             map.put(newHead, true);
         }
 
@@ -118,7 +118,7 @@ public class SnakeGame_LE_353 {
         System.out.println(solution.move("L"));//5
 
         System.out.println(solution.move("L"));//6
-        System.out.println(solution.move("U"));//7
+        System.out.println(solution.move("U"));//7, new head is previous tail case
         System.out.println(solution.move("U"));//7
         System.out.println(solution.move("R"));//7
         System.out.println(solution.move("R"));//7
