@@ -12,6 +12,8 @@ public class TheMaze2_LE_505 {
           visited container, instead using a distance 2D array directly. Since even if a cell is visited before, as far as cur
           distance is shorter than previous one, it can also be visited again.
         - refer to solution link
+        - Time is O(m x n x max(m, n)), Complete traversal of maze will be done in the worst case. Here, mm and nn refers to the number of rows and columns of the maze. Further, for every current node chosen, we can travel upto a maximum depth of \text{max}(m,n)max(m,n) in any direction.
+        - Space is O(m x n). Queue size can grow up to m*n in the worst case.
         - further read can be made on the Dijkstra Algorithm for interest, although Dijkstra is very unlikely asked in Amazon interview.
     */
     public int shortestDistance(int[][] maze, int[] start, int[] destination) {
