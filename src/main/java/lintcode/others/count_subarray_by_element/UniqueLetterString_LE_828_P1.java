@@ -1,4 +1,4 @@
-package lintcode.dynamicprogramming2;
+package lintcode.others.count_subarray_by_element;
 
 public class UniqueLetterString_LE_828_P1 {
     /*
