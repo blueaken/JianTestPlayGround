@@ -43,21 +43,25 @@ public class FindMedianFromDataStream_LE_295_OptWithHeap {
 
     public static void main(String[] args) {
         FindMedianFromDataStream_LE_295_OptWithHeap solution = new FindMedianFromDataStream_LE_295_OptWithHeap();
-//        solution.addNum(1);
-//        solution.addNum(2);
-//        System.out.println(solution.findMedian()); //1.50
-//        solution.addNum(3);
-//        System.out.println(solution.findMedian()); //2.00
+        solution.addNum(1);
+        solution.addNum(2);
+        System.out.println(solution.findMedian()); //1.50
+        solution.addNum(3);
+        System.out.println(solution.findMedian()); //2.00
+        solution.addNum(4);
+        System.out.println(solution.findMedian()); //2.50
+        solution.addNum(5);
+        System.out.println(solution.findMedian()); //3.00
 
-        solution.addNum(-1);
-        System.out.println(solution.findMedian()); //-1.00
-        solution.addNum(-2);
-        System.out.println(solution.findMedian()); //-1.50
-        solution.addNum(-3);
-        System.out.println(solution.findMedian()); //-2.00
-        solution.addNum(-4);
-        System.out.println(solution.findMedian()); //-2.50
-        solution.addNum(-5);
-        System.out.println(solution.findMedian()); //-3.00
+//        solution.addNum(-1);
+//        System.out.println(solution.findMedian()); //-1.00
+//        solution.addNum(-2);
+//        System.out.println(solution.findMedian()); //-1.50
+//        solution.addNum(-3);
+//        System.out.println(solution.findMedian()); //-2.00
+//        solution.addNum(-4);
+//        System.out.println(solution.findMedian()); //-2.50
+//        solution.addNum(-5);
+//        System.out.println(solution.findMedian()); //-3.00
     }
 }
