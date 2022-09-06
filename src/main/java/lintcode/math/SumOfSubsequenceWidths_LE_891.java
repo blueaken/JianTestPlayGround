@@ -7,6 +7,7 @@ public class SumOfSubsequenceWidths_LE_891 {
         - ref https://leetcode.com/problems/sum-of-subsequence-widths/discuss/2176301/JAVA-EASY-COMMENTED-SOLUTION & Huifeng Guan webpage
         - since the order does not matter, we sort it first
         - for any element nums[i] in the sorted array, it plays in the answer only when it is max and min of a subsequence. For each nums[i], there are 2^i possibilities of max, and 2^(n-i) possibilities of min, once this is figured out, we can easily solve this in O(NLogN) + O(N) = O(NLogN).
+        - can be further optimized, but this version should be good for interview
     */
     public int sumSubseqWidths(int[] nums) {
         int n = nums.length;
