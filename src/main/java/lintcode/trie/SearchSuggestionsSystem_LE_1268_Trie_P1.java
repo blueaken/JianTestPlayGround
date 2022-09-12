@@ -1,4 +1,4 @@
-package lintcode.string;
+package lintcode.trie;
 
 import java.util.ArrayList;
 import java.util.HashMap;
