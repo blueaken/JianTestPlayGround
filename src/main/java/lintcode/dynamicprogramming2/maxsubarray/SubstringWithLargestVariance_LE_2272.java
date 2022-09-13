@@ -1,4 +1,4 @@
-package lintcode.dynamicprogramming2;
+package lintcode.dynamicprogramming2.maxsubarray;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -40,7 +40,7 @@ public class SubstringWithLargestVariance_LE_2272 {
     }
 
     private int helper(int[] occur) {
-        //here the logic is similar to 053, but the tricky is have to count at least one '-1' occurence, otherewise the max can be only one char case
+        //here the logic is similar to 053, but the tricky is have to count at least one '-1' occurrence, otherwise the max can be only one char case
         int ret = 0;
         int[] dp1 = new int[occur.length];
         dp1[0] = occur[0];

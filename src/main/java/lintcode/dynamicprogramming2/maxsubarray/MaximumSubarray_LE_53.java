@@ -1,4 +1,4 @@
-package lintcode.dynamicprogramming;
+package lintcode.dynamicprogramming2.maxsubarray;
 
 public class MaximumSubarray_LE_53 {
     /*
