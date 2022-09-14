@@ -69,4 +69,33 @@ public class CriticalConnections_LE_1192_P1 {
 
         return jump[node];
     }
+
+    public static void main(String[] args) {
+        CriticalConnections_LE_1192_P1 solution = new CriticalConnections_LE_1192_P1();
+        int n = 4;
+        List<Integer> edge1 = new ArrayList<>();
+        edge1.add(0);
+        edge1.add(1);
+
+        List<Integer> edge2 = new ArrayList<>();
+        edge2.add(1);
+        edge2.add(2);
+
+        List<Integer> edge3 = new ArrayList<>();
+        edge3.add(2);
+        edge3.add(0);
+
+        List<Integer> edge4 = new ArrayList<>();
+        edge4.add(1);
+        edge4.add(3);
+
+        List<List<Integer>> connections = new ArrayList<>();
+        connections.add(edge1);
+        connections.add(edge2);
+        connections.add(edge3);
+        connections.add(edge4);
+        //expect [[1,3]] or [[3,1]]
+
+        System.out.println(solution.criticalConnections(n, connections));
+    }
 }
