@@ -1,8 +1,8 @@
-package lintcode.stack.monotonic;
+package lintcode.others.count_subarray_by_element;
 
 import java.util.Stack;
 
-public class TotalStrengthOfWizards_LE_2281_1_Based {
+public class TotalStrengthOfWizards_LE_2281 {
     /*
         - take some time to understand the request, it is similar to 907, the diff is one product is "The total of all the individual strengths of the wizards in the group", instead of only the min value itself; this part uses a Presum variant solution, leave it for now, practice 907 first
         - since the strength.length is of 10^5 level, not good to use travese all subarray combination, will TLE for sure
@@ -105,7 +105,7 @@ public class TotalStrengthOfWizards_LE_2281_1_Based {
     }
 
     public static void main(String[] args) {
-        TotalStrengthOfWizards_LE_2281_1_Based solution = new TotalStrengthOfWizards_LE_2281_1_Based();
+        TotalStrengthOfWizards_LE_2281 solution = new TotalStrengthOfWizards_LE_2281();
         int[] strength = {1,3,1,2};//44
 
         System.out.println(solution.totalStrength(strength));
