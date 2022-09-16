@@ -1,4 +1,4 @@
-package lintcode.heap;
+package lintcode.greedy;
 
 import java.util.PriorityQueue;
 
