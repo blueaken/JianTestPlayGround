@@ -46,4 +46,12 @@ public class FindTheLongestSubstringContainingVowelsInEvenCounts_LE_1371 {
 
         return ans;
     }
+
+    public static void main(String[] args) {
+        //test
+        //1<<10
+        System.out.println(1<<10);
+        //10<<1
+        System.out.println(10<<1);
+    }
 }
