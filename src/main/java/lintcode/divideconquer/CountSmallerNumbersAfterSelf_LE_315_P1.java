@@ -47,7 +47,7 @@ public class CountSmallerNumbersAfterSelf_LE_315_P1 {
         helper(nums, sorted, start, mid, count);
         helper(nums, sorted, mid+1, end, count);
 
-        //addtional work for the left half
+        //additional work for the left half
         for (int i = start; i <= mid; i++) {
             int lowerBound = binarySearch(sorted, mid+1, end, nums[i]); //similar to C++ lowerBound()
             count[i] += lowerBound - (mid + 1);
@@ -56,7 +56,7 @@ public class CountSmallerNumbersAfterSelf_LE_315_P1 {
         Arrays.sort(sorted, start, end + 1);
     }
 
-
+    //二分查找数组中等于key的位置，找到返回该数字的最小地址，不存在则give the upper bound of key
     public int binarySearch(int arr[], int low, int high, int key){
         while(low < high){
             int mid = low + (high - low)/2;
@@ -71,7 +71,12 @@ public class CountSmallerNumbersAfterSelf_LE_315_P1 {
         if (arr[low] < key) {
             low++;
         }
-
         return low;
+    }
+
+    public static void main(String[] args) {
+        CountSmallerNumbersAfterSelf_LE_315_P1 solution = new CountSmallerNumbersAfterSelf_LE_315_P1();
+        int[] nums = {5,2,6,1};
+        System.out.println(solution.countSmaller(nums)); //{2,1,1,0}
     }
 }
