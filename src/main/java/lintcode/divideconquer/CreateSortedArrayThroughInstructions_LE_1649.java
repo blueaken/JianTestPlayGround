@@ -1,4 +1,4 @@
-package lintcode.sort;
+package lintcode.divideconquer;
 
 public class CreateSortedArrayThroughInstructions_LE_1649 {
     /*

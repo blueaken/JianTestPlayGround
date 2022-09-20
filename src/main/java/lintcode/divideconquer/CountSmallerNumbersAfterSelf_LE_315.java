@@ -1,4 +1,4 @@
-package lintcode.sort;
+package lintcode.divideconquer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,7 +7,7 @@ import java.util.List;
 public class CountSmallerNumbersAfterSelf_LE_315 {
     /*
         - ref https://www.youtube.com/watch?v=B7vkfZcJNeY
-        - divide & conqure then merge sort
+        - divide & conquer then merge sort
         - similar to 1649, which is somehow harder
     */
 

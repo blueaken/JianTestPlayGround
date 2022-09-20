@@ -20,11 +20,8 @@ public class MedianOfTwoSortedArrays_LE_4 {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
         int len = nums1.length + nums2.length;
-        double ret = 0.0;
         if (len % 2 == 1) {
-            // return findKthElement(nums1, 0, nums2, 0, len/2+1);
-            ret = findKthElement(nums1, 0, nums2, 0, len/2+1);
-            return ret;
+            return findKthElement(nums1, 0, nums2, 0, len/2+1);
         } else {
             return (findKthElement(nums1, 0, nums2, 0, len/2) + findKthElement(nums1, 0, nums2, 0, len/2+1)) / 2;
         }
@@ -55,14 +52,10 @@ public class MedianOfTwoSortedArrays_LE_4 {
         }
         k2 = k - k1;
 
-        double ret = 0.0;
         if (nums1[a + k1 -1] < nums2[b + k2 -1]) {
-            // return findKthElement(nums1, a + k1, nums2, b, k - k1);
-            ret = findKthElement(nums1, a + k1, nums2, b, k - k1);
+            return findKthElement(nums1, a + k1, nums2, b, k - k1);
         } else {
-            // return findKthElement(nums1, a, nums2, b + k2, k - k2);
-            ret = findKthElement(nums1, a, nums2, b + k2, k - k2);
+            return findKthElement(nums1, a, nums2, b + k2, k - k2);
         }
-        return ret;
     }
 }
