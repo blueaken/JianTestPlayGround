@@ -49,28 +49,28 @@ public class CountSmallerNumbersAfterSelf_LE_315_P1 {
 
         //additional work for the left half
         for (int i = start; i <= mid; i++) {
-            int lowerBound = binarySearch(sorted, mid+1, end, nums[i]); //similar to C++ lowerBound()
+            int lowerBound = lower_bound_bs(sorted, mid+1, end, nums[i]); //similar to C++ lowerBound()
             count[i] += lowerBound - (mid + 1);
         }
 
         Arrays.sort(sorted, start, end + 1);
     }
 
-    //二分查找数组中等于key的位置，找到返回该数字的最小地址，不存在则give the upper bound of key
-    public int binarySearch(int arr[], int low, int high, int key){
-        while(low < high){
-            int mid = low + (high - low)/2;
-            if(arr[mid] >= key){
+    //二分查找数组中等于key的位置，找到返回该数字的最小地址，不存在则return the insert position
+    public int lower_bound_bs(int arr[], int low, int high, int key) {
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+            if (arr[mid] >= key) {
                 high = mid;
-            } else{
-                low = mid+1;
+            } else {
+                low = mid + 1;
             }
         }
-
-        //不存在则give the upper bound of key
+        //不存在则return the insert position
         if (arr[low] < key) {
             low++;
         }
+
         return low;
     }
 

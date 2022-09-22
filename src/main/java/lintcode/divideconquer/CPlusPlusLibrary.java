@@ -31,6 +31,24 @@ public class CPlusPlusLibrary {
         return index + diff;
     }
 
+    //二分查找数组中等于key的位置，找到返回该数字的最小地址，不存在则return the insert position
+    public int lower_bound_bs(int arr[], int low, int high, int key) {
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+            if (arr[mid] >= key) {
+                high = mid;
+            } else {
+                low = mid + 1;
+            }
+        }
+        //不存在则return the insert position
+        if (arr[low] < key) {
+            low++;
+        }
+
+        return low;
+    }
+
     //Using build in Arrays.binarySearch()
     public static int upper_bound(int arr[], int start, int end, int key){
         int diff = start;
@@ -49,43 +67,44 @@ public class CPlusPlusLibrary {
         return index + diff;
     }
 
+    //二分查找数组中等于key的位置，找到返回该数字的最大地址+1，当Key大于数组范围或者等于最后一个元素时，返回最大地址+1
+    public int upper_bound_bs(int arr[], int low, int high, int key) {
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+            if (arr[mid] <= key) {
+                low = mid + 1;
+            } else {
+                high = mid;
+            }
+        }
+
+        //当Key大于数组范围或者等于最后一个元素时，返回最大地址+1
+        if (arr[low] <= key) {
+            low++;
+        }
+
+        return low;
+    }
+
     public static void main(String[] args) {
         CPlusPlusLibrary solution = new CPlusPlusLibrary();
 
-        int[] nums = {0,1,2,3,4,5};
+        int[] nums = {0,0,1,1,2,2,3,4,5};
         int len = nums.length;
 
         System.out.println("=================================================");
 
-        System.out.println(solution.lower_bound(nums, 2, 4, 5)); //5
+        System.out.println(solution.upper_bound_bs(nums, 0, len-1, 5)); //9
 
-        System.out.println(solution.lower_bound(nums, 2, 4,4)); //4
+        System.out.println(solution.upper_bound_bs(nums, 0, len-1,4)); //8
 
-        System.out.println(solution.lower_bound(nums, 2, 4,3)); //3
+        System.out.println(solution.upper_bound_bs(nums, 0, len-1,2)); //6
 
-        System.out.println(solution.lower_bound(nums, 2, 4,2)); //2
+        System.out.println(solution.upper_bound_bs(nums, 0, len-1,1)); //4
 
-        System.out.println(solution.lower_bound(nums, 2, 4,1)); //2
+        System.out.println(solution.upper_bound_bs(nums, 0, len-1,9)); //9
 
-        System.out.println(solution.lower_bound(nums, 2, 4,9)); //5
-
-        System.out.println(solution.lower_bound(nums, 2, 4,-9)); //2
-
-        System.out.println("=================================================");
-
-        System.out.println(solution.lower_bound(nums, 0, len-1, 5)); //5
-
-        System.out.println(solution.lower_bound(nums, 0, len-1,4)); //4
-
-        System.out.println(solution.lower_bound(nums, 0, len-1,3)); //3
-
-        System.out.println(solution.lower_bound(nums, 0, len-1,2)); //2
-
-        System.out.println(solution.lower_bound(nums, 0, len-1,1)); //1
-
-        System.out.println(solution.lower_bound(nums, 0, len-1,9)); //6
-
-        System.out.println(solution.lower_bound(nums, 0, len-1,-9)); //0
+        System.out.println(solution.upper_bound_bs(nums, 0, len-1,-9)); //0
 
 
 //        System.out.println("=================================================");
