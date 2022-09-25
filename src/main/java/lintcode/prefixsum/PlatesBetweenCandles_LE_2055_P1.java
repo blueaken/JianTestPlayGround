@@ -47,9 +47,9 @@ public class PlatesBetweenCandles_LE_2055_P1 {
             int[] query = queries[i];
             int start = query[0], end = query[1];
             int x = next[start], y = last[end];
-            if (x == n || y == -1 || x == y) {
-                continue;
-            }
+//            if (x == n || y == -1 || x == y) {
+//                continue;
+//            }
             if (x < y) {
                 ans[i] = ps[y] - ps[x];
             }
