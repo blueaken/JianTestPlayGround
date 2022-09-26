@@ -2,7 +2,7 @@ package lintcode.binarySearch;
 
 import java.util.Arrays;
 
-public class MinimumSpaceWastedFromPackaging_LE_1889_TLE_P1 {
+public class MinimumSpaceWastedFromPackaging_LE_1889_OPT_P1 {
     /*
         ref - https://leetcode.com/problems/minimum-space-wasted-from-packaging/discuss/2201322/Java-solution.-PrefixSum-%2B-BinarySearch
         - for each supplier's boxes, find the waste space to hold all packages, and return min
