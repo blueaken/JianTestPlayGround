@@ -1,4 +1,4 @@
-package lintcode.binarySearch;
+package lintcode.binarySearch.byValue;
 
 public class CapacityToShipPackagesWithinDDays_LE_1011_BS {
     /*
