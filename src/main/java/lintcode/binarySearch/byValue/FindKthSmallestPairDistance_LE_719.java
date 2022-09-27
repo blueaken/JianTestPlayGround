@@ -1,4 +1,4 @@
-package lintcode.binarySearch.findKth;
+package lintcode.binarySearch.byValue;
 
 import java.util.Arrays;
 
@@ -36,6 +36,6 @@ public class FindKthSmallestPairDistance_LE_719 {
 /*
     X X X L X X X R X X X
           3       7
-    - for num at position R, when nums[R] - nums{L] <= mid, start from position L, there are 'R - L' such pair
+    - for num at position R, when nums[R] - nums{L] <= mid, end at position R, there are 'R - L' such pairs
 */
 }
