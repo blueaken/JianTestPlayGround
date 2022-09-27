@@ -8,7 +8,7 @@ public class WeightedJobSchedulingMaximumProfit_LE_1235_P1 {
         - Type DP
         - ref preview notes, looks no need for Binary Search, can use DP directly
         - 1. sort by endTime
-        - 2. dp[i] = max(profix[i], dp[i-1], profix[i] + dp[j]), 0 <= j < i & job[j] not overlapping with job[i], i denotes job endtime
+        - 2. dp[i] = max(profit[i], dp[i-1], profit[i] + dp[j]), 0 <= j < i & job[j] not overlapping with job[i], i denotes job endtime
     */
     public int jobScheduling(int[] startTime, int[] endTime, int[] profit) {
         int n = profit.length;
