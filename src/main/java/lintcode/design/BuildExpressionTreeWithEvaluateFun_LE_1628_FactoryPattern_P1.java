@@ -1,4 +1,4 @@
-package lintcode.binarytree;
+package lintcode.design;
 
 import java.util.Stack;
 
@@ -82,7 +82,7 @@ import java.util.Stack;
 - refactor the code with factory mode to make the solution more modular?
 - ref - https://leetcode.com/problems/design-an-expression-tree-with-evaluate-function/discuss/1209901/Java-Factory-method-pattern
 */
-public class Test {
+public class BuildExpressionTreeWithEvaluateFun_LE_1628_FactoryPattern_P1 {
 //    Node buildTree(String[] postfix) {
 //        Stack<Node> stack = new Stack<>();
 //        for (int i = 0; i < postfix.length; i++) {
@@ -91,7 +91,7 @@ public class Test {
 //            if (node instanceof NumberNode) {
 //                stack.push(node);
 //            } else if (node instanceof OperatorNode) {
-//                OperatorNode n = (OperatorNode) node;
+//                OperatorNode n = (OperatorNode)node;
 //                n.setRight(stack.pop());
 //                n.setLeft(stack.pop());
 //                stack.push(n);
@@ -108,10 +108,9 @@ public class Test {
 //     */
 //
 //    public static void main(String[] args) {
-//        Test solution = new Test();
+//        BuildExpressionTreeWithEvaluateFun_LE_1628_FactoryPattern_P1 solution = new BuildExpressionTreeWithEvaluateFun_LE_1628_FactoryPattern_P1();
 //        String[] postfix = {"3", "4", "+", "2", "*", "7", "/"};//2
 //        Node expTree = solution.buildTree(postfix);
 //        System.out.println(expTree.evaluate());
 //    }
 }
-

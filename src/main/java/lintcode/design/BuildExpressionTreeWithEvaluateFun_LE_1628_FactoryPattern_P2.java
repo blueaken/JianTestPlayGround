@@ -1,4 +1,4 @@
-package lintcode.binarytree;
+package lintcode.design;
 
 import java.util.Stack;
 
