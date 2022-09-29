@@ -1,4 +1,4 @@
-package lintcode.binarytree;
+package lintcode.binarytree.serialization;
 
 import type.TreeNode;
 import util.TreeNodeUtil;
