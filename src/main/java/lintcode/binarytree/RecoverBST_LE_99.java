@@ -72,8 +72,8 @@ public class RecoverBST_LE_99 {
 
     public static void main(String[] args) {
         RecoverBST_LE_99 solution = new RecoverBST_LE_99();
-//        int[] input = {3,1,4,-999,-999,2}; //case when the 2 swapped node are not adjacent
-        int[] input = {1,3,-999,-999,2}; //case when the 2 swapped node are adjacent
+        int[] input = {3,1,4,-999,-999,2}; //case when the 2 swapped node are not adjacent
+//        int[] input = {1,3,-999,-999,2}; //case when the 2 swapped node are adjacent
         TreeNode root = TreeNodeUtil.buildTree(input);
         TreeNodeUtil.printTree(root);
         System.out.println("===========================");
