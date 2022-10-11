@@ -14,7 +14,7 @@ public class MaxNumberOfBooksYouCanTake_LE_2355 {
          等差数列长度 L = i - j
          和 = (首项 + 末项) * L / 2 = (books[i] + books[i] - L + 1) * L / 2
        ---------------------------------------------
-       when k > books[i], dp[k] = dp[i] + books[k];
+       when k > books[i], dp[k] = dp[i] + books[k]; (here i = j)
        when k < books[i], dp[k] = dp[j] + sum(j+1 : k)
        --------------------------------------------
        use monotonic stack for perf, note: use '1L' in front of books[i] when calc 等差数列和 to avoid overflow
