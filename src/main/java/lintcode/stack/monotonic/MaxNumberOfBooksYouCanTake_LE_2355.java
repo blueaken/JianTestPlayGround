@@ -27,7 +27,7 @@ public class MaxNumberOfBooksYouCanTake_LE_2355 {
         long ans = 0;
         for (int i = 0; i < n; i++) {
             //如果stack top element能和当前元素i组成等差数列，则Pop
-            while (stack.size() > 0 && books[stack.peek()] > (books[i] - (i - stack.peek()))) {
+            while (stack.size() > 0 && books[stack.peek()] >= (books[i] - (i - stack.peek()))) {
                 stack.pop();
             }
             //找到了j的位置，可以用上面公式dp[k] = dp[j] + sum(j+1 : k)计算，注意有2种情况
