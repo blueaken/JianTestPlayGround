@@ -3,7 +3,7 @@ package lintcode.dynamicprogramming2.maxsubarray;
 import java.util.HashSet;
 import java.util.Set;
 
-public class SubstringWithLargestVariance_LE_2272_P1 {
+public class SubstringWithLargestVariance_LE_2272_P2 {
     /*
         P1 - still feel abstract
         - read Huifeng Guan video - https://www.youtube.com/watch?v=P6KnO-Dw0Fo
@@ -30,6 +30,8 @@ public class SubstringWithLargestVariance_LE_2272_P1 {
   }
 特别注意，curSum0的初始值可以是0，但是curSum1的初始值必须设置为INT_MIN.
         =================================================
+        P2 10.13.2022
+        ref prev notes
     */
     public int largestVariance(String s) {
         Set<Character> set = new HashSet<>();
@@ -37,34 +39,28 @@ public class SubstringWithLargestVariance_LE_2272_P1 {
             set.add(c);
         }
 
-        int max = 0;
-        for (char a : set) {
-            for (char b : set) {
+        int ans = 0;
+        for (Character a : set) {
+            for (Character b : set) {
                 if (a == b) {
                     continue;
                 }
-                //note the trick is we have to count both '1' and '-1' result, since the variance involves 2 chars, so cannot simply use max subarray sum (053) solution, check Huifeng Guan's note above
-                int curSum0 = 0, curSum1 = Integer.MIN_VALUE;
+
+                int curSum1 = Integer.MIN_VALUE;
+                int curSum0 = 0;
                 for (int i = 0; i < s.length(); i++) {
-                    char c = s.charAt(i);
-                    if (c == a) {
+                    char cur = s.charAt(i);
+                    if (cur == a) {
                         curSum0 = curSum0 + 1;
                         curSum1 = curSum1 + 1;
-                    } else if (c == b) {
-                        curSum1 = Math.max(curSum0, curSum1) - 1; //has to put before curSum0 value changes
+                    } else if (cur == b) {
+                        curSum1 = Math.max(curSum0, curSum1) -1;
                         curSum0 = 0;
                     }
-                    max = Math.max(max, curSum1);
+                    ans = Math.max(ans, curSum1);
                 }
-
             }
         }
-        return max;
-    }
-
-    public static void main(String[] args) {
-        SubstringWithLargestVariance_LE_2272_P1 solution = new SubstringWithLargestVariance_LE_2272_P1();
-        String s = "abc";//0
-        System.out.println(solution.largestVariance(s));
+        return ans;
     }
 }
