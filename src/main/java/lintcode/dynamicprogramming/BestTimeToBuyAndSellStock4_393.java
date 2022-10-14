@@ -16,7 +16,7 @@ public class BestTimeToBuyAndSellStock4_393 {
         }
 
         int [][] res = new int[k + 1][prices.length];
-        //res[0][j] = 0, since no transacation make 0 profit, res[i][0] = 0, since buy & sell in one day does not make profit
+        //res[0][j] = 0, since no transaction make 0 profit; res[i][0] = 0, since buy & sell in one day does not make profit
 
         for (int i = 1; i <= k; i++) {
             for (int j = 1; j < prices.length; j++) {
