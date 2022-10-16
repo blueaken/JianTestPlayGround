@@ -1,4 +1,4 @@
-package lintcode.dynamicprogramming2;
+package lintcode.dynamicprogramming2.backpack;
 
 public class CoinChange2_740 {
     /**

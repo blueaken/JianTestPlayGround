@@ -1,6 +1,6 @@
-package lintcode.dynamicprogramming2;
+package lintcode.dynamicprogramming2.backpack;
 
-public class CoinChange_669_SpaceOptimization {
+public class CoinChange_669 {
     /**
      * @param coins: a list of integer
      * @param amount: a total amount of money amount
@@ -23,20 +23,28 @@ public class CoinChange_669_SpaceOptimization {
 
         //init
         int len = coins.length;
-        int[] res = new int[amount+1];
-        res[0] = 0;
+        int[][] res = new int[len+1][amount+1];
+        for (int i = 0; i <= len; i++) {
+            for (int j = 0; j <= amount; j++) {
+                if (j == 0) {
+                    continue;
+                }
+                res[i][j] = amount + 1;
+            }
+        }
 
         //dp
-        for (int i = 1; i <= amount; i++) {
-            res[i] = Integer.MAX_VALUE;
-            for (int j = 0; j < len; j++) {
-                if (coins[j] <= i && res[i - coins[j]] != Integer.MAX_VALUE) {
-                    res[i] = Math.min(res[i], 1 + res[i - coins[j]]);
+        for (int i = 1; i <= len; i++) {
+            for (int j = 1; j <= amount; j++) {
+                if (coins[i-1] > j) {
+                    res[i][j] = res[i-1][j];
+                } else {
+                    res[i][j] = Math.min(res[i-1][j], 1 + res[i][j-coins[i-1]]);
                 }
             }
         }
 
-        return res[amount] == Integer.MAX_VALUE ? -1 : res[amount];
+        return res[len][amount] > amount ? -1 : res[len][amount];
     }
 
     public static void main(String[] args) {
