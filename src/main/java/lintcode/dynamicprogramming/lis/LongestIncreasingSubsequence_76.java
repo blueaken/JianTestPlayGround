@@ -1,4 +1,4 @@
-package lintcode.dynamicprogramming;
+package lintcode.dynamicprogramming.lis;
 
 public class LongestIncreasingSubsequence_76 {
     /**
