@@ -1,4 +1,4 @@
-package lintcode.dynamicprogramming2;
+package lintcode.dynamicprogramming2.double_sequence;
 
 public class EditDistance_119 {
     /**
