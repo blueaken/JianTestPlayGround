@@ -1,4 +1,4 @@
-package lintcode.dynamicprogramming2;
+package lintcode.dynamicprogramming2.double_sequence;
 
 public class LongestCommonSubSequence_LE_1143 {
     public int longestCommonSubsequence(String text1, String text2) {
