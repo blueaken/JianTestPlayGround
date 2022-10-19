@@ -1,4 +1,4 @@
-package lintcode.dynamicprogramming2;
+package lintcode.dynamicprogramming2.interval2;
 
 public class LongestPalindromeSubseq_667_REC {
     /**
