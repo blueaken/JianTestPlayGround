@@ -1,4 +1,4 @@
-package lintcode.dfs;
+package lintcode.backtrack;
 
 import java.util.ArrayList;
 import java.util.List;
