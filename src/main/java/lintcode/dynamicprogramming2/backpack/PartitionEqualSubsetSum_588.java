@@ -1,4 +1,4 @@
-package lintcode.dynamicprogramming2;
+package lintcode.dynamicprogramming2.backpack;
 
 import java.util.Arrays;
 
