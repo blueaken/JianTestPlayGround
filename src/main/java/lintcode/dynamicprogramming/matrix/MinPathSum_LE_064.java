@@ -1,4 +1,4 @@
-package lintcode.dynamicprogramming;
+package lintcode.dynamicprogramming.matrix;
 
 public class MinPathSum_LE_064 {
     /*
