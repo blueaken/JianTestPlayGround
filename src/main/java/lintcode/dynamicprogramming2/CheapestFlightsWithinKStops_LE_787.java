@@ -8,7 +8,7 @@ public class CheapestFlightsWithinKStops_LE_787 {
         ref labuladong post
         - solve with TopDown DP with the help of mem cache
     */
-    Map<Integer, List<int[]>> indegree;
+    Map<Integer, List<int[]>> indegree; //arrival city, List<[from city, price]>
     int src, dst;
 
     int[][] mem;
