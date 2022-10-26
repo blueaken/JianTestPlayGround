@@ -1,0 +1,8 @@
+10.26.2022
+
+Ref Huifeng Guan's comments -
+我们之前总结过，对区间排序的贪心法，有的需要sort by starting point，有的需要sort by ending point. 大致的规律是：
+
+        如果求的是maximum number of non-overlapping intervals，用sort by ending point的方法
+        如果求的是minimum number of intervals to cover the whole range，用sort by starting point的方法
+
