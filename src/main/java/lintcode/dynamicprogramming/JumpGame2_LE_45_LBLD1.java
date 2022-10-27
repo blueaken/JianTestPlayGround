@@ -19,23 +19,28 @@ public class JumpGame2_LE_45_LBLD1 {
         return dp(nums, 0);
     }
 
-    private int dp(int[] nums, int curStep) {
+    // 定义：从索引 pos 跳到最后一格，至少需要 dp(nums, pos) 步
+    private int dp(int[] nums, int pos) {
         int n = nums.length;
 
         //base case
-        if (curStep >= n-1) {
+        if (pos >= n-1) {
             return 0;
         }
 
-        if (mem[curStep] != n) {
-            return mem[curStep];
+        if (mem[pos] != n) {
+            return mem[pos];
         }
 
-        int maxStep = nums[curStep];
+        int maxStep = nums[pos];
+        // 你可以选择跳 1 步，2 步...
         for (int i = 1; i <= maxStep; i++) {
-            int sub = dp(nums, curStep + i);
-            mem[curStep] = Math.min(sub + 1, mem[curStep]);
+            // 穷举每一个选择
+            // 计算每一个子问题的结果
+            int sub = dp(nums, pos + i);
+            // 取其中最小的作为最终结果
+            mem[pos] = Math.min(sub + 1, mem[pos]);
         }
-        return mem[curStep];
+        return mem[pos];
     }
 }

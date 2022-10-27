@@ -3,7 +3,7 @@ package lintcode.dynamicprogramming;
 public class JumpGame_LE_55 {
     public boolean canJump(int[] nums) {
         int local, reach = 0;
-        //make sure add i <= reach check to ensure current i is reachabble
+        //make sure add i <= reach check to ensure current i is reachable
         for (int i = 0; i <= reach && i < nums.length; i++) {
             local = i + nums[i];
             reach = Math.max(local, reach);
