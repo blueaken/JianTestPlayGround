@@ -1,6 +1,6 @@
 package lintcode.greedy;
 
-public class  MaximumLenSubarrayPositiveProduct_LE_1567_Greedy_Ref {
+public class MaximumLenSubarrayPositiveProduct_LE_1567_Greedy_Ref_P1 {
     /*
         Ref - https://leetcode.com/problems/maximum-length-of-subarray-with-positive-product/discuss/820072/EASY-soultion-with-DRY-RUN-JAVA
         - O(N) Time solution, it is a greedy
@@ -20,28 +20,32 @@ public class  MaximumLenSubarrayPositiveProduct_LE_1567_Greedy_Ref {
      2. count the current subarry's negative count, if it is even, then the length is the current subarray length
      3. if the negative count is odd, then the length is current pos - 1st negative pos + 1
      overall time is O(N)
+     ====================================
+     P1 10.28.2022
+     ref prev notes
+     ====================================
     */
     public int getMaxLen(int[] nums) {
         int n = nums.length;
+
         int ans = 0;
         for (int i = 0; i < n; i++) {
             if (nums[i] == 0) {
                 continue;
             }
-            int count = 0;
-            int firstNeg = -1;
 
+            int negCount = 0;
+            int firstNeg = -666;
             int j = i;
             while (j < n && nums[j] != 0) {
-                int cur = nums[j];
-                count += cur < 0 ? 1 : 0;
-                if (count % 2 == 0) {
+                negCount += nums[j] < 0 ? 1 : 0;
+                if (negCount % 2 == 0) {
                     ans = Math.max(ans, j - i + 1);
-                } else if (firstNeg != -1) {
+                } else if (firstNeg != -666) {
                     ans = Math.max(ans, j - firstNeg);
                 }
 
-                if (cur < 0 && firstNeg == -1) {
+                if (nums[j] < 0 && firstNeg == -666) {
                     firstNeg = j;
                 }
 
@@ -49,6 +53,6 @@ public class  MaximumLenSubarrayPositiveProduct_LE_1567_Greedy_Ref {
             }
             i = j;
         }
-        return ans;
+        return  ans;
     }
 }
