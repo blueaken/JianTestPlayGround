@@ -8,7 +8,7 @@ public class MinimumNumberOfRefuelingStops_LE_871 {
         ref huifeng guan's post
         - similar to jump game
         - solve with greedy
-        - take target a gas station of {target, 0}
+        - make target the last station of {target, 0}
     */
     public int minRefuelStops(int target, int startFuel, int[][] stations) {
         //case when no need any fuel
@@ -17,7 +17,7 @@ public class MinimumNumberOfRefuelingStops_LE_871 {
         }
 
         int n = stations.length;
-        //make targe as a station too
+        //make target the last station
         int[][] nums = new int[n+1][2];
         for (int i = 0; i < n; i++) {
             nums[i] = stations[i];
