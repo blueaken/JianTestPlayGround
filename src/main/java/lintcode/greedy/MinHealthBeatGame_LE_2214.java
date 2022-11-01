@@ -1,4 +1,4 @@
-package lintcode.prefixsum;
+package lintcode.greedy;
 
 public class MinHealthBeatGame_LE_2214 {
     public long minimumHealth(int[] damage, int armor) {
