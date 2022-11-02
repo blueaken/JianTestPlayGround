@@ -1,4 +1,4 @@
-package lintcode.sort;
+package lintcode.interval;
 
 import java.util.Arrays;
 
