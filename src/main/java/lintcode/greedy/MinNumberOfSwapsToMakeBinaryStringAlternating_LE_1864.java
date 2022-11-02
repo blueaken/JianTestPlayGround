@@ -1,28 +1,25 @@
 package lintcode.greedy;
 
-public class MinimumNumberOfKeypresses_LE_2268_P1 {
+public class MinNumberOfSwapsToMakeBinaryStringAlternating_LE_1864 {
     /*
         ref - https://leetcode.com/problems/minimum-number-of-swaps-to-make-the-binary-string-alternating/discuss/2472213/Java-Beats-100-oror-O(n)-one-pass-solution-oror-Explanation-with-comments
         - good idea with comments above
-        ========================
-        P1 11.02.2022
-        ========================
     */
     public int minSwaps(String s) {
         int n = s.length();
         int c0 = 0, c1 = 0;
-        int evenSwap = 0, oddSwap = 0;
+        int evenSwaps = 0, oddSwaps = 0;
 
         //count 1s, 0s, and swap nums at both even and odd positions for 0s in one pass
         for (int i = 0; i < n; i++) {
             if (s.charAt(i) == '0') {
                 c0++;
                 if (i % 2 == 0) {
-                    evenSwap++;
+                    evenSwaps++;
                 } else {
-                    oddSwap++;
+                    oddSwaps++;
                 }
-            } else {
+            } else{
                 c1++;
             }
         }
@@ -32,15 +29,15 @@ public class MinimumNumberOfKeypresses_LE_2268_P1 {
             return -1;
         }
 
+        //if string is odd length, and 1s more than 0s, then 1 should be in even positions, return even swaps of 0s, vice versa
         if (c1 > c0) {
-            //pattern is 10101...
-            return evenSwap;
+            return evenSwaps;
         } else if (c0 > c1) {
-            //pattern is 01010...
-            return oddSwap;
+            return oddSwaps;
         } else {
             // if 1s and 0s are same, then return the min swaps of even and odd positions
-            return Math.min(evenSwap, oddSwap);
+            return Math.min(evenSwaps, oddSwaps);
         }
+
     }
 }
