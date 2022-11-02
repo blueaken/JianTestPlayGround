@@ -3,7 +3,7 @@ package lintcode.greedy;
 public class GasStation_LE_134 {
     /*
         10.27.2022
-        ref labaladong post, 图像法看懂了: O(N)
+        ref labuladong post, 图像法看懂了: O(N)
     */
     public int canCompleteCircuit(int[] gas, int[] cost) {
         int n = gas.length;
