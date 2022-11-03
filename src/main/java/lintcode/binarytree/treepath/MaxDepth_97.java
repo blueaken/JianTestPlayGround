@@ -1,4 +1,4 @@
-package lintcode.binarytree;
+package lintcode.binarytree.treepath;
 
 import type.TreeNode;
 
