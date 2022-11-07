@@ -6,6 +6,7 @@ public class MaximumBinaryTree_LE_654 {
     /*
         11.06.2022
         ref 东哥 post
+        solve by traverse
     */
     public TreeNode constructMaximumBinaryTree(int[] nums) {
         return buildTree(nums, 0, nums.length-1);
