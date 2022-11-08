@@ -14,6 +14,7 @@ public class SerializeAndDeserializeBinaryTree_LE_297_P2 {
         P2 11.08.2022
         - ref 东哥 post this time
         - solve by preorder traverse
+        - 另外东哥用postorder & level traverse都做了一遍，可以看一下帖子，确实牛B
     */
 
     // Encodes a tree to a single string.
