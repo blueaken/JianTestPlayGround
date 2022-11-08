@@ -27,6 +27,7 @@ public class ConstructBinaryTreeFromPreorderAndPostorderTraversal_LE_889 {
             return null;
         }
 
+        //ensure preorder[preStart+1] is valid
         if (preStart == preEnd) {
             return new TreeNode(preorder[preStart]);
         }
