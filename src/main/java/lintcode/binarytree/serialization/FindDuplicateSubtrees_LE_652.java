@@ -28,6 +28,7 @@ public class FindDuplicateSubtrees_LE_652 {
 
         String left = serialize(node.left);
         String right = serialize(node.right);
+        //serialize order in myself string can change, as far as it can identify a subtree
         String myself = left + "," + right + "," + node.val;
 
         int freq = map.getOrDefault(myself, 0);
