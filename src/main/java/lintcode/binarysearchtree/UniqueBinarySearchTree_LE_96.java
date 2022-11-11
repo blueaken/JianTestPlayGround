@@ -1,4 +1,4 @@
-package lintcode.dynamicprogramming2;
+package lintcode.binarysearchtree;
 
 public class UniqueBinarySearchTree_LE_96 {
     //ref - Tushor's video - https://www.youtube.com/watch?v=RUB5ZPfKcnY
