@@ -10,6 +10,7 @@ public class SortAnArray_LE_912_QuickSort {
         11.11.2022
         redo with quick sort
         - note:quick sort 边界条件比较多比merge sort容易出错，注释参考东哥帖子
+        - note:quick sort is not stable, comparing - merge sort is stable
         ==============
     */
     public int[] sortArray(int[] nums) {
