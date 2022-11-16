@@ -1,4 +1,4 @@
-package lintcode.heap;
+package lintcode.linkedlist;
 
 import type.ListNode;
 
