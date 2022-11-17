@@ -3,7 +3,7 @@ package lintcode.dynamicprogramming2;
 public class LongestPalindromeSubString_200_P2 {
     /*
         - retry since DP got TLE
-        - for each postion try to find the longest palindrome, and record the longest positions
+        - for each position try to find the longest palindrome, and record the longest positions
         - Time also O(N^2)
     */
     public String longestPalindrome(String s) {
