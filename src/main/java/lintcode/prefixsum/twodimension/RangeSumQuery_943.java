@@ -1,4 +1,4 @@
-package lintcode.prefixsum;
+package lintcode.prefixsum.twodimension;
 
 //similar to 665, much simpler though
 public class RangeSumQuery_943 {

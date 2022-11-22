@@ -1,4 +1,4 @@
-package lintcode.prefixsum;
+package lintcode.prefixsum.twodimension;
 
 public class RangeSumQuery2D_LE_304 {
     /**

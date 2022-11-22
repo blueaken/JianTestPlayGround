@@ -1,4 +1,4 @@
-package lintcode.prefixsum;
+package lintcode.prefixsum.twodimension;
 
 // ref - https://www.youtube.com/watch?v=PwDqpOMwg6U
 public class RangeSumQuery2DMatrix_665 {
