@@ -32,6 +32,7 @@ public class FindLongestAwesomeSubstring_LE_1542 {
 
     private void findValid(int j, int key) {
         if (state.containsKey(key)) {
+            //denotes the substring [i+1 : j]
             ans = Math.max(ans, j - state.get(key));
         }
 
