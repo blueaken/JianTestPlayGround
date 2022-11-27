@@ -14,8 +14,8 @@ public class NumberOfWonderfulSubstrings_LE_1915 {
 
         int key = 0;
         for (int i = 0; i < word.length(); i++) {
-            char cur = word.charAt(i);
-            key ^= 1 << (cur-'a');
+            int cur = word.charAt(i) - 'a';
+            key ^= 1 << cur;
 
             //check all even number case
             ans += states[key]; //note should add all previous counts, not just increase by 1
