@@ -19,6 +19,7 @@ public class MaximumNumberOfWeeksForWhichYouCanWork_LE_1953 {
         if (rest >= max - 1) {
             return sum;
         } else {
+            //max-1 is the number of the max project's gap, since rest < max-1, we need to minus the difference between them to make sure the working week is consecutive
             return sum - (max - 1 - rest);
         }
     }
