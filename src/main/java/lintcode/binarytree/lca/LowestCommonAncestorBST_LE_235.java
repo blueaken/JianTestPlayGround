@@ -12,9 +12,6 @@ public class LowestCommonAncestorBST_LE_235 {
             return null;
         }
 
-        int pVal = p.val;
-        int qVal = q.val;
-
         if (p.val < root.val && q.val < root.val) {
             return lowestCommonAncestor(root.left, p, q);
         } else if (p.val > root.val && q.val > root.val) {
