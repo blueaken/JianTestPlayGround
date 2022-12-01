@@ -1,4 +1,4 @@
-package lintcode.prefixsum;
+package lintcode.prefixsum.diff;
 
 public class RangeAddition_LE_370 {
     /*
