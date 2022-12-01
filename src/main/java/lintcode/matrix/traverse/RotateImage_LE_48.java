@@ -1,4 +1,4 @@
-package lintcode.matrix.rotate;
+package lintcode.matrix.traverse;
 
 public class RotateImage_LE_48 {
     /**
