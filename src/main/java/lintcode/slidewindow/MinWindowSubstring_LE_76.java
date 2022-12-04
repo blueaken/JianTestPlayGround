@@ -27,7 +27,7 @@ public class MinWindowSubstring_LE_76 {
         }
 
         int left = 0, right = 0;
-        int valid = 0; //当 valid 等于 need 大小时应该收缩窗口
+        int valid = 0; //当 valid的值等于 need数组中unique char数目时说明当前substring已满足条件，开始收缩窗口
         String res = "";
         while (right < s.length()) {
             // r 是将移入窗口的字符
