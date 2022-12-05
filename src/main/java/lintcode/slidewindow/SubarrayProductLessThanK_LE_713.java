@@ -20,7 +20,7 @@ public class SubarrayProductLessThanK_LE_713 {
                 left++;
             }
 
-            //note - we get a valid subarray [left, right) now, the question is how many subarraies in this range? since the right position can only be visited here, we count every subarry ends in the right: ex, left = 1, right = 4,the current range is [1, 2, 3], the subarries end at right is - [1,2,3], [2,3], [3], whose count is "right - left"
+            //note - we get a valid subarray [left, right) now, the question is how many subarraies in this range? since the right position can only be visited here, we count every subarray ends in the right: ex, left = 1, right = 4,the current range is [1, 2, 3], the subarraies end at right is - [1,2,3], [2,3], [3], whose count is "right - left"
             count += right - left;
         }
         return count;
