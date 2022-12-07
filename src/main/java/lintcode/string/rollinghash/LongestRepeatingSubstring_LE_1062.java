@@ -1,4 +1,4 @@
-package lintcode.string;
+package lintcode.string.rollinghash;
 
 public class LongestRepeatingSubstring_LE_1062 {
     /*
