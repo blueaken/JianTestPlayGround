@@ -1,6 +1,6 @@
 package lintcode.string;
 
-public class StrStr_LE_028_KMP_DP {
+public class StrStr_LE_28_KMP_DP {
     /*
         10.26.2022
         ref labaladong post

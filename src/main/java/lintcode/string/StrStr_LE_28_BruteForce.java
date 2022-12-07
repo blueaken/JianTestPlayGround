@@ -1,6 +1,6 @@
 package lintcode.string;
 
-public class StrStr_LE_028_BruteForce {
+public class StrStr_LE_28_BruteForce {
     /*
         10.26.2022
         ref labaladong post
