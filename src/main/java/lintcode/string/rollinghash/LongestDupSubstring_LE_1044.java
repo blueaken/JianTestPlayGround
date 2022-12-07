@@ -1,4 +1,4 @@
-package lintcode.binarysearch;
+package lintcode.string.rollinghash;
 
 import java.util.HashMap;
 import java.util.HashSet;

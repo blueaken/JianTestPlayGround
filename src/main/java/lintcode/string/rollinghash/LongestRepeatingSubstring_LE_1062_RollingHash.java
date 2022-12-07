@@ -19,7 +19,7 @@ public class LongestRepeatingSubstring_LE_1062_RollingHash {
             }
         }
 
-        //verify again in case of hash collision
+        //verify again in case not found
         if (find(s, start)) {
             return start;
         } else {
