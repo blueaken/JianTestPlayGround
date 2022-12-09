@@ -21,7 +21,7 @@ public class FindFirstAndLastPositionOfElementInSortedArray_LE_34_WithRangeCheck
 
     private int left_bound(int[] nums, int target) {
         int n = nums.length;
-        //check if out of bountary
+        //check if out of boundary
         if (target > nums[n-1] || target < nums[0]) {
             return -1;
         }
@@ -44,7 +44,7 @@ public class FindFirstAndLastPositionOfElementInSortedArray_LE_34_WithRangeCheck
 
     private int right_bound(int[] nums, int target) {
         int n = nums.length;
-        //check if out of bountary
+        //check if out of boundary
         if (target > nums[n-1] || target < nums[0]) {
             return -1;
         }
