@@ -1,4 +1,4 @@
-package lintcode.binarysearch.labuladong;
+package lintcode.binarysearch.labuladong.variant;
 
 public class Search2DMatrix_LE_74 {
     /**
