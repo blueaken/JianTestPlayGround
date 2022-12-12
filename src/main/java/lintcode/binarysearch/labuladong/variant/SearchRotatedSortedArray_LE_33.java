@@ -1,4 +1,4 @@
-package lintcode.binarysearch;
+package lintcode.binarysearch.labuladong.variant;
 
 public class SearchRotatedSortedArray_LE_33 {
     /*
