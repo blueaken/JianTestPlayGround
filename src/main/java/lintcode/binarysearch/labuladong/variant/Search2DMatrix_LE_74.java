@@ -26,7 +26,7 @@ public class Search2DMatrix_LE_74 {
     }
 
     private int getVal(int[][] matrix, int index) {
-        int m = matrix.length;
+//        int m = matrix.length;
         int n = matrix[0].length;
 
         int row = index / n;
