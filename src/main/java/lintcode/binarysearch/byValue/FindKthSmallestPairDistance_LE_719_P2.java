@@ -27,7 +27,7 @@ public class FindKthSmallestPairDistance_LE_719_P2 {
             int mid = start + (end - start) / 2;
             int left =0, count = 0;
             for (int right = 0; right < nums.length; right++) {
-                //find the biggest range that distance between right and left is within mid
+                //find the number of Pairs that distance between right and left is within mid
                 while (nums[right] - nums[left] > mid) {
                     left++;
                 }
