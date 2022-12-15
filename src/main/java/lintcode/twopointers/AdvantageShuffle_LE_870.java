@@ -7,7 +7,7 @@ public class AdvantageShuffle_LE_870 {
     /**
      12.14.2022
      - ref 东哥 post, 田忌赛马策略
-     - 因为nums 2顺序不能改变，使用Priority Queue来辅助
+     - 因为结果要按照nums2的顺序，使用Priority Queue来辅助记录num2的索引位置并排序
      */
     public int[] advantageCount(int[] nums1, int[] nums2) {
         //descending sort nums2 and keep its index
