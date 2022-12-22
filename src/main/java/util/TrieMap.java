@@ -1,9 +1,6 @@
 package util;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class TrieMap<V> {
 
@@ -15,7 +12,7 @@ public class TrieMap<V> {
 
     private static class TrieNode<V> {
         V val = null;
-        Map<Character, TrieNode> children;
+        Map<Character, TrieNode> children = new HashMap<>();
     }
 
     // Trie 树的根节点
@@ -270,10 +267,10 @@ public class TrieMap<V> {
         TrieNode<V> p = node;
         // 从节点 node 开始搜索 key
         for (int i = 0; i < key.length(); i++) {
-//            if (p == null) {
-//                // 无法向下搜索
-//                return null;
-//            }
+            if (p == null) {
+                // 无法向下搜索
+                return null;
+            }
             // 向下搜索
             char c = key.charAt(i);
             if (p.children.containsKey(c)) {
