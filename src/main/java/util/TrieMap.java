@@ -273,12 +273,12 @@ public class TrieMap<V> {
             }
             // 向下搜索
             char c = key.charAt(i);
-            if (p.children.containsKey(c)) {
-                p = p.children.get(c);
-            } else {
-                return null;
-            }
-//            p = p.children.get(c);
+//            if (p.children.containsKey(c)) {
+//                p = p.children.get(c);
+//            } else {
+//                return null;
+//            }
+            p = p.children.get(c);
         }
         return p;
     }
