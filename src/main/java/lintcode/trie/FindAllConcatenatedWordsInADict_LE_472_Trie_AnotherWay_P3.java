@@ -31,7 +31,7 @@ public class FindAllConcatenatedWordsInADict_LE_472_Trie_AnotherWay_P3 {
         List<String> res = new ArrayList<>();
         //process in the order of length by the algorithm nature
         for (String word : words){
-            if (dict.checkIfSubStrExistsAndCount(word, 0, 0)) {
+            if (dict.checkIfConcatenatedWords(word, 0, 0)) {
                 res.add(word);
             }
         }

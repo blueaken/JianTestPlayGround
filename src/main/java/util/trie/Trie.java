@@ -57,7 +57,7 @@ public class Trie {
     }
 
     // for LE_472
-    public boolean checkIfSubStrExistsAndCount(String str, int startPos, int count) {
+    public boolean checkIfConcatenatedWords(String str, int startPos, int count) {
         TrieNode node = root;
         for (int i = startPos; i < str.length(); i++) {
             char c = str.charAt(i);
@@ -69,7 +69,7 @@ public class Trie {
                 if (i == str.length()-1) {
                     return count > 0; //filer out the smallest word
                 } else {
-                    if (checkIfSubStrExistsAndCount(str, i+1, count+1)) {
+                    if (checkIfConcatenatedWords(str, i+1, count+1)) {
                         return true;
                     }
                 }
