@@ -1,6 +1,6 @@
 package lintcode.trie.labuladong;
 
-import util.TrieSet;
+import util.trie.TrieSet;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package lintcode.trie.labuladong;
 
-import util.TrieSet;
+import util.trie.TrieSet;
 
 public class TrieImplementation_LE_208_Rec {
     // 直接封装 TrieSet

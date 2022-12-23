@@ -1,4 +1,4 @@
-package util;
+package util.trie;
 
 import java.util.*;
 
