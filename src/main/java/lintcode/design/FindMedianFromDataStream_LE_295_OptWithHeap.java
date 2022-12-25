@@ -1,11 +1,11 @@
-package lintcode.binarytree;
+package lintcode.design;
 
 import java.util.PriorityQueue;
 
 /*
     - gut shot idea, no optimization, got TLE
     - ref 花花 https://zxi.mytechroad.com/blog/leetcode/leetcode-295-find-median-from-data-stream/
-    - Optimize wtih 2 heaps, minHeap and maxHeap, maintain the maxHeap size >= minHeap size, and the diff < 2;
+    - Optimize with 2 heaps, minHeap and maxHeap, maintain the maxHeap size >= minHeap size, and the diff < 2;
 */
 public class FindMedianFromDataStream_LE_295_OptWithHeap {
     private PriorityQueue<Integer> leftH; //store the left half of the data stream
