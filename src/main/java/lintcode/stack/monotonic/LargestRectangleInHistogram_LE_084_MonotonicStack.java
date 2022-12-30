@@ -33,4 +33,10 @@ public class LargestRectangleInHistogram_LE_084_MonotonicStack {
         }
         return ans;
     }
+
+    public static void main(String[] args) {
+        LargestRectangleInHistogram_LE_084_MonotonicStack solution = new LargestRectangleInHistogram_LE_084_MonotonicStack();
+        int[] heights = {2,1,5,6,2,3};
+        System.out.println(solution.largestRectangleArea(heights));
+    }
 }
