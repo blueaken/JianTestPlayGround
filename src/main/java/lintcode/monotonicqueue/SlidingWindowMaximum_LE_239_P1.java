@@ -1,4 +1,4 @@
-package lintcode.stack.monotonic;
+package lintcode.monotonicqueue;
 
 import java.util.LinkedList;
 

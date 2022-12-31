@@ -1,28 +1,30 @@
-package lintcode.stack.monotonic;
+package lintcode.monotonicqueue;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
 
-public class SlidingWindowMaximum_LE_239 {
+public class SlidingWindowMaximum_LE_239_Opt {
     /*
         - Brute Force is obvious, Time is O(n - k + 1) * k, Space is O(1)
         - The trick is how to reach O(n), yes, with Monotonic Queue, here we need access the front element, so pass Monotonic Stack
         - ref 花花 https://www.youtube.com/watch?v=2SXqBsTR6a8&t=6s
         - Time is O(N), Space is O(N)
+        - Previous solution beat 39% time, it can be optimized to store index only, as below, beat 74% time
     */
     public int[] maxSlidingWindow(int[] nums, int k) {
         int size = nums.length;
         int[] ans = new int[size - k + 1];
         ArrayDeque<Integer> dq = new ArrayDeque<>();
         for (int i = 0; i < size; i++) {
-            while (dq.size() > 0 && nums[i] > dq.getLast()) {
+            while (dq.size() > 0 && nums[i] > nums[dq.getLast()]) {
                 dq.removeLast();
             }
-            dq.addLast(nums[i]);
+            dq.addLast(i);
             if (i - k + 1 >= 0) {
-                ans[i - k + 1] = dq.getFirst();
+                //when there is k elements in the window
+                ans[i - k + 1] = nums[dq.getFirst()];
                 //note if the window's first element is the current max, pop it to avoid effect next calc
-                if (nums[i - k + 1] == dq.getFirst()) {
+                if (i - k + 1 == dq.getFirst()) {
                     dq.removeFirst();
                 }
             }
@@ -32,10 +34,14 @@ public class SlidingWindowMaximum_LE_239 {
     }
 
     public static void main(String[] args) {
-        SlidingWindowMaximum_LE_239 solution = new SlidingWindowMaximum_LE_239();
-        int nums[] = {-7,-8,7,5,7,1,6,0};
-        int k = 4;
-        //[7,7,7,7,7]
+        SlidingWindowMaximum_LE_239_Opt solution = new SlidingWindowMaximum_LE_239_Opt();
+        int nums[] = {1,3,-1,-3,5,3,6,7};
+        int k = 3;
+        //[3,3,5,5,6,7]
+
+//        int nums[] = {-7,-8,7,5,7,1,6,0};
+//        int k = 4;
+//        //[7,7,7,7,7]
         System.out.println(Arrays.toString(solution.maxSlidingWindow(nums, k)));
     }
 }
