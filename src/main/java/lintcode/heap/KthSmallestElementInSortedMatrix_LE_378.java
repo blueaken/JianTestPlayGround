@@ -7,6 +7,7 @@ public class KthSmallestElementInSortedMatrix_LE_378 {
      1.3.2023
      similar to 23 and 373, use heap to improve performance
      ref 东哥 post
+     - 用binary search应该更加快，有空可以练习
      */
     public int kthSmallest(int[][] matrix, int k) {
         // int[] 存储{matrix[i][j], i, j}三元组
