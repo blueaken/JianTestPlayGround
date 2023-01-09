@@ -1,4 +1,4 @@
-package lintcode.backtrack;
+package lintcode.backtrack.permutation;
 
 import java.util.ArrayList;
 import java.util.List;
