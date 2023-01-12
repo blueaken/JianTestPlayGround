@@ -1,6 +1,4 @@
-package lintcode.dfs;
-
-import lintcode.bfs.NumIslands_LE_200_P1;
+package lintcode.dfs.island;
 
 public class NumIslands_LE_200_DFS_P1 {
     /*

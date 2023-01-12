@@ -1,4 +1,4 @@
-package lintcode.dfs;
+package lintcode.dfs.island;
 
 public class NumIslands_LE_200_DFS_P2 {
     /*
