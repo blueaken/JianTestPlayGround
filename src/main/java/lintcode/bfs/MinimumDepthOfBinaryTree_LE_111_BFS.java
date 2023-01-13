@@ -1,5 +1,10 @@
 package lintcode.bfs;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
+import type.TreeNode;
+
 public class MinimumDepthOfBinaryTree_LE_111_BFS {
     /**
      1.13.2023
