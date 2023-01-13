@@ -1,4 +1,4 @@
-package lintcode.bfs;
+package lintcode.bfs.labuladong;
 
 import java.util.LinkedList;
 import java.util.Queue;
