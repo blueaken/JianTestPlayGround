@@ -1,4 +1,4 @@
-package lintcode.design;
+package lintcode.design.random;
 
 import java.util.Map;
 import java.util.HashMap;
