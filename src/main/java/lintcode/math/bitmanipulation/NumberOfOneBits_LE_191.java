@@ -1,4 +1,4 @@
-package lintcode.bitmanipulation;
+package lintcode.math.bitmanipulation;
 
 public class NumberOfOneBits_LE_191 {
     /**
