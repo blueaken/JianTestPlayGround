@@ -11,7 +11,7 @@ public class RemoveCoveredIntervals_LE_1288 {
         Arrays.sort(intervals, (a, b) -> {
             int diff = a[0] - b[0];
             if (diff == 0) {
-                // if same start point then sort by desending order of the end point
+                // if same start point then sort by descending order of the end point
                 diff = b[1] - a[1];
             }
             return diff;
