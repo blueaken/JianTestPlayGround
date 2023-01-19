@@ -1,4 +1,4 @@
-package lintcode.divideandconquer;
+package lintcode.divideconquer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ public class DifferentWaysToAddParentheses_LE_241 {
         List<Integer> res = new ArrayList<>();
         for (int i = 0; i < expression.length(); i++) {
             char cur = expression.charAt(i);
-            // if input is a seperator then divide & conquer
+            // if input is a separator then divide & conquer
             if (cur == '+' || cur == '-' || cur == '*') {
                 List<Integer> left = diffWaysToCompute(expression.substring(0, i));
                 List<Integer> right = diffWaysToCompute(expression.substring(i+1));
