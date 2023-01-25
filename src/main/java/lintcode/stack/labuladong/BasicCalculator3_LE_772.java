@@ -5,38 +5,36 @@ import java.util.Stack;
 public class BasicCalculator3_LE_772 {
     /**
      1.25.2023
-     ref 东哥 calculator framework
+     - ref 东哥 calculator framework
+     - refactor with global position variable to improve parenthsis handling efficiency
      */
+    int pos;
     public int calculate(String s) {
+        this.pos = 0;
+        return helper(s);
+    }
+
+    public int helper(String s) {
         Stack<Integer> stack = new Stack<>();
         char sign = '+';
         int num = 0;
 
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
+        for (; pos < s.length(); pos++) {
+            char c = s.charAt(pos);
             if (Character.isDigit(c)) {
                 num = num * 10 + (c - '0');
             }
             if (c == '(') {
-                int left = 1;
-                int j = i + 1;
-                while (left > 0) {
-                    char d = s.charAt(j);
-                    if (d == '(') {
-                        left++;
-                    }
-                    if (d == ')') {
-                        left--;
-                        if (left == 0) {
-                            break;
-                        }
-                    }
-                    j++;
+                pos++;
+                num = helper(s);
+                pos++;
+
+                if (pos < s.length()) {
+                    c = s.charAt(pos);
                 }
-                num = calculate(s.substring(i+1, j));
-                i = j;
             }
-            if (!Character.isDigit(c) && c != ' ' || i == s.length() - 1) {
+
+            if (!Character.isDigit(c) && c != ' ' || pos == s.length() - 1) {
                 switch(sign) {
                     case '+':
                         stack.push(num);
@@ -53,6 +51,10 @@ public class BasicCalculator3_LE_772 {
                 }
                 num = 0;
                 sign = c;
+            }
+
+            if (c == ')') {
+                break;
             }
         }
 
