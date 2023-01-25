@@ -5,40 +5,37 @@ import java.util.Stack;
 public class BasicCalculator_LE_224 {
     /**
      1.24.2023
-     ref 东哥 post
+     - ref 东哥 calculator post
+     - refactor with global position variable to improve performance on handling parenthesis
      */
+    int pos;
     public int calculate(String s) {
+        this.pos = 0;
+        return helper(s);
+    }
+
+    public int helper(String s) {
         Stack<Integer> stack = new Stack<>();
         char sign = '+'; // default to positive
         int num = 0;
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
+        for (; pos < s.length(); pos++) {
+            char c = s.charAt(pos);
             if (Character.isDigit(c)) {
                 num = num * 10 + (c - '0');
             }
 
-            // recursive calculate the value between parenthesis
+            // recursive calculate the value between parenthesis, refactor with global posistion variable
             if (c == '(') {
-                int left = 1;
-                int j = i + 1;
-                while (left > 0) {
-                    char cur = s.charAt(j);
-                    if (cur == '(') {
-                        left++;
-                    } else if (cur == ')') {
-                        left--;
-                        if (left == 0) {
-                            break;
-                        }
-                    }
-                    j++;
-                }
+                pos++;
+                num = helper(s);
+                pos++;
 
-                num = calculate(s.substring(i+1, j));
-                i = j;
+                if (pos < s.length()) {
+                    c = s.charAt(pos);;
+                }
             }
 
-            if (!Character.isDigit(c) && c != ' ' || i == s.length() - 1) {
+            if (!Character.isDigit(c) && c != ' ' || pos == s.length() - 1) {
                 switch (sign) {
                     case '+':
                         stack.push(num);
@@ -49,6 +46,10 @@ public class BasicCalculator_LE_224 {
                 }
                 sign = c;
                 num = 0;
+            }
+
+            if (c == ')') {
+                break;
             }
         }
 
