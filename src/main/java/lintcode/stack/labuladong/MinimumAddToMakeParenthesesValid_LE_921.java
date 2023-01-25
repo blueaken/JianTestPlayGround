@@ -4,6 +4,7 @@ public class MinimumAddToMakeParenthesesValid_LE_921 {
     /**
      1.25.2023
      ref 东哥 括号 post
+     greedy type
      */
     public int minAddToMakeValid(String s) {
         int insert = 0; // 左括号插入次数
