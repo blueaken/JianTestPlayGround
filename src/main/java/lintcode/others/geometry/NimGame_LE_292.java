@@ -1,4 +1,4 @@
-package lintcode.math.gametheory;
+package lintcode.others.geometry;
 
 public class NimGame_LE_292 {
     /**
