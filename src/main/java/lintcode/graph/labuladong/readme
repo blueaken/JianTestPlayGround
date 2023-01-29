@@ -1,0 +1,49 @@
+东哥关于图的遍历论述颇为精妙，在图的遍历中使用onPath数组和visited数组，其中onPath数组和回溯算法的区别在于一个是对节点的回溯，一个是对树枝的回溯。具体如下：
+
+---------------------------
+上述 GIF 描述了递归遍历二叉树的过程，在 visited 中被标记为 true 的节点用灰色表示，在 onPath 中被标记为 true 的节点用绿色表示，类比贪吃蛇游戏，visited 记录蛇经过过的格子，而 onPath 仅仅记录蛇身。在图的遍历过程中，onPath 用于判断是否成环，类比当贪吃蛇自己咬到自己（成环）的场景，这下你可以理解它们二者的区别了吧。
+
+如果让你处理路径相关的问题，这个 onPath 变量是肯定会被用到的，比如 拓扑排序 中就有运用。
+
+另外，你应该注意到了，这个 onPath 数组的操作很像前文 回溯算法核心套路 中做「做选择」和「撤销选择」，区别在于位置：回溯算法的「做选择」和「撤销选择」在 for 循环里面，而对 onPath 数组的操作在 for 循环外面。
+
+为什么有这个区别呢？这就是前文 回溯算法核心套路 中讲到的回溯算法和 DFS 算法的区别所在：回溯算法关注的不是节点，而是树枝。不信你看前文画的回溯树，我们需要在「树枝」上做选择和撤销选择：
+
+他们的区别可以这样反应到代码上：
+
+// DFS 算法，关注点在节点
+void traverse(TreeNode root) {
+    if (root == null) return;
+    printf("进入节点 %s", root);
+    for (TreeNode child : root.children) {
+        traverse(child);
+    }
+    printf("离开节点 %s", root);
+}
+
+// 回溯算法，关注点在树枝
+void backtrack(TreeNode root) {
+    if (root == null) return;
+    for (TreeNode child : root.children) {
+        // 做选择
+        printf("从 %s 到 %s", root, child);
+        backtrack(child);
+        // 撤销选择
+        printf("从 %s 到 %s", child, root);
+    }
+}
+如果执行这段代码，你会发现根节点被漏掉了：
+
+void traverse(TreeNode root) {
+    if (root == null) return;
+    for (TreeNode child : root.children) {
+        printf("进入节点 %s", child);
+        traverse(child);
+        printf("离开节点 %s", child);
+    }
+}
+所以对于这里「图」的遍历，我们应该用 DFS 算法，即把 onPath 的操作放到 for 循环外面，否则会漏掉记录起始点的遍历。
+
+说了这么多 onPath 数组，再说下 visited 数组，其目的很明显了，由于图可能含有环，visited 数组就是防止递归重复遍历同一个节点进入死循环的。
+
+当然，如果题目告诉你图中不含环，可以把 visited 数组都省掉，基本就是多叉树的遍历。
