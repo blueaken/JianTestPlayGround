@@ -1,4 +1,4 @@
-package lintcode.unionfind;
+package lintcode.graph.unionfind;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -61,7 +61,7 @@ public class LongestConsecutiveSequence_LE_128_UnionFind {
         return ans;
     }
 
-    //Union Find 2 utility mehtods
+    //Union Find 2 utility methods
     private int findFather(int x) {
         int curFather = father.get(x);
         if ( curFather != x) {

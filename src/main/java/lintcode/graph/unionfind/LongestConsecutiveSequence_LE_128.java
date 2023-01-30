@@ -1,4 +1,4 @@
-package lintcode.unionfind;
+package lintcode.graph.unionfind;
 
 import java.util.HashMap;
 import java.util.Map;
