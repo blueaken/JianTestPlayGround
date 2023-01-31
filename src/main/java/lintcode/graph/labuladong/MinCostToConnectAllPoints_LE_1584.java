@@ -1,22 +1,34 @@
 package lintcode.graph.labuladong;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-public class ConnectingCitiesWithMinimumCost_LE_1135 {
+public class MinCostToConnectAllPoints_LE_1584 {
     /**
      1.31.2023
-     - Greedy + Kruskal算法，ref 东哥 post
-     - similar to LE 261
-     - 你可以认为树的判定算法加上按权重排序的逻辑就变成了 Kruskal 算法
+     - similar to LE 1135, greedy + Kruskai算法
+     - ref 东哥 post, 注意需要先build graph, 使用point index
      */
-    public int minimumCost(int n, int[][] connections) {
-        // label starts from 1
-        UF uf = new UF(n+1);
+    public int minCostConnectPoints(int[][] points) {
+        int n = points.length;
 
-        // sort the edges on the weight - Greedy
-        Arrays.sort(connections, (a, b) -> a[2] - b[2]);
+        List<int[]> edges = new ArrayList<>();
+        // init graph, use point index as node number
+        for (int i = 0; i < n; i++) {
+            for (int j = i+1; j < n; j++) {
+                int xi = points[i][0], yi = points[i][1];
+                int xj = points[j][0], yj = points[j][1];
+                edges.add(new int[]{i, j, Math.abs(xi-xj) + Math.abs(yi-yj)});
+            }
+        }
+
+        // greedy
+        Collections.sort(edges, (a, b) -> a[2] - b[2]);
+
+        UF uf = new UF(n);
         int mst = 0;
-        for (int[] edge : connections) {
+        for (int[] edge : edges) {
             int u = edge[0], v = edge[1], cost = edge[2];
             if (uf.connected(u, v)) {
                 continue;
@@ -26,12 +38,11 @@ public class ConnectingCitiesWithMinimumCost_LE_1135 {
             uf.union(u, v);
         }
 
-        // UF count should be 1 after the MST spanning, but since the label starts from 1, need to add node 0's count
-        return uf.getCount() == 2 ? mst : -1;
+        return mst;
     }
 
     class UF {
-        int count = 0;
+        int count;
         int[] parent;
 
         UF(int n) {
