@@ -2,7 +2,7 @@ package lintcode.graph.labuladong;
 
 import java.util.Arrays;
 
-public class ConnectingCitiesWithMinimumCost_LE_1135 {
+public class ConnectingCitiesWithMinimumCost_LE_1135_UF {
     /**
      1.31.2023
      - Greedy + Kruskal算法，ref 东哥 post
