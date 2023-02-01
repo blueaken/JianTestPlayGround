@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class MinCostToConnectAllPoints_LE_1584 {
+public class MinCostToConnectAllPoints_LE_1584_Kruskal {
     /**
      1.31.2023
-     - similar to LE 1135, greedy + Kruskai算法
+     - similar to LE 1135, greedy + Kruskal算法
      - ref 东哥 post, 注意需要先build graph, 使用point index
      */
     public int minCostConnectPoints(int[][] points) {
