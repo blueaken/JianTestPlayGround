@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class NetworkDelayTime_LE_743 {
+public class NetworkDelayTime_LE_743_Dijsktra {
     /**
      2.2.2023
      Dijkstra算法, ref 东哥 post
