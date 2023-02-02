@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
 public class MinCostToConnectAllPoints_LE_1584_Prim {
     /**
      1.31.2023
-     - similar to LE 1135, greedy + Kruskai算法
+     - similar to LE 1135, greedy + Kruskal算法
      - ref 东哥 post, 注意需要先build graph, 使用point index
      ========================================================
      2.1.2023
