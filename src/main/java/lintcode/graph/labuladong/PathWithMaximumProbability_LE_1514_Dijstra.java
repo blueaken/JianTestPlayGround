@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class PathWithMaximumProbability_LE_1514 {
+public class PathWithMaximumProbability_LE_1514_Dijstra {
     /**
      2.2.2023
      Dijstra算法，ref 东哥 post
