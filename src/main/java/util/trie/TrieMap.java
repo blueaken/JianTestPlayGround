@@ -81,7 +81,6 @@ public class TrieMap<V> {
     }
 
     /***** 查 *****/
-
     // 搜索 key 对应的值，不存在则返回 null
     // get("the") -> 4
     // get("tha") -> null
@@ -176,7 +175,7 @@ public class TrieMap<V> {
         }
 
         for (char c = 0; c < R; c++) {
-            //用回溯法遍历
+            //用回溯法遍历, 针对的是树枝；DFS中回溯针对的是节点；
             if (node.children.containsKey(c)) {
                 path.append(c);
                 traverse(node.children.get(c), path, res);

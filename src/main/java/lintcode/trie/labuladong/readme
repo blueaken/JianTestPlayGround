@@ -1,5 +1,9 @@
 12.22.2022
-东哥的Trie Tree模板以递归 + 数组的形式构建，和我本来的 Iterative + HashMap的方式有冲突，而且文章中的例题也不是Amazon高频，因此：
+
+- Trie树和普通多叉树节点最大不同在于TrieNode 中 children 数组的索引是有意义的，代表键中的一个字符。
+- 形象理解就是，Trie 树用「树枝」存储字符串（键），用「节点」存储字符串（键）对应的数据（值）。
+
+- 东哥的Trie Tree模板以递归 + 数组的形式构建，和我本来的 Iterative + HashMap的方式有冲突，而且文章中的例题也不是Amazon高频，因此：
 1. 把东哥模板用递归 + HashMap 重构后调通，以参考。
 2. 把原来做的Amazon高频Trie高频再做一遍，结合东哥模板看看是否有改进之处。
 注：TrieMap 和 TrieSet 类实现放在 /util 下面。

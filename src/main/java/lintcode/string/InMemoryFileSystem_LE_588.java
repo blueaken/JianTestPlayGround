@@ -4,10 +4,10 @@ import java.util.*;
 
 /*
     - ref solution link and choose the approach 1 - https://leetcode.com/problems/design-in-memory-file-system/solution/
-    - this approach uses a class with 2 seperate hash maps - one for directory, and one for file seperately
+    - this approach uses a class with 2 separate hash maps - one for directory, and one for file separately
     - the advantage of this approach is it is easy to expand for more commands, ex rmdir, just need to read the destination directoy and remove the corresponding directory entry for dir keys.
     - rename is also simple, we just need to copy a temp directory and delete the old one
-    - extract only dirs or files is alos easy, since we maintian seperate entries for dirs and files
+    - extract only dirs or files is also easy, since we maintain separate entries for dirs and files
 */
 public class InMemoryFileSystem_LE_588 {
     class Dir {
@@ -92,4 +92,5 @@ public class InMemoryFileSystem_LE_588 {
         }
         return t.files.get(paths[paths.length - 1]);
     }
+
 }

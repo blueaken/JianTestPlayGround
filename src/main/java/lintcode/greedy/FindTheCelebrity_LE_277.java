@@ -5,7 +5,7 @@ public class FindTheCelebrity_LE_277 {
         - ref https://www.youtube.com/watch?v=QDehNYXlCAg&t=4s
         - Brute Force - O(N^2), to tell if a is celebrity,
           need 2 conditions for every other people b: !know(a, b) && know(b, a)
-        - Optimize, each round drop 1, after n - 1 comparion, only 1 candidate left
+        - Optimize, each round drop 1, after n - 1 comparison, only 1 candidate left
         ========================
         P1 11.02.2022
         type - greedy
@@ -20,7 +20,7 @@ public class FindTheCelebrity_LE_277 {
 //            }
 //        }
 //
-//        //check previous relationship which maybe dropped in earlier comparation
+//        //check previous relationship which maybe dropped in earlier comparison
 //        for (int others = 0; others < n; others++) {
 //            if (can == others) {
 //                continue;
