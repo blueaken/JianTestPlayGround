@@ -11,6 +11,8 @@ public class MaximumNumberOfRobotsWithinBudget_LE_2398 {
      - redo with 东哥 sliding window template, with priority queue
      - also ref solution post - https://leetcode.com/problems/maximum-number-of-robots-within-budget/solutions/2524813/sliding-window-and-priority-queue/
      - Time - O(NLogN), Space - O(N)
+     ===================
+     previous solution ACed, but only beat 10% time, should be able to optimize with binary search
      */
     public int maximumRobots(int[] chargeTimes, int[] runningCosts, long budget) {
         int n = chargeTimes.length;
@@ -33,5 +35,29 @@ public class MaximumNumberOfRobotsWithinBudget_LE_2398 {
         }
 
         return res;
+    }
+
+    private boolean isOk(int k, int[] chargeTimes, int[] runningCosts, long budget) {
+        int n = chargeTimes.length;
+        int left = 0, right = 0;
+        PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> b - a);
+        long sum = 0l;
+
+        while (right < n) {
+            pq.offer(chargeTimes[right]);
+            sum += runningCosts[right];
+            right++;
+
+            if (pq.size() == k) {
+                if ((pq.peek() + pq.size() * sum) <= budget) {
+                    return true;
+                }
+                pq.remove(chargeTimes[left]);
+                sum -= runningCosts[left];
+                left++;
+            }
+        }
+
+        return false;
     }
 }
