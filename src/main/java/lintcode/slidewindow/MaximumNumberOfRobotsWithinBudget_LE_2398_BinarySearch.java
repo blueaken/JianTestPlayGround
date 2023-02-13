@@ -15,6 +15,8 @@ public class MaximumNumberOfRobotsWithinBudget_LE_2398_BinarySearch {
      2.11.2023
      - previous solution ACed, but only beat 10% time, should be able to optimize with binary search
      - TLE in the performance test case
+     - there should be issue in the BS and/or sliding window template, comparing the solution post - https://leetcode.com/problems/maximum-number-of-robots-within-budget/solutions/3017899/java-binary-search-solution-with-sliding-window/
+     - but cannot find now, leave it for now
      */
     public int maximumRobots(int[] chargeTimes, int[] runningCosts, long budget) {
         int n = chargeTimes.length;
