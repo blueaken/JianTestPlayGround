@@ -33,6 +33,6 @@ maxTurnSum(node) = node->val + max(0, maxDownSum(node->left)) + max(0, maxDownSu
         int pathSum = left + right + root.val;
         res = Math.max(res, pathSum);
 
-        return root.val + Math.max(left, right); //return the max value of one path, per the functioin definition
+        return root.val + Math.max(left, right); //return the max value of one path, per the function definition
     }
 }
