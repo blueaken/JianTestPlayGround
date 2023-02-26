@@ -1,4 +1,4 @@
-package lintcode.divideconquer;
+package lintcode.mergesort;
 
 public class ReversePairs_LE_493_MergeSort {
     /*
@@ -12,6 +12,9 @@ public class ReversePairs_LE_493_MergeSort {
         11.09.2022
         ref labuladong post
         solve it with merge sort
+        ========================
+        02.26.2023
+        redo with 东哥 merge sort template
     */
 
     int[] temp;
@@ -41,8 +44,6 @@ public class ReversePairs_LE_493_MergeSort {
             temp[i] = nums[i];
         }
 
-        //before sort, count reverse pairs
-        //如果双重for循环会TLE，利用nums[lo...mid]已排序的特点进行优化：
         int end = mid+1;
         for (int i = lo; i <= mid; i++) {
             while (end <= hi && ((long)nums[i] > (long)2 * nums[end])) {
@@ -52,15 +53,15 @@ public class ReversePairs_LE_493_MergeSort {
         }
 
         int i = lo, j = mid+1;
-        for (int pos = lo; pos <= hi; pos++) {
+        for (int p = lo; p <= hi; p++) {
             if (i == mid+1) {
-                nums[pos] = temp[j++];
-            } else if (j == hi+1) {
-                nums[pos] = temp[i++];
+                nums[p] = temp[j++];
+            } else if (j == hi + 1) {
+                nums[p] = temp[i++];
             } else if (temp[i] > temp[j]) {
-                nums[pos] = temp[j++];
+                nums[p] = temp[j++];
             } else {
-                nums[pos] = temp[i++];
+                nums[p] = temp[i++];
             }
         }
     }
