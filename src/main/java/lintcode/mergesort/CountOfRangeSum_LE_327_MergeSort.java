@@ -1,4 +1,4 @@
-package lintcode.divideconquer;
+package lintcode.mergesort;
 
 public class CountOfRangeSum_LE_327_MergeSort {
     /*
