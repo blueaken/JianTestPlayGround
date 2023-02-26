@@ -1,9 +1,9 @@
-package lintcode.divideconquer;
+package lintcode.mergesort;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CountSmallerNumbersAfterSelf_LE_315_MergeSort {
+public class CountSmallerNumbersAfterSelf_LE_315_MergeSort_P1 {
     /*
         ref Huifeng Guan video again
         - https://www.youtube.com/watch?v=z-uLlQMvOVM
@@ -22,15 +22,17 @@ public class CountSmallerNumbersAfterSelf_LE_315_MergeSort {
           + additional work of update [Y Y Y Y Y Y Y]  , to found its relative position and update,
                                        a           mid
           use a sorted array to help, so as to use binary search
-    =================================
+        =================================
         11.09.2022
         ref labuladong post - good idea of solving with merge sort
+        =================================
+        2.26.2023
+        redo with merge sort, 东哥模板
+        =================================
     */
-
     class Pair {
         int val;
         int id;
-
         Pair(int val, int id) {
             this.val = val;
             this.id = id;
@@ -44,23 +46,21 @@ public class CountSmallerNumbersAfterSelf_LE_315_MergeSort {
         temp = new Pair[n];
         count = new int[n];
 
-        //load nums array val and id into Pair array
         Pair[] arr = new Pair[n];
         for (int i = 0; i < n; i++) {
             arr[i] = new Pair(nums[i], i);
         }
 
         sort(arr, 0, n-1);
-
         List<Integer> res = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            res.add(count[i]);
+        for (int i : count) {
+            res.add(i);
         }
         return res;
     }
 
     private void sort(Pair[] arr, int lo, int hi) {
-        //base case - no need to sort one element array
+        // base case
         if (lo == hi) {
             return;
         }
@@ -77,23 +77,23 @@ public class CountSmallerNumbersAfterSelf_LE_315_MergeSort {
             temp[i] = arr[i];
         }
 
-        int i = lo, j = mid+1;
-        for (int pos = lo; pos <= hi; pos++) {
-            if (i == mid+1) {
-                arr[pos] = temp[j++];
-            } else if (j == hi+1) {
-                arr[pos] = temp[i++];
-                //every time there is an update in i, we should update the count array
-                int oriId = arr[pos].id;
-                count[oriId] += j - (mid + 1);
+        int i = lo, j = mid + 1;
+        for (int p = lo; p <= hi; p++) {
+            if (i == mid + 1) {
+                arr[p] = temp[j++];
+            } else if (j == hi + 1) {
+                arr[p] = temp[i++];
+                // every i index move, udpate its count array val
+                int oriId = arr[p].id;
+                count[oriId] += j - (mid+1);
             } else if (temp[i].val > temp[j].val) {
-                arr[pos] = temp[j++];
+                arr[p] = temp[j++];
             } else {
                 //note - if duplicate value, we should update the count array too
-                arr[pos] = temp[i++];
-                //every time there is an update in i, we should update the count array
-                int oriId = arr[pos].id;
-                count[oriId] += j - (mid + 1);
+                arr[p] = temp[i++];
+                // every i index move, udpate its count array val
+                int oriId = arr[p].id;
+                count[oriId] += j - (mid+1);
             }
         }
     }
