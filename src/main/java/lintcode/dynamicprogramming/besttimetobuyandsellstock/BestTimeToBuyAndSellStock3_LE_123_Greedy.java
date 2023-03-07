@@ -1,6 +1,6 @@
 package lintcode.dynamicprogramming.besttimetobuyandsellstock;
 
-public class BestTimeToBuyAndSellStock3_LE_123 {
+public class BestTimeToBuyAndSellStock3_LE_123_Greedy {
     /*
         10.13.2022
         ref huifeng guan post
@@ -14,22 +14,22 @@ public class BestTimeToBuyAndSellStock3_LE_123 {
         =================
         3.7.2023
         - can use greedy, but try 东哥 template first
+        =========
+        - try greedy
     */
     public int maxProfit(int[] prices) {
-        int K = 2;
-        int n = prices.length;
-        int[][][] dp = new int[n][K+1][2];
-        for (int i = 0; i < n; i++) {
-            for (int k = 1; k <= K; k++) {
-                if (i - 1 == -1) {
-                    dp[i][k][0] = 0;
-                    dp[i][k][1] = - prices[i];
-                    continue;
-                }
-                dp[i][k][0] = Math.max(dp[i-1][k][0], dp[i-1][k][1] + prices[i]);
-                dp[i][k][1] = Math.max(dp[i-1][k][1], dp[i-1][k-1][0] - prices[i]);
-            }
+        int buy1 = Integer.MIN_VALUE;
+        int sold1 = 0;
+        int buy2 = Integer.MIN_VALUE;
+        int sold2 = 0;
+
+        for (int price : prices) {
+            buy1 = Math.max(buy1, -price);
+            sold1 = Math.max(sold1, buy1 + price);
+            buy2 = Math.max(buy2, sold1 - price);
+            sold2 = Math.max(sold2, buy2 + price);
         }
-        return dp[n-1][K][0];
+        int res = Math.max(0, sold2);
+        return res;
     }
 }
