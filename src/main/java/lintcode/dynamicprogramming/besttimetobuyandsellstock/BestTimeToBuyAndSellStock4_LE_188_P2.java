@@ -1,6 +1,6 @@
 package lintcode.dynamicprogramming.besttimetobuyandsellstock;
 
-public class BestTimeToBuyAndSellStock4_LE_188_P1 {
+public class BestTimeToBuyAndSellStock4_LE_188_P2 {
     /*
         10.13.2022
         - ref previous notes and get a basic DP formula
@@ -19,25 +19,23 @@ public class BestTimeToBuyAndSellStock4_LE_188_P1 {
           ref 东哥 brilliant post
           note: time is slower than 2 separate sell & buy array
           ==========================
+          3.7.2023
+          P2 with 东哥 post
     */
     public int maxProfit(int K, int[] prices) {
         int n = prices.length;
-
-        if (K > n/2) {
-            return maxProfitInf(prices);
+        if (K > n / 2) {
+            return maxProfitWithIK(prices);
         }
 
         int[][][] dp = new int[n][K+1][2];
-
         for (int i = 0; i < n; i++) {
             for (int k = 1; k <= K; k++) {
-                if (i-1 == -1) {
+                if (i - 1 == -1) {
                     dp[i][k][0] = 0;
                     dp[i][k][1] = -prices[i];
                     continue;
                 }
-
-                //note every buy count the start of a transaction
                 dp[i][k][0] = Math.max(dp[i-1][k][0], dp[i-1][k][1] + prices[i]);
                 dp[i][k][1] = Math.max(dp[i-1][k][1], dp[i-1][k-1][0] - prices[i]);
             }
@@ -45,16 +43,15 @@ public class BestTimeToBuyAndSellStock4_LE_188_P1 {
         return dp[n-1][K][0];
     }
 
-    //solve the infinite transaction with greedy
-    private int maxProfitInf(int[] prices) {
-        int n = prices.length;
-        int ans = 0;
-        for (int i = 1; i < n; i++) {
-            int cur = prices[i] - prices[i-1];
-            if (cur > 0) {
-                ans += cur;
+    // solve infinite transaction with greedy
+    private int maxProfitWithIK(int[] prices) {
+        int res = 0;
+        for (int i = 1; i < prices.length; i++) {
+            int curProfit = prices[i] - prices[i-1];
+            if (curProfit > 0) {
+                res += curProfit;
             }
         }
-        return ans;
+        return res;
     }
 }
