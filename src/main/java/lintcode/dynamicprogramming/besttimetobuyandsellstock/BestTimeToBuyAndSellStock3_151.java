@@ -1,4 +1,4 @@
-package lintcode.dynamicprogramming;
+package lintcode.dynamicprogramming.besttimetobuyandsellstock;
 
 public class BestTimeToBuyAndSellStock3_151 {
     /**
