@@ -1,6 +1,6 @@
 package lintcode.dynamicprogramming2;
 
-public class HouseRobber_LE_198_LinearTime {
+public class HouseRobber_LE_198_ConstantSpace {
     /*
         10.25.2022
         ref labaladong post
