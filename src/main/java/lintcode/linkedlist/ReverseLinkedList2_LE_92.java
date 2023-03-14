@@ -25,4 +25,21 @@ public class ReverseLinkedList2_LE_92 {
         head.next = succ;
         return last;
     }
+
+    public static void main(String[] args) {
+        ReverseLinkedList2_LE_92 solution = new ReverseLinkedList2_LE_92();
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
+
+        System.out.println("before reverse:");
+        head.print();
+        System.out.println("*******************");
+
+        int left = 2, right = 4;
+        System.out.println("after reverse:");
+        solution.reverseBetween(head, left, right).print();
+    }
 }

@@ -14,7 +14,7 @@ public class FourSum_LE_18_Labuladong {
      redo with 东哥nSum模板
      */
     public List<List<Integer>> fourSum(int[] nums, int target) {
-        Arrays.sort(nums);
+        Arrays.sort(nums);// note - have to sort before
         return nSumTarget(nums, 4, 0, target);
     }
 
