@@ -1,4 +1,4 @@
-package lintcode.binarysearch.labuladong;
+package lintcode.binarysearch.byValue;
 
 public class SplitArrayLargestSum_LE_410 {
     /**
