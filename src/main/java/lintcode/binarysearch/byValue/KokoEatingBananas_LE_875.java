@@ -1,15 +1,13 @@
-package lintcode.binarysearch.labuladong.variant;
+package lintcode.binarysearch.byValue;
 
-public class KokoEatingBananas_LE_875_P1 {
+public class KokoEatingBananas_LE_875 {
     /**
      12.09.2022
      ref 东哥 post
-     ===============
-     3.19.2023
-     P1
      */
     public int minEatingSpeed(int[] piles, int h) {
-        int left = 1, right = 1000000000 + 1;
+        int left = 1, right = 1000000001;
+        // //we are looking for min k, so search for left bound of the binary search
         while (left < right) {
             int mid = left + (right - left) / 2;
             if (f(piles, mid) <= h) {
@@ -18,19 +16,20 @@ public class KokoEatingBananas_LE_875_P1 {
                 left = mid + 1;
             }
         }
+
         return left;
     }
 
-    // 在每小时吃k个香蕉的速度下，吃完所有piles所需要的时间
-    private int f(int[] piles, int k) {
+    //f(x) - when speed is x per hour, the total hours needed to finish the piles
+    int f(int[] piles, int x) {
         int hours = 0;
         for (int i = 0; i < piles.length; i++) {
-            int cur = piles[i];
-            hours += cur / k;
-            if (cur % k > 0) {
+            hours += piles[i] / x;
+            if (piles[i] % x > 0) {
                 hours++;
             }
         }
+        //note hours may overflow
         return hours;
     }
 }
