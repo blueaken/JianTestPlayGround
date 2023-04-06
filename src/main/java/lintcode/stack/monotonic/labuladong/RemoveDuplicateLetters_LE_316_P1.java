@@ -1,39 +1,40 @@
-package lintcode.stack.monotonic;
+package lintcode.stack.monotonic.labuladong;
 
 import java.util.Stack;
 
-public class RemoveDuplicateLetters_LE_316 {
+public class RemoveDuplicateLetters_LE_316_P1 {
     /**
      12.18.2022
      ref 东哥 post
      - the trick is how to keep lexicographical order, solve by monotonic stack template
+     ==============
+     03.27.2023
+     P1
      */
     public String removeDuplicateLetters(String s) {
         int[] count = new int[256];
-        for (char c : s.toCharArray()) {
-            count[c]++;
+        for (char cur : s.toCharArray()) {
+            count[cur]++;
         }
 
-        boolean[] inStack = new boolean[256];
         Stack<Character> stack = new Stack<>();
-        for (char c : s.toCharArray()) {
-            //remove current char's count in each iteration
-            count[c]--;
+        boolean[] inStack = new boolean[256];
+        for (char cur : s.toCharArray()) {
+            count[cur]--;
 
-            if (inStack[c]) {
+            if (inStack[cur]) {
                 continue;
             }
 
-            //maintain a monotonic increasing stack
-            while (stack.size() != 0 && stack.peek() > c) {
+            while (stack.size() > 0 && stack.peek() > cur) {
                 if (count[stack.peek()] == 0) {
                     break;
                 }
 
                 inStack[stack.pop()] = false;
             }
-            stack.push(c);
-            inStack[c] = true;
+            stack.push(cur);
+            inStack[cur] = true;
         }
 
         StringBuilder sb = new StringBuilder();
