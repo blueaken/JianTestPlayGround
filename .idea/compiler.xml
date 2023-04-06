@@ -20,7 +20,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="JianTestPlayGround" target="1.8" />
+      <module name="JianTestPlayGround" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

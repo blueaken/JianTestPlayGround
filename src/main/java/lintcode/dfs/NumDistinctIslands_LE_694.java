@@ -1,6 +1,6 @@
 package lintcode.dfs;
 
-import javafx.util.Pair;
+//import javafx.util.Pair;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -23,46 +23,46 @@ public class NumDistinctIslands_LE_694 {
     private int curRow;
     private int curCol;
 
-    public int numDistinctIslands(int[][] grid) {
-        boolean[][] visited = new boolean[grid.length][grid[0].length];
-        Set<Set<Pair<Integer, Integer>>> islands = new HashSet<>();
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[0].length; j++) {
-                if (grid[i][j] == 1) {
-                    Set<Pair<Integer, Integer>> currentIsland = new HashSet<>();
-                    this.curRow = i;
-                    this.curCol = j;
-                    dfs (i, j, currentIsland, grid, visited);
+//    public int numDistinctIslands(int[][] grid) {
+//        boolean[][] visited = new boolean[grid.length][grid[0].length];
+//        Set<Set<Pair<Integer, Integer>>> islands = new HashSet<>();
+//        for (int i = 0; i < grid.length; i++) {
+//            for (int j = 0; j < grid[0].length; j++) {
+//                if (grid[i][j] == 1) {
+//                    Set<Pair<Integer, Integer>> currentIsland = new HashSet<>();
+//                    this.curRow = i;
+//                    this.curCol = j;
+//                    dfs (i, j, currentIsland, grid, visited);
+//
+//                    if (currentIsland.size() > 0) {
+//                        islands.add(currentIsland);
+//                    }
+//                }
+//            }
+//        }
+//        return islands.size();
+//    }
 
-                    if (currentIsland.size() > 0) {
-                        islands.add(currentIsland);
-                    }
-                }
-            }
-        }
-        return islands.size();
-    }
+//    private void dfs(int row, int col, Set<Pair<Integer, Integer>> currentIsland, int[][] grid, boolean[][] visited) {
+//        if (row < 0 || row == grid.length || col < 0 || col == grid[0].length
+//                || grid[row][col] == 0 || visited[row][col]) {
+//            return;
+//        }
+//
+//        visited[row][col] = true;
+//        //store in local cor
+//        currentIsland.add(new Pair (row - this.curRow, col - this.curCol));
+//
+//        dfs(row + 1, col, currentIsland, grid, visited);
+//        dfs(row - 1, col, currentIsland, grid, visited);
+//        dfs(row, col + 1, currentIsland, grid, visited);
+//        dfs(row, col - 1, currentIsland, grid, visited);
+//
+//    }
 
-    private void dfs(int row, int col, Set<Pair<Integer, Integer>> currentIsland, int[][] grid, boolean[][] visited) {
-        if (row < 0 || row == grid.length || col < 0 || col == grid[0].length
-                || grid[row][col] == 0 || visited[row][col]) {
-            return;
-        }
-
-        visited[row][col] = true;
-        //store in local cor
-        currentIsland.add(new Pair (row - this.curRow, col - this.curCol));
-
-        dfs(row + 1, col, currentIsland, grid, visited);
-        dfs(row - 1, col, currentIsland, grid, visited);
-        dfs(row, col + 1, currentIsland, grid, visited);
-        dfs(row, col - 1, currentIsland, grid, visited);
-
-    }
-
-    public static void main(String[] args) {
-        NumDistinctIslands_LE_694 solution = new NumDistinctIslands_LE_694();
-        int[][] grid = {{1,1,0,0,0},{1,1,0,0,0},{0,0,0,1,1},{0,0,0,1,1}};
-        System.out.println(solution.numDistinctIslands(grid));
-    }
+//    public static void main(String[] args) {
+//        NumDistinctIslands_LE_694 solution = new NumDistinctIslands_LE_694();
+//        int[][] grid = {{1,1,0,0,0},{1,1,0,0,0},{0,0,0,1,1},{0,0,0,1,1}};
+//        System.out.println(solution.numDistinctIslands(grid));
+//    }
 }
