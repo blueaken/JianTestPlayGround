@@ -106,16 +106,34 @@ public class LFUCache_LE_460 {
     }
 
     public static void main(String[] args) {
-        LFUCache_LE_460 solution = new LFUCache_LE_460(2);
+
+        LFUCache_LE_460 solution = new LFUCache_LE_460(3);
         solution.put(1, 1);
         solution.put(2, 2);
-        System.out.println(solution.get(1)); //1
-        solution.put(3, 3); //key 2 should be evicted
-        System.out.println(solution.get(2)); //-1, not found
-        System.out.println(solution.get(3)); //3
-        solution.put(4, 4);//both 1 & 3 has the same frequency now, but 1 is LRU, so 1 is evicted
-        System.out.println(solution.get(1)); //-1, not found
-        System.out.println(solution.get(3)); //3
+        solution.put(3, 3);
+        solution.put(4, 4); // key 1 should be evicted
         System.out.println(solution.get(4)); //4
+        System.out.println(solution.get(3)); //3
+        System.out.println(solution.get(2)); //2
+        System.out.println(solution.get(1)); //-1
+        solution.put(5, 5); //key 4 should be evicted
+        System.out.println(solution.get(1)); //-1, not found
+        System.out.println(solution.get(2)); //2
+        System.out.println(solution.get(3)); //3
+        System.out.println(solution.get(4)); //-1, not found
+        System.out.println(solution.get(5)); //5
+
+
+//        LFUCache_LE_460 solution = new LFUCache_LE_460(2);
+//        solution.put(1, 1);
+//        solution.put(2, 2);
+//        System.out.println(solution.get(1)); //1
+//        solution.put(3, 3); //key 2 should be evicted
+//        System.out.println(solution.get(2)); //-1, not found
+//        System.out.println(solution.get(3)); //3
+//        solution.put(4, 4);//both 1 & 3 has the same frequency now, but 1 is LRU, so 1 is evicted
+//        System.out.println(solution.get(1)); //-1, not found
+//        System.out.println(solution.get(3)); //3
+//        System.out.println(solution.get(4)); //4
     }
 }
