@@ -41,6 +41,10 @@ public class ShortestSubarrayWithSumAtLeastK_LE_862 {
         ShortestSubarrayWithSumAtLeastK_LE_862 solution = new ShortestSubarrayWithSumAtLeastK_LE_862();
         int[] nums = {2,-1,2,1,3};
         int k = 4;
+//        // 2 - {1，3}
+//        int[] nums = {8,3,4,5};
+//        int k = 5;
+//        // 1 - {8} or {5}
         System.out.println(solution.shortestSubarray(nums, k));
     }
 }
