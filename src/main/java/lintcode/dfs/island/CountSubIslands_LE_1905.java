@@ -48,4 +48,24 @@ public class CountSubIslands_LE_1905 {
         dfs(grid, i, j+1);
         dfs(grid, i, j-1);
     }
+
+    public static void main(String[] args) {
+        CountSubIslands_LE_1905 solution = new CountSubIslands_LE_1905();
+        int[][] grid1 =
+                {{1,1,1,0,0},
+                {0,1,1,1,1},
+                {0,0,0,0,0},
+                {1,0,0,0,0},
+                {1,1,0,1,1}};
+
+        int[][] grid2 =
+                {{1,1,1,0,0},
+                {0,0,1,1,1},
+                {0,1,0,0,0},
+                {1,0,1,1,0},
+                {0,1,0,1,0}};
+
+        System.out.println(solution.countSubIslands(grid1, grid2));
+    }
+
 }
