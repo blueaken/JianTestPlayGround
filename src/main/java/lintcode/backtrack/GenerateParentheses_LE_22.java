@@ -16,6 +16,9 @@ public class GenerateParentheses_LE_22 {
         return res;
     }
 
+    // 创建一个数组
+
+
     // 可用的左括号数量为 left 个，可用的右括号数量为 right 个
     private void backtrack(int left, int right, StringBuilder sb) {
         //base cases
