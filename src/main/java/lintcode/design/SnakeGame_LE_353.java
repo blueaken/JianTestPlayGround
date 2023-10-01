@@ -1,7 +1,5 @@
 package lintcode.design;
 
-//import javafx.util.Pair;
-
 import java.util.*;
 
 public class SnakeGame_LE_353 {
