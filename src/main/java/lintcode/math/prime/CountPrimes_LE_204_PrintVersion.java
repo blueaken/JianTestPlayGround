@@ -32,8 +32,14 @@ public class CountPrimes_LE_204_PrintVersion {
     }
 
     public static void main(String[] args) {
-        CountPrimes_LE_204_PrintVersion solution = new CountPrimes_LE_204_PrintVersion();
-        int n = 16; //2,3,5
-        System.out.println(solution.countPrimes(n));
+
+        float x = 3;
+        float r = x / 2;
+        System.out.println(r);
+
+
+//        CountPrimes_LE_204_PrintVersion solution = new CountPrimes_LE_204_PrintVersion();
+//        int n = 16; //2, 3, 5, 7, 11, 13
+//        System.out.println(solution.countPrimes(n));
     }
 }
