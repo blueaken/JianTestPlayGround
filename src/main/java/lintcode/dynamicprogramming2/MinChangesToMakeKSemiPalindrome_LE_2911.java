@@ -1,7 +1,5 @@
 package lintcode.dynamicprogramming2;
 
-import lintcode.math.prime.Tes;
-
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -14,7 +12,7 @@ public class MinChangesToMakeKSemiPalindrome_LE_2911 {
      - 1. the idea/definition of semi-palindrome string, not appear on LC problems before
      - 2. after that use a top down DP to loop the whole string
      - 3. need to optimize the performance by pre calculate the possible substrings for min semi-palindrome changes before hand
-     - after the optimizatioin, the Time is improved to O(N^3);
+     - after the optimization, the Time is improved to O(N^3);
      - i think it Ok to miss this problem in real interview
      */
     int[][] mem, change;
@@ -23,7 +21,7 @@ public class MinChangesToMakeKSemiPalindrome_LE_2911 {
         this.s = s;
         int n = s.length();
 
-        // pre calculate of min changes for substring [i, j], covers all possibile substrings
+        // pre calculate of min changes for substring [i, j], covers all possible substrings
         change = new int[n][n];
         for (int i = 0; i < n; i++) {
             for (int j = i; j < n; j++) {
@@ -117,7 +115,7 @@ public class MinChangesToMakeKSemiPalindrome_LE_2911 {
     }
 
     public static void main(String[] args) {
-        Tes solution = new Tes();
+        MinChangesToMakeKSemiPalindrome_LE_2911 solution = new MinChangesToMakeKSemiPalindrome_LE_2911();
 
 //        String s = "abcac";
 //        int k = 2;
