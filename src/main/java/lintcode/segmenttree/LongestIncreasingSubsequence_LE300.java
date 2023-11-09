@@ -100,7 +100,7 @@ public class LongestIncreasingSubsequence_LE300 {
 
         void build(int left, int right, int index, int[] nums) {
             if (left == right) {
-                tree[left] = nums[left];
+                tree[index] = nums[left];
                 return;
             }
 

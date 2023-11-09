@@ -4,70 +4,100 @@ import java.util.*;
 
 public class Test {
 
-    /**
-     11.6.23
-     - ref the discussion post and resolve with DFS
-     - https://leetcode.com/problems/maximum-score-after-applying-operations-on-a-tree/solutions/4250632/java-dfs-o-n-solution/
-     */
-    LinkedList<Integer>[] graph;
-    int[] values;
-    public long maximumScoreAfterOperations(int[][] edges, int[] values) {
-        this.values = values;
-        int n = edges.length + 1;
-        long sum = 0;
+    int N = 1_00_001;
 
-        // init graph
-        graph = new LinkedList[n];
-        for (int i = 0; i < n; i++) {
-            graph[i] = new LinkedList<>();
-            sum += values[i];
-        }
-        for (int[] edge : edges) {
-            graph[edge[0]].add(edge[1]);
-            graph[edge[1]].add(edge[0]);
+    class SegmentTree{
+        int[] tree;
+
+        SegmentTree(int[] nums) {
+            int size = 4 * nums.length;
+            tree = new int[size];
         }
 
-        long minSubVal = dfs(0, -1);
+        int query(int x, int y, int left, int right, int index) {
+            if (x > right || y < left) {
+                return Integer.MIN_VALUE;
+            }
 
-        return sum - minSubVal;
-//        return dfs(0, -1);
+            if (x <= left && right <= y) {
+                return tree[index];
+            }
+
+            int mid = (left + right) >> 1;
+            int leftTree = query(x, y, left, mid, 2*index+1);
+            int rightTree = query(x, y, mid+1, right, 2*index+2);
+
+            return Math.max(leftTree, rightTree);
+        }
+
+        void update(int idx, int val, int left, int right, int index) {
+            if (left == right) {
+                tree[index] = val;
+                return;
+            }
+
+            int mid = (left + right) >> 1;
+            if (mid >= idx) {
+                update (idx, val, left, mid, 2*index+1);
+            } else {
+                update (idx, val, mid+1, right, 2*index+2);
+            }
+
+            tree[index] = Math.max(tree[2*index+1], tree[2*index+2]);
+        }
     }
 
-    long dfs(int node, int parent) {
-        long res = 0;
-        for (int child : graph[node]) {
-            if (child == parent) {
-                continue;
-            }
-            res += dfs(child, node);
-        }
+//    int seg[];
+//    void update(int idx , int x , int low , int high , int i){
+//        if(low == high){
+//            seg[idx] = x;
+//            return;
+//        }
+//        int mid = low + (high - low) / 2;
+//        if(i <= mid){
+//            update(2 * idx + 1 , x , low , mid , i);
+//        }
+//        else{
+//            update(2 * idx + 2 , x , mid + 1 , high , i);
+//        }
+//        seg[idx] = Math.max(seg[2 * idx + 1], seg[2 * idx + 2]);
+//    }
+//    int query(int l , int r , int low , int high , int idx){ // max query
+//        if(l > high || r < low){
+//            return Integer.MIN_VALUE;
+//        }
+//        if(low >= l && high <= r){
+//            return seg[idx];
+//        }
+//        int mid = low + (high - low) / 2;
+//        int left = query(l , r , low , mid , 2 * idx + 1);
+//        int right = query(l , r , mid + 1 , high , 2 * idx + 2);
+//        return Math.max(left , right);
+//    }
 
-        // leaf node
-        if (res == 0) {
-            return values[node];
+    public int lengthOfLIS(int[] a, int k) {
+        int n = a.length;
+        int max = 0;
+        int[]seg = new int[4 * N];
+        SegmentTree st = new SegmentTree(seg);
+        for(int i = 0; i < n; i++){
+            int l = Math.max(0 , a[i] - k);
+            int r = a[i] - 1;
+            int res = st.query(l , r , 0 , N - 1 , 0) + 1; // search in all the possible previous elements ([l , r]) and add '1' to the max                                                                length with this previous
+            max = Math.max(max , res); // update max
+            st.update(0 , res , 0 , N - 1 , a[i]); // update segment tree's a[i]th index with res
         }
-
-        // return the min of the parent node and sum of child node
-        res = Math.min(res, values[node]);
-        return res;
+        return max;
     }
 
 
     public static void main(String[] args) {
         Test test = new Test();
 
-//        int[][] edges = {{0,1},{0,2}};
-//        int[] values = {1,2,3};
-//        // 5
+        int[] nums = {7,4,5,1,8,12,4,7};
+        int k = 5;
+        // 4
 
-//        int[][] edges = {{0,1},{0,2}};
-//        int[] values = {5,2,1};
-//        // 5
-
-        int[][] edges = {{0,1},{0,2},{1,3},{1,4},{2,5},{2,6}};
-        int[] values = {5,8,4,3,2,6,7};
-        // 30
-
-        System.out.println(test.maximumScoreAfterOperations(edges, values));
+        System.out.println(test.lengthOfLIS(nums, k));
     }
 }
