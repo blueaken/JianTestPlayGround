@@ -4,100 +4,72 @@ import java.util.*;
 
 public class Test {
 
-    int N = 1_00_001;
-
-    class SegmentTree{
-        int[] tree;
-
-        SegmentTree(int[] nums) {
-            int size = 4 * nums.length;
-            tree = new int[size];
+    String ans;
+    boolean[] used;
+    Map<Character, Integer> orderMap;
+    public String customSortString(String order, String s) {
+        orderMap = new HashMap<>();
+        for (int i = 0; i < order.length(); i++) {
+            orderMap.put(order.charAt(i), i);
         }
 
-        int query(int x, int y, int left, int right, int index) {
-            if (x > right || y < left) {
-                return Integer.MIN_VALUE;
-            }
+        int n = s.length();
+        StringBuilder sb = new StringBuilder();
+        used = new boolean[n];
 
-            if (x <= left && right <= y) {
-                return tree[index];
-            }
+        backtrack(s, sb);
+        return ans;
+    }
 
-            int mid = (left + right) >> 1;
-            int leftTree = query(x, y, left, mid, 2*index+1);
-            int rightTree = query(x, y, mid+1, right, 2*index+2);
-
-            return Math.max(leftTree, rightTree);
+    void backtrack(String s, StringBuilder sb) {
+        if (sb.length() == s.length()) {
+            ans = sb.toString();
+            return;
         }
 
-        void update(int idx, int val, int left, int right, int index) {
-            if (left == right) {
-                tree[index] = val;
-                return;
+        for (int i = 0; i < s.length(); i++) {
+            if (used[i]) {
+                continue;
             }
 
-            int mid = (left + right) >> 1;
-            if (mid >= idx) {
-                update (idx, val, left, mid, 2*index+1);
-            } else {
-                update (idx, val, mid+1, right, 2*index+2);
+            used[i] = true;
+            sb.append(s.charAt(i));
+            if (check(sb.toString())) {
+                backtrack(s, sb);
             }
-
-            tree[index] = Math.max(tree[2*index+1], tree[2*index+2]);
+            used[i] = false;
+            sb.deleteCharAt(sb.length()-1);
         }
     }
 
-//    int seg[];
-//    void update(int idx , int x , int low , int high , int i){
-//        if(low == high){
-//            seg[idx] = x;
-//            return;
-//        }
-//        int mid = low + (high - low) / 2;
-//        if(i <= mid){
-//            update(2 * idx + 1 , x , low , mid , i);
-//        }
-//        else{
-//            update(2 * idx + 2 , x , mid + 1 , high , i);
-//        }
-//        seg[idx] = Math.max(seg[2 * idx + 1], seg[2 * idx + 2]);
-//    }
-//    int query(int l , int r , int low , int high , int idx){ // max query
-//        if(l > high || r < low){
-//            return Integer.MIN_VALUE;
-//        }
-//        if(low >= l && high <= r){
-//            return seg[idx];
-//        }
-//        int mid = low + (high - low) / 2;
-//        int left = query(l , r , low , mid , 2 * idx + 1);
-//        int right = query(l , r , mid + 1 , high , 2 * idx + 2);
-//        return Math.max(left , right);
-//    }
-
-    public int lengthOfLIS(int[] a, int k) {
-        int n = a.length;
-        int max = 0;
-        int[]seg = new int[4 * N];
-        SegmentTree st = new SegmentTree(seg);
-        for(int i = 0; i < n; i++){
-            int l = Math.max(0 , a[i] - k);
-            int r = a[i] - 1;
-            int res = st.query(l , r , 0 , N - 1 , 0) + 1; // search in all the possible previous elements ([l , r]) and add '1' to the max                                                                length with this previous
-            max = Math.max(max , res); // update max
-            st.update(0 , res , 0 , N - 1 , a[i]); // update segment tree's a[i]th index with res
+    boolean check(String s) {
+        for (int i = 0; i < s.length(); i++) {
+            if (!orderMap.keySet().contains(s.charAt(i))) {
+                continue;
+            }
+            int cur = orderMap.get(s.charAt(i));
+            for (int j = i+1; j < s.length(); j++) {
+                if (!orderMap.keySet().contains(s.charAt(j))) {
+                    continue;
+                }
+                int nxt = orderMap.get(s.charAt(j));
+                if (cur > nxt) {
+                    return false;
+                }
+            }
         }
-        return max;
+        return true;
     }
 
 
     public static void main(String[] args) {
         Test test = new Test();
 
-        int[] nums = {7,4,5,1,8,12,4,7};
-        int k = 5;
-        // 4
+        String order = "hucw";
+        String s = "utzoampdgkalexslxoqfkdjoczajxtuhqyxvlfatmptqdsochtdzgypsfkgqwbgqbcamdqnqztaqhqanirikahtmalzqjjxtqfnh";
 
-        System.out.println(test.lengthOfLIS(nums, k));
+        System.out.println(test.customSortString(order, s));
     }
 }
+
+

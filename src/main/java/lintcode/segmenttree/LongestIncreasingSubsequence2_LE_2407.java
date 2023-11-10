@@ -7,7 +7,7 @@ public class LongestIncreasingSubsequence2_LE_2407 {
      - solve it with Segment Tree, Time is O(NLogK)
      */
     public int lengthOfLIS(int[] nums, int k) {
-        int[] arr = new int[15];
+        int[] arr = new int[100001];
         SegmentTree st = new SegmentTree(arr);
 
         int n = nums.length;
