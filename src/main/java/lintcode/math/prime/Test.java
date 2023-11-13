@@ -4,71 +4,62 @@ import java.util.*;
 
 public class Test {
 
-    String ans;
-    boolean[] used;
-    Map<Character, Integer> orderMap;
-    public String customSortString(String order, String s) {
-        orderMap = new HashMap<>();
-        for (int i = 0; i < order.length(); i++) {
-            orderMap.put(order.charAt(i), i);
+    /**
+     11.12.23
+     ref this solution post and its comments - https://leetcode.com/problems/maximum-swap/solutions/107068/java-simple-solution-o-n-time/
+     */
+    public int maximumSwap(int num) {
+        char[] arr = String.valueOf(num).toCharArray();
+        int n = arr.length;
+
+        int[]ple = new int[n];
+        ple[0] = arr[0];
+        for (int i = 1; i < n; i++) {
+            ple[i] = Math.min(arr[i], ple[i-1]);
         }
 
-        int n = s.length();
-        StringBuilder sb = new StringBuilder();
-        used = new boolean[n];
-
-        backtrack(s, sb);
-        return ans;
-    }
-
-    void backtrack(String s, StringBuilder sb) {
-        if (sb.length() == s.length()) {
-            ans = sb.toString();
-            return;
+        int[]nge = new int[n];
+        nge[n-1] = arr[n-1];
+        for (int i = n-2; i >= 0; i--) {
+            nge[i] = Math.max(arr[i], nge[i+1]);
         }
 
-        for (int i = 0; i < s.length(); i++) {
-            if (used[i]) {
+        int minPos = -1;
+        for (int i = 0; i < n; i++) {
+            if (ple[i] >= nge[i]) {
                 continue;
             }
-
-            used[i] = true;
-            sb.append(s.charAt(i));
-            if (check(sb.toString())) {
-                backtrack(s, sb);
-            }
-            used[i] = false;
-            sb.deleteCharAt(sb.length()-1);
+            minPos = i;
+            break;
         }
-    }
 
-    boolean check(String s) {
-        for (int i = 0; i < s.length(); i++) {
-            if (!orderMap.keySet().contains(s.charAt(i))) {
-                continue;
-            }
-            int cur = orderMap.get(s.charAt(i));
-            for (int j = i+1; j < s.length(); j++) {
-                if (!orderMap.keySet().contains(s.charAt(j))) {
-                    continue;
-                }
-                int nxt = orderMap.get(s.charAt(j));
-                if (cur > nxt) {
-                    return false;
-                }
-            }
+        // no swap need
+        if (minPos == -1) {
+            return num;
         }
-        return true;
+
+        int maxPos = minPos;
+        while (maxPos < n-1 && nge[maxPos] == nge[maxPos+1]) {
+            maxPos++;
+        }
+
+        // swap
+        char temp = arr[maxPos];
+        arr[maxPos] = arr[minPos];
+        arr[minPos] = temp;
+
+        String res = new String(arr);
+        return Integer.valueOf(res);
     }
 
 
     public static void main(String[] args) {
         Test test = new Test();
 
-        String order = "hucw";
-        String s = "utzoampdgkalexslxoqfkdjoczajxtuhqyxvlfatmptqdsochtdzgypsfkgqwbgqbcamdqnqztaqhqanirikahtmalzqjjxtqfnh";
-
-        System.out.println(test.customSortString(order, s));
+//        int n = 9936;//9963
+//        int n = 99228; //99822
+        int n = 9973;
+        System.out.println(test.maximumSwap(n));
     }
 }
 

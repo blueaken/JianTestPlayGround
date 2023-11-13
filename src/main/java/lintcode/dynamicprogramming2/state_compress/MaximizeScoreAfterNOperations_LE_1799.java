@@ -3,7 +3,7 @@ package lintcode.dynamicprogramming2.state_compress;
 public class MaximizeScoreAfterNOperations_LE_1799 {
     /*
         - influenced by sense from recent working on bitmask problems
-        - ref top down dfs soluiton - https://leetcode.com/problems/maximize-score-after-n-operations/discuss/1690800/Java-Standard-DFS-%2B-bitmask
+        - ref top down dfs solution - https://leetcode.com/problems/maximize-score-after-n-operations/discuss/1690800/Java-Standard-DFS-%2B-bitmask
     */
     public int maxScore(int[] nums) {
         int[] mem = new int[1 << nums.length]; //2^N - 1种状态
