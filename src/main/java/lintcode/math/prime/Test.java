@@ -56,10 +56,20 @@ public class Test {
     public static void main(String[] args) {
         Test test = new Test();
 
-//        int n = 9936;//9963
-//        int n = 99228; //99822
-        int n = 9973;
-        System.out.println(test.maximumSwap(n));
+////        int n = 9936;//9963
+////        int n = 99228; //99822
+//        int n = 9973;
+//        System.out.println(test.maximumSwap(n));
+
+        int a = 4, b = 12;
+        System.out.println(gcd(a, b));
+    }
+
+    public static int gcd (int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return gcd(b, a%b);
     }
 }
 
