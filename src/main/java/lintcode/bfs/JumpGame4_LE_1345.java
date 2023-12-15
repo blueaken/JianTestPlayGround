@@ -44,7 +44,7 @@ public class JumpGame4_LE_1345 {
                     visited[neigh] = true;
                 }
                 // ref a trick here to avoid TLE, because if we clear the array list here, will clear the mapping array list in the HashMap, thus avoid visiting nodes of same value again, since they are already in the queue, also avoid put the previous and next nodes of current nodes into the lists - https://leetcode.com/problems/jump-game-iv/solutions/3260687/JAVA-oror-Extra-trick-with-BFS-to-make-it-O(N)/
-//                neighs.clear();
+                neighs.clear();
             }
             step++;
         }
