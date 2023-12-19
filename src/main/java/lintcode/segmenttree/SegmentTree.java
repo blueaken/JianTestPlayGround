@@ -37,7 +37,7 @@ public class SegmentTree {
      * @param index
      * @param arr
      */
-    void build(int left, int right, int index, int[] arr) {
+void build(int left, int right, int index, int[] arr) {
         // base case - hit a leaf node
         if (left == right) {
             tree[index] = arr[left];
