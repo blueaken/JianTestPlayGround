@@ -48,4 +48,12 @@ public class NumberOfDistinctIslands_LE_694 {
         dfs(grid, i, j-1, sb, 4);
         sb.append(-dir).append(',');
     }
+
+    public static void main(String[] args) {
+        NumberOfDistinctIslands_LE_694 solution = new NumberOfDistinctIslands_LE_694();
+        int[][] grid = {{1,1,0,0,0},{1,1,0,0,0},{0,0,0,1,1},{0,0,0,1,1}};
+        // 1
+
+        System.out.println(solution.numDistinctIslands(grid));
+    }
 }
