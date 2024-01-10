@@ -33,4 +33,10 @@ public class LongestRepeatingCharacterReplacement_LE_424 {
         }
         return res;
     }
+
+    public static void main(String[] args) {
+        LongestRepeatingCharacterReplacement_LE_424 solution = new LongestRepeatingCharacterReplacement_LE_424();
+//        System.out.println(solution.characterReplacement("AABABBA", 1));
+        System.out.println(solution.characterReplacement("AABABBA", 2));
+    }
 }
